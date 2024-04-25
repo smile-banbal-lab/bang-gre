@@ -1,0 +1,252 @@
+[
+    {
+        "ID": 1,
+        "Name": "John Smith",
+        "Phone": "123-456-7890",
+        "Email": "john@example.com",
+        "Address": "123 Main St",
+        "Admin": true,
+        "userID": "john123",
+        "Password": "password123"
+    },
+    {
+        "ID": 2,
+        "Name": "Emily Johnson",
+        "Phone": "987-654-3210",
+        "Email": "emily@example.com",
+        "Address": "456 Elm St",
+        "Admin": false,
+        "userID": "emily456",
+        "Password": "abc123"
+    },
+    {
+        "ID": 3,
+        "Name": "Michael Williams",
+        "Phone": "555-123-4567",
+        "Email": "michael@example.com",
+        "Address": "789 Oak St",
+        "Admin": false,
+        "userID": "mike789",
+        "Password": "pass456"
+    },
+    {
+        "ID": 4,
+        "Name": "Sarah Brown",
+        "Phone": "333-555-7777",
+        "Email": "sarah@example.com",
+        "Address": "101 Pine St",
+        "Admin": true,
+        "userID": "sarah101",
+        "Password": "qwerty"
+    },
+    {
+        "ID": 5,
+        "Name": "David Davis",
+        "Phone": "888-999-0000",
+        "Email": "david@example.com",
+        "Address": "202 Cedar St",
+        "Admin": false,
+        "userID": "david202",
+        "Password": "secret"
+    },
+    {
+        "ID": 6,
+        "Name": "Jessica Taylor",
+        "Phone": "444-777-2222",
+        "Email": "jessica@example.com",
+        "Address": "303 Maple St",
+        "Admin": true,
+        "userID": "jess303",
+        "Password": "123456"
+    },
+    {
+        "ID": 7,
+        "Name": "Andrew Wilson",
+        "Phone": "222-444-6666",
+        "Email": "andrew@example.com",
+        "Address": "404 Walnut St",
+        "Admin": true,
+        "userID": "andrew404",
+        "Password": "mypass"
+    },
+    {
+        "ID": 8,
+        "Name": "Olivia Martinez",
+        "Phone": "666-888-9999",
+        "Email": "olivia@example.com",
+        "Address": "505 Oak St",
+        "Admin": false,
+        "userID": "olivia505",
+        "Password": "hello123"
+    },
+    {
+        "ID": 9,
+        "Name": "James Rodriguez",
+        "Phone": "111-333-5555",
+        "Email": "james@example.com",
+        "Address": "606 Elm St",
+        "Admin": false,
+        "userID": "james606",
+        "Password": "welcome1"
+    },
+    {
+        "ID": 10,
+        "Name": "Sophia Lee",
+        "Phone": "777-333-1111",
+        "Email": "sophia@example.com",
+        "Address": "707 Pine St",
+        "Admin": true,
+        "userID": "sophia707",
+        "Password": "testpass"
+    },
+    {
+        "ID": 11,
+        "Name": "Benjamin Lopez",
+        "Phone": "222-666-9999",
+        "Email": "benjamin@example.com",
+        "Address": "808 Cedar St",
+        "Admin": false,
+        "userID": "benjamin808",
+        "Password": "4321pass"
+    },
+    {
+        "ID": 12,
+        "Name": "Mia Perez",
+        "Phone": "555-777-8888",
+        "Email": "mia@example.com",
+        "Address": "909 Maple St",
+        "Admin": true,
+        "userID": "mia909",
+        "Password": "pass1234"
+    },
+    {
+        "ID": 13,
+        "Name": "Ethan Flores",
+        "Phone": "999-888-7777",
+        "Email": "ethan@example.com",
+        "Address": "1010 Oak St",
+        "Admin": false,
+        "userID": "ethan1010",
+        "Password": "987654"
+    },
+    {
+        "ID": 14,
+        "Name": "Charlotte Scott",
+        "Phone": "111-222-3333",
+        "Email": "charlotte@example.com",
+        "Address": "1111 Elm St",
+        "Admin": true,
+        "userID": "charlotte1111",
+        "Password": "abcd1234"
+    },
+    {
+        "ID": 15,
+        "Name": "Alexander Nguyen",
+        "Phone": "444-888-2222",
+        "Email": "alexander@example.com",
+        "Address": "1212 Pine St",
+        "Admin": false,
+        "userID": "alexander1212",
+        "Password": "p@ssw0rd"
+    },
+    {
+        "ID": 16,
+        "Name": "Amelia Kim",
+        "Phone": "777-222-5555",
+        "Email": "amelia@example.com",
+        "Address": "1313 Maple St",
+        "Admin": true,
+        "userID": "amelia1313",
+        "Password": "888888"
+    },
+    {
+        "ID": 17,
+        "Name": "William Hernandez",
+        "Phone": "333-999-6666",
+        "Email": "william@example.com",
+        "Address": "1414 Oak St",
+        "Admin": false,
+        "userID": "william1414",
+        "Password": "pa$$w0rd"
+    },
+    {
+        "ID": 18,
+        "Name": "Harper Lee",
+        "Phone": "666-111-4444",
+        "Email": "harper@example.com",
+        "Address": "1515 Elm St",
+        "Admin": true,
+        "userID": "harper1515",
+        "Password": "mypassword"
+    },
+    {
+        "ID": 19,
+        "Name": "Elijah Park",
+        "Phone": "222-555-8888",
+        "Email": "elijah@example.com",
+        "Address": "1616 Pine St",
+        "Admin": false,
+        "userID": "elijah1616",
+        "Password": "passw0rd"
+    },
+    {
+        "ID": 20,
+        "Name": "Ava Kim",
+        "Phone": "888-444-7777",
+        "Email": "ava@example.com",
+        "Address": "1717 Maple St",
+        "Admin": true,
+        "userID": "ava1717",
+        "Password": "qwerty123"
+    },
+    {
+        "ID": 21,
+        "Name": "Jackson Choi",
+        "Phone": "555-222-9999",
+        "Email": "jackson@example.com",
+        "Address": "1818 Oak St",
+        "Admin": false,
+        "userID": "jackson1818",
+        "Password": "password321"
+    },
+    {
+        "ID": 22,
+        "Name": "Sofia Garcia",
+        "Phone": "999-333-1111",
+        "Email": "sofia@example.com",
+        "Address": "1919 Elm St",
+        "Admin": true,
+        "userID": "sofia1919",
+        "Password": "test1234"
+    },
+    {
+        "ID": 23,
+        "Name": "Jameson Kim",
+        "Phone": "333-777-8888",
+        "Email": "jameson@example.com",
+        "Address": "2020 Pine St",
+        "Admin": false,
+        "userID": "jameson2020",
+        "Password": "passpass"
+    },
+    {
+        "ID": 24,
+        "Name": "Penelope Tran",
+        "Phone": "777-111-9999",
+        "Email": "penelope@example.com",
+        "Address": "2121 Maple St",
+        "Admin": true,
+        "userID": "penelope2121",
+        "Password": "abcdefg"
+    },
+    {
+        "ID": 25,
+        "Name": "Lucas Kim",
+        "Phone": "111-777-8888",
+        "Email": "lucas@example.com",
+        "Address": "2222 Oak St",
+        "Admin": false,
+        "userID": "lucas2222",
+        "Password": "987654321"
+    }
+]
