@@ -38,6 +38,12 @@ function LoginForm() {
 
 	}
 
+	const onSignUpClickHandler = () => {
+        // 회원가입 페이지로 이동
+        navigate('/signup');
+    }
+
+
 	/* 로그인 요청 후 성공 or 실패 동작 */
 	useEffect(
 		() => {
@@ -54,7 +60,7 @@ function LoginForm() {
 				navigate('/');
 			}
 		}, // eslint-disable-next-line
-		[result]
+		[result, isAuthorized, navigate, dispatch]
 	);
 
 	return (
@@ -76,6 +82,8 @@ function LoginForm() {
 					onChange={onChangeHandler}
 				/>
 				<button onClick={onClickHandler}>로그인</button>
+				&nbsp;&nbsp;&nbsp;
+				<button onClick={onSignUpClickHandler}>회원가입</button> {/* 회원가입 버튼 추가 */}
 			</div>
 		</>
 	);
