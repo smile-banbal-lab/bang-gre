@@ -25,6 +25,7 @@ const userReducer = handleActions(
 				res = { message: 'LOGIN_FAIL' };
 			}
 
+			console.log('[Login] res: ', res);
 			return res;
 
 		},

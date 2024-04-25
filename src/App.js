@@ -6,6 +6,8 @@ import MenuDetail from './pages/MenuDetail';
 import MenuRegist from './pages/MenuRegist';
 import MenuModify from './pages/MenuModify';
 import Login from './pages/Login';
+import PasswordCheck from './pages/PasswordCheck';
+import MyPage from './pages/MyPage';
 import Error from './pages/Error';
 import "./App.css";
 
@@ -34,6 +36,12 @@ function App() {
 						</Route>
 					</Route>
 					<Route path="login" element={<Login />} />
+					<Route path="user" >
+						<Route path=":id" element={<MyPage/>} />
+						<Route path="passwordcheck" >
+							<Route path=":id" element={<PasswordCheck />} />
+						</Route>
+					</Route>	
 				</Route>
 				<Route path="*" element={<Error />} />
 			</Routes>
