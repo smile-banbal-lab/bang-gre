@@ -7,6 +7,7 @@ import MenuRegist from './pages/MenuRegist';
 import MenuModify from './pages/MenuModify';
 import Login from './pages/Login';
 import Error from './pages/Error';
+import SignUp from './pages/SignUp';
 import "./App.css";
 
 /* 추가 설치해야 하는 패키지 목록
@@ -34,6 +35,8 @@ function App() {
 						</Route>
 					</Route>
 					<Route path="login" element={<Login />} />
+					<Route path="/signup" element={<SignUp />} />
+
 				</Route>
 				<Route path="*" element={<Error />} />
 			</Routes>
