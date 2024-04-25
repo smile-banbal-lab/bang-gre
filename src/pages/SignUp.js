@@ -3,6 +3,7 @@ import axios from 'axios';
 
 function SignUp() {
     const [formData, setFormData] = useState({
+        id: '',
         name: '',
         username: '',
         password: '',
@@ -21,7 +22,7 @@ function SignUp() {
     const onSubmitHandler = (e) => {
         e.preventDefault(); // 폼 제출 시 페이지 리로드 방지
         // 데이터를 db.json에 저장하기 위해 백엔드 API 호출
-        axios.post('/api/users', formData)
+        axios.post('http://localhost:4000/user', formData)
             .then(response => {
                 console.log(response.data);
                 // 성공적인 회원가입 후 처리 로직
@@ -33,6 +34,15 @@ function SignUp() {
 
     return (
         <form onSubmit={onSubmitHandler}>
+            <div>
+                <label>아이디:</label>
+                <input
+                    type="text"
+                    name="id"
+                    value={formData.id}
+                    onChange={onChangeHandler}
+                />
+            </div>
             <div>
                 <label>이름:</label>
                 <input
