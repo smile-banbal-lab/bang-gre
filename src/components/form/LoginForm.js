@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from 'react-router-dom';
 import { callLoginAPI } from '../../apis/UserAPICalls';
 import { resetLoginUser } from "../../modules/UserModule";
+import './LoginForm.css';
 
 
 function LoginForm() {
@@ -63,29 +64,32 @@ function LoginForm() {
 		[result, isAuthorized, navigate, dispatch]
 	);
 
-	return (
-		<>
-			<div>
-				<label>ID : </label>
-				<input
-					type="text"
-					name="id"
-					value={loginInfo.id}
-					onChange={onChangeHandler}
-				/>
-				&nbsp;&nbsp;&nbsp;
-				<label>PW : </label>
-				<input
-					type="password"
-					name="password"
-					value={loginInfo.password}
-					onChange={onChangeHandler}
-				/>
-				<button onClick={onClickHandler}>로그인</button>
-				&nbsp;&nbsp;&nbsp;
-				<button onClick={onSignUpClickHandler}>회원가입</button> {/* 회원가입 버튼 추가 */}
-			</div>
-		</>
+    return (
+        <div className="login-form-container">
+            <div className="input-group">
+                <label>ID:</label>
+                <input
+                    type="text"
+                    name="id"
+                    value={loginInfo.id}
+                    onChange={onChangeHandler}
+                />
+            </div>
+            <div className="input-group">
+                <label>PW:</label>
+                <input
+                    type="password"
+                    name="password"
+                    value={loginInfo.password}
+                    onChange={onChangeHandler}
+                />
+            </div>
+            <div className="button-group">
+                <button onClick={onClickHandler}>로그인</button>
+                <button onClick={onSignUpClickHandler}>회원가입</button>
+            </div>
+        </div>
+		
 	);
 }
 

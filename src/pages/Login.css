@@ -1,0 +1,13 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f6f87e;
+}
+
+.login-container h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
