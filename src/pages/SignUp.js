@@ -3,17 +3,18 @@ import axios from 'axios';
 
 function SignUp() {
 	const [formData, setFormData] = useState({
-		id: '',
+		userid: '', //'id' 대신 'userid'를 사용함 (id는 pk로 해야되기 때문임)
 		name: '',
 		username: '',
 		password: '',
 		address: '',
 		email: '',
 		phone: '',
+		isAdmin: false //isAdmin 필드를 추가하고 초기값을 'false'로 설정
 	});
 
 	const [duplicate, setDuplicate] = useState({
-		id: false,
+		userid: false, //'id'대신 'userid'로 중복 검사함
 		phone: false,
 	});
 
@@ -25,7 +26,7 @@ function SignUp() {
 		});
 
 	// 중복 확인 필드에 대한 검사 실행
-	if (name === 'id' || name === 'phone') {
+	if (name === 'userid' || name === 'phone') {
 		checkDuplicate(name, value);
 		}
 	};
@@ -75,14 +76,14 @@ function SignUp() {
 	return (
 		<form onSubmit={onSubmitHandler}>
 			<div>
-				<label>아이디:</label>
+				<label>사용자 ID:</label>
 				<input
 					type="text"
-					name="id"
-					value={formData.id}
+					name="userid"
+					value={formData.userid}
 					onChange={onChangeHandler}
 				/>
-				{duplicate.id && <p style={{color: 'red'}}>이 아이디는 사용할 수 없습니다.</p>}
+				{duplicate.userid && <p style={{color: 'red'}}>이 아이디는 사용할 수 없습니다.</p>}
 			</div>
 			<div>
 				<label>이름:</label>
