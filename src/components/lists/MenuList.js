@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import MenuItem from '../items/MenuItem';
 import { callGetMenuListAPI } from "../../apis/MenuAPICalls";
+import "../commons/Commons.css"
+
 
 function MenuList() {
     const [searchValue, setSearchValue] = useState('');
@@ -61,7 +63,7 @@ function MenuList() {
 	return (
 		menuList && (
 			<>
-				<div>
+				<div id="Searchbar">
 					{/* 카테고리 선택 필터 */}
 					<label>카테고리 선택:</label>
 					<input
@@ -100,15 +102,17 @@ function MenuList() {
 						onChange={() => handleCategoryChange('음료')}
 					/>
 					<label>음료</label>
-					
+					<br/>
 					{/* 검색 필터 */}
 					<input
                         type='search'
                         placeholder={'메뉴 이름을 입력해주세요'}
                         value={searchValue}
                         onChange={e => setSearchValue(e.target.value)}
+						id="menu-search-input"
                     />
-                    <button onClick={filterMenuList}>검색</button>
+					<br/>
+                    <button onClick={filterMenuList} id="menu-search-button">SEARCH</button>
                 </div>
 
                 <div className="menuBox">
