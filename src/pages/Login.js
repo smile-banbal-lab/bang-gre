@@ -1,7 +1,8 @@
 
 import LoginForm from '../components/form/LoginForm';
 import { Navigate } from 'react-router-dom';
-import './Login.css'
+import './Login.css';
+import './Main.css';
 
 function Login(){
 
@@ -13,10 +14,12 @@ function Login(){
 	}
 
 	return (
-		<div className="login-container">
-			<h1>로그인 페이지</h1>
+		<section id="section01">
+		<div>
+			<h1>로그인</h1>
 			<LoginForm/>
 		</div>
+		</section>
 	);
 }
 
