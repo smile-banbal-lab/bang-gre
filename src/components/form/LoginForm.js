@@ -16,7 +16,7 @@ function LoginForm() {
 	/* input 태그 입력 값 state 관리 */
 	const [loginInfo, setLoginInfo] = useState(
 		{
-			id: '',
+			userid: '',
 			password: ''
 		}
 	);
@@ -52,7 +52,7 @@ function LoginForm() {
 				alert('아이디와 비밀번호를 확인해주세요');
 				setLoginInfo(
 					{
-						id: '',
+						userid: '',
 						password: ''
 					}
 				);
@@ -67,11 +67,11 @@ function LoginForm() {
     return (
         <div className="login-form-container">
             <div className="input-group">
-                <label>ID:</label>
+                <label>User ID:</label>
                 <input
                     type="text"
-                    name="id"
-                    value={loginInfo.id}
+                    name="userid" //'id'를 'userid'로 변경
+                    value={loginInfo.userid}
                     onChange={onChangeHandler}
                 />
             </div>
