@@ -18,4 +18,4 @@ function Searchbar() {
     );
 }
 
-export default Searchbar;s
+export default Searchbar;
