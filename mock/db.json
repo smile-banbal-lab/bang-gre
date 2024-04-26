@@ -1,11 +1,6 @@
 {
 	"user": [
 		{
-			"id": "admin",
-			"password": "admin",
-			"nickname": "관리자"
-		},	
-		{
 			"id": "user1",
 			"name": "John Smith",
 			"phone": "123-456-7890",
