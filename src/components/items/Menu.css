@@ -1,0 +1,42 @@
+#menu-detail {
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 5%;
+    display: flex;
+    justify-content: center; /* 양쪽 정렬을 위해 */
+    box-sizing: border-box;
+    border: 1px solid gray;
+}
+#menu-detail h2{
+    text-align: left;
+}
+.menu-info{
+    margin-right: 5%;
+}
+.menu-info td {
+    border: 1px solid #ddd;
+    padding: 15px;
+    box-sizing: border-box;
+    text-align: center;
+    border-left: none;
+    border-right: none;
+}
+
+.menu-detail{
+    width: 100%;
+}
+.menu-detail-info-name {
+    background-color: #f2f2f2;
+}
+
+.menu-img {
+    width: 40%; /* 이미지가 차지할 너비 설정 */
+    padding: 5%;
+    box-sizing: border-box;
+    background-color: #f2f2f2;
+    border-radius: 20px;
+}
+.menu-img img{
+    width: 100%;
+}
