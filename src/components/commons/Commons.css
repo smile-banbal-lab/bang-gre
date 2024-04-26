@@ -1,0 +1,56 @@
+#Searchbar{
+    width: 100%;
+    margin:0;
+    padding: 0;
+    position:relative;
+}
+#menu-search-input{
+    width: 80%;
+    border: none;
+    border-radius: 100px;
+    z-index: 0;
+}
+@media screen and (max-width: 768px) { /* 모바일 화면 크기 */
+    input {
+        height: 50px; /* 화면의 높이로 설정 */
+    }
+    button{
+        height: 40px;
+        top: 5px; right: 11%;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) { /* 태블릿 화면 크기 */
+    input {
+        height: 70px; /* 특정 높이로 설정 */
+    }
+    button{
+        height: 60px;
+        top: 6px; right: 10.5%;
+    }
+}
+
+@media screen and (min-width: 1025px) { /* PC 화면 크기 */
+    input {
+        height: 70px; /* 특정 높이로 설정 */
+    }
+    button{
+        height: 60px;
+        top: 6px; right: 10.5%;
+    }
+}
+#menu-search-button{
+    width: 15%;
+    border: none;
+    border-radius: 100px;
+    position:absolute;
+    text-align: center;
+    color: white;
+    z-index: 999;
+    cursor: pointer;
+    background-color: rgb(19, 157, 232);
+}
+#menu-search-button:hover{
+    color: rgb(61, 61, 61);
+    background-color: rgb(255, 221, 0);
+}
