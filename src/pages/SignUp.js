@@ -52,6 +52,12 @@ function SignUp() {
 
 	const onSubmitHandler = (e) => {
         e.preventDefault();
+		// 모든 필드가 채워져 있는지 확인
+		const isFormValid = Object.values(formData).every(x => x !== '');
+		if (!isFormValid){
+			alert('모든 필드를 채워주세요.');
+			return;
+		}
         if (duplicate.id || duplicate.phone) {
             alert('아이디 또는 핸드폰 번호가 중복되었습니다.');
             return;
