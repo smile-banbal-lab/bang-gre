@@ -31,6 +31,75 @@
 .main-hash-tag-item:hover{
     background-color: rgba(255, 255, 255, 1);
 }
+/* ----------------section02---------------- */
+#section02{
+    width: 100%;
+    padding: 5% 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#main-category-box{
+    display: flex;
+    flex-wrap: wrap; /* 필요에 따라 아이템을 다음 줄에 넘겨줍니다. */
+    justify-content: center; /* 수평 가운데 정렬 */
+    margin: 0 auto;
+    text-align: center;
+}
+#main-category-box img{
+    width: 50%;
+}
+#main-category-box>div{
+    float: left;
+    margin: 0 auto;
+}
+#main-category-box>div>div{
+    width: 500px;
+    padding:7% 0;
+    box-sizing: border-box;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#main-category-box .category-box-01-item01{
+    background-color: rgb(255, 250, 207);
+    border-radius: 20px;
+    margin-right: 10px;
+}
+#main-category-box .category-box-01-item02{
+    background-color: rgb(207, 244, 255);
+    border-radius: 20px;
+}
+#main-category-box .category-box-02-item01{
+    background-color: rgb(229, 255, 207);
+    border-radius: 20px;
+    margin-right: 10px;
+}
+#main-category-box .category-box-02-item02{
+    background-color: rgb(255, 232, 207);
+    border-radius: 20px;
+}
+#main-category-box .category-box-03-item01{
+    background-color: rgb(255, 207, 223);
+    border-radius: 20px;
+    margin-right: 10px;
+}
+#main-category-box .category-box-03-item02{
+    background-color: rgb(207, 214, 255);
+    border-radius: 20px;
+}
+/* section03 */
+#section03{
+    width: 100%;
+    height: 1080px;
+    padding: 5% 0;
+    box-sizing: border-box;
+    background-color: rgb(207, 244, 255);
+}
+
 @media screen and (max-width: 768px) { /* 모바일 화면 크기 */
     #section01 {
         height: 40vh; /* 화면의 높이로 설정 */
