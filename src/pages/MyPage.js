@@ -1,8 +1,11 @@
+import MyPageForm from '../components/form/MyPageForm';
+
 function MyPage() {
 
 	return (
 		<>
-			<h1>나는 마이 페이지! 마이 페이지다!</h1>
+			<h1>회원정보 수정</h1>
+			<MyPageForm />
 		</>
 	);
 }

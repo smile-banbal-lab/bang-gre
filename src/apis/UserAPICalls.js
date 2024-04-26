@@ -1,6 +1,8 @@
 import { request } from "./Api";
 import { login } from "../modules/UserModule";
 import { verify } from "../modules/UserModule";
+import { modifyUserInfo } from "../modules/UserModule";
+
 
 /* 로그인 정보 전달 받는 함수 */
 export function callLoginAPI(loginInfo) {
@@ -45,5 +47,19 @@ export function callVerifyAPI(password) {
 		/* action 생성 함수에 결과 전달하며 dispatch 호출 */
 		dispatch(verify(result));
 
+	}
+}
+
+
+export function callModifyUserInfoAPI(userInfo) {
+
+	console.log('modifyUserInfo api calls...');
+
+	return async (dispatch, getState) => {
+
+		const result = await request('PUT', `/user/${userInfo.id}`, userInfo);
+		console.log('modifyUserInfo result : ', result);
+
+		dispatch(modifyUserInfo(result));
 	}
 }

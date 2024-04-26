@@ -7,12 +7,14 @@ const initialState = {};
 export const LOGIN = 'user/LOGIN';							// -> login()
 export const RESET_LOGIN_USER = 'user/RESET_LOGIN_USER';	// -> resetLoginUser()
 export const VERIFY = 'user/VERIFY';
+export const MODIFY_USER_INFO = 'user/MODIFY_USER_INFO';
 
 /* Action Functions (User) */
-export const { user: { login, resetLoginUser, verify } } = createActions({
+export const { user: { login, resetLoginUser, verify, modifyUserInfo } } = createActions({
 	[LOGIN]: (res) => ({ res }),
 	[RESET_LOGIN_USER]: (res = initialState) => ({ res }),
-	[VERIFY]: (res) => ({ res })
+	[VERIFY]: (res) => ({ res }),
+	[MODIFY_USER_INFO] : (res) => ({ modify: res })
 });
 
 /* Reducer (User) */
@@ -45,6 +47,10 @@ const userReducer = handleActions(
 			}
 
 			return res;
+		},
+		[MODIFY_USER_INFO]: (state, { payload }) => {
+
+			return payload;
 		}
 	},
 	initialState
