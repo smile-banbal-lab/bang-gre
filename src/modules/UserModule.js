@@ -6,11 +6,13 @@ const initialState = {};
 /* Action Types (User) */									// 타입 별 생성되는 액션 함수 이름(LARGE_SNAKE_CASE -> camelCase)
 export const LOGIN = 'user/LOGIN';							// -> login()
 export const RESET_LOGIN_USER = 'user/RESET_LOGIN_USER';	// -> resetLoginUser()
+export const VERIFY = 'user/VERIFY';
 
 /* Action Functions (User) */
-export const { user: { login, resetLoginUser } } = createActions({
+export const { user: { login, resetLoginUser, verify } } = createActions({
 	[LOGIN]: (res) => ({ res }),
 	[RESET_LOGIN_USER]: (res = initialState) => ({ res }),
+	[VERIFY]: (res) => ({ res })
 });
 
 /* Reducer (User) */
@@ -33,6 +35,16 @@ const userReducer = handleActions(
 
 			return res;
 
+		},
+		[VERIFY]: (state, { payload: {res}}) => {
+
+			if (res) {
+				localStorage.setItem("isVerify", true);
+			} else {
+				res = { message: 'VERIFY_FAIL'};
+			}
+
+			return res;
 		}
 	},
 	initialState

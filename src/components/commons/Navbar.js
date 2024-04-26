@@ -10,11 +10,12 @@ function Navbar() {
 
 	const user = useSelector(state => state.userReducer);
 
-	const { id } = user; 
+	const { id } = user;
 
 	/* 로그아웃 호출 시: localStorage 저장 값 삭제, userReducer 값 리셋, 루트로 이동 */
 	const logoutHandler = () => {
 		localStorage.removeItem('isLogin');
+		localStorage.removeItem('isVerify');
 		dispatch(resetLoginUser());
 		navigate('/');
 	}
