@@ -1,3 +1,71 @@
+/*  --------------------Header----------------- */
+#Header{
+    width: 100%;
+    height: 100px;
+    background-color: rgb(255, 225, 0);
+}
+.main-logo-img{
+    width: 100px;    
+    text-shadow: 1px 1px 1px black;
+    cursor: pointer;
+}
+
+/*  --------------------Navbar----------------- */
+
+#Navbar{
+    top: 25px; right: 5%;
+    position: absolute;
+    z-index: 99999;
+}
+
+#Navbar li *{
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: rgb(61, 61, 61);
+}
+#Navbar li *:hover{
+    font-weight: bold;
+    transition-duration: .5s;
+    color:rgb(19, 157, 232);
+}
+/*  --------------------Category Searchbar----------------- */
+#Category-Searchbar{
+    width: 100%;
+    margin:0;
+    padding: 0;
+    position:relative;
+    margin: 15px 0;
+}
+#category-search-input{
+    width: 90%;
+    border: 1px solid rgb(19, 157, 232);
+    border-radius: 100px;
+    padding-left: 5%;
+    box-sizing: border-box;
+    font-size: 1.2em;
+    z-index: 0;
+}
+#category-search-button{
+    width: 15%;
+    height: 100%;
+    border: 2px solid rgb(19, 157, 232);
+    border-radius: 100px;
+    position:absolute;
+    top:0;right: 5%;
+    text-align: center;
+    color: white;
+    z-index: 999;
+    cursor: pointer;
+    background-color: rgb(19, 157, 232);
+}
+#category-search-button:hover{
+    transition-duration: .5s;
+    color: rgb(61, 61, 61);
+    border: 2px solid rgb(255, 221, 0);
+    background-color: rgb(255, 221, 0);
+}
+/*  --------------------Searchbar----------------- */
+
 #Searchbar{
     width: 100%;
     margin:0;
@@ -5,13 +73,36 @@
     position:relative;
 }
 #menu-search-input{
-    width: 45%;
+    width: 90%;
+    border:none;
     border-radius: 100px;
+    padding-left: 5%;
+    box-sizing: border-box;
+    font-size: 1.2em;
     z-index: 0;
+
+}
+#menu-search-button{
+    width: 15%;
+    height: 100%;
+    border: 3px solid white;
+    border-radius: 100px;
+    position:absolute;
+    top:0;right: 5%;
+    text-align: center;
+    color: white;
+    z-index: 999;
+    cursor: pointer;
+    background-color: rgb(19, 157, 232);
+}
+#menu-search-button:hover{
+    color: rgb(61, 61, 61);
+
+    background-color: rgb(255, 221, 0);
 }
 @media screen and (max-width: 768px) { /* 모바일 화면 크기 */
     input {
-        height: 50px; /* 화면의 높이로 설정 */
+        height: 40px; /* 화면의 높이로 설정 */
     }
     button{
         height: 40px;
@@ -21,35 +112,24 @@
 
 @media screen and (min-width: 769px) and (max-width: 1024px) { /* 태블릿 화면 크기 */
     input {
-        height: 70px; /* 특정 높이로 설정 */
+        height: 60px; /* 특정 높이로 설정 */
     }
     button{
-        height: 60px;
+        height: 50px;
         top: 6px; right: 10.5%;
     }
 }
 
 @media screen and (min-width: 1025px) { /* PC 화면 크기 */
     input {
-        height: 70px; /* 특정 높이로 설정 */
+        height: 60px; /* 특정 높이로 설정 */
     }
     button{
-        height: 60px;
+        height: 50px;
         top: 6px; right: 10.5%;
     }
 }
-#menu-search-button{
-    width: 15%;
-    border: none;
-    border-radius: 100px;
-    position:absolute;
-    text-align: center;
-    color: white;
-    z-index: 999;
-    cursor: pointer;
-    background-color: rgb(19, 157, 232);
-}
-#menu-search-button:hover{
-    color: rgb(61, 61, 61);
-    background-color: rgb(255, 221, 0);
-}
+
+
+
+

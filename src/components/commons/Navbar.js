@@ -22,12 +22,13 @@ function Navbar() {
 
 	return (
 		<div>
-			<ul>
-				<li><NavLink to='/'>메인으로</NavLink></li>
-				<li><NavLink to='/menu'>메뉴보기</NavLink></li>
+			<ul id='Navbar'>
+				<li><NavLink to='/'>HOME</NavLink></li>
+				<li><NavLink to='/menu'>PRODUCT</NavLink></li>
+				<li><NavLink to='/'>MY</NavLink></li>
 				{/* localStorage 안의 값으로 로그인 여부 판단하여 조건부 랜더링 */}
 				{!isAuthorized ? (
-					<li><NavLink to='/login'>로그인</NavLink></li>
+					<li><NavLink to='/login'>LOGIN</NavLink></li>
 				) : (
 					<>
 					<li><NavLink to={`/user/passwordcheck/${id}`}>마이페이지</NavLink></li>

@@ -63,7 +63,7 @@ function MenuList() {
 	return (
 		menuList && (
 			<>
-				<div id="Searchbar">
+				<div id='MenuList'>
 					{/* 카테고리 선택 필터 */}
 					<label>카테고리 선택:</label>
 					<input
@@ -104,15 +104,17 @@ function MenuList() {
 					<label>음료</label>
 					<br/>
 					{/* 검색 필터 */}
-					<input
-                        type='search'
-                        placeholder={'메뉴 이름을 입력해주세요'}
-                        value={searchValue}
-                        onChange={e => setSearchValue(e.target.value)}
-						id="menu-search-input"
-                    />
-					<br/>
-                    <button onClick={filterMenuList} id="menu-search-button">SEARCH</button>
+                    <div id='Category-Searchbar'>
+                        <input
+                            type='search'
+                            placeholder={'메뉴 이름을 입력해주세요'}
+                            value={searchValue}
+                            onChange={e => setSearchValue(e.target.value)}
+                            id="category-search-input"
+                        />
+                        <br/>
+                        <button onClick={filterMenuList} id="category-search-button">SEARCH</button>
+                    </div>
                 </div>
 
                 <div className="menuBox">

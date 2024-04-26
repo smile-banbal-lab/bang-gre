@@ -1,6 +1,8 @@
+/* ------------------ menu ------------------ */
 #menu-detail {
     width: 90%;
     margin: 0 auto;
+    margin-top: 100px;
     border-radius: 20px;
     padding: 5%;
     display: flex;
@@ -39,4 +41,33 @@
 }
 .menu-img img{
     width: 100%;
+}
+/* ------------------ menuItem ------------------ */
+.menuItem {
+	width: 300px;
+    border-radius: 30px;
+	cursor: pointer;
+    color: white;
+	padding: 5px;
+    background-color: rgba(19, 157, 232);
+}
+
+.menuItem:hover {
+    transition-duration: .5s;
+    color: rgb(61, 61, 61);
+    background-color: rgb(255, 213, 0);
+}
+.menuItem button{
+    background-color: white;
+    border:none;
+    width: 100%;
+    color:rgb(61, 61, 61);
+
+    border-radius: 30px;
+}
+.menuItem button:hover{
+    transition-duration: 1s;
+    font-weight: 700;
+    color: white;
+    background-color: crimson;
 }
