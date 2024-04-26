@@ -110,6 +110,14 @@
     .main-hash-tag{
         display: none;
     }
+    #main-category-box>div>div{
+        width: 500px;
+        padding:7% 0;
+        box-sizing: border-box;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 10px;
+    }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) { /* 태블릿 화면 크기 */

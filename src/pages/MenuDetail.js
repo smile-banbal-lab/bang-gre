@@ -29,8 +29,8 @@ function MenuDetail() {
 
 	return (
 		<div>
-			<h1>메뉴 상세</h1>
-			<h1>
+			<Menu id={id} />
+			<div className="admin-buttonBox">
 				{ /* 로그인 된 상황에만 button이 보이도록 조건부 랜더링 */}
 				{(isAuthorized) &&
 					<>
@@ -38,8 +38,7 @@ function MenuDetail() {
 						<button onClick={deleteHandler}>메뉴 삭제</button>
 					</>
 				}
-			</h1>
-			<Menu id={id} />
+			</div>
 		</div>
 	);
 }
