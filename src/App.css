@@ -43,3 +43,18 @@ a {
 .menuItem:hover {
 	background-color: gray;
 }
+
+button {
+    width: 300px;
+    background-color: lightgrey;
+    cursor: pointer;
+    color: white;
+    padding: 5px;
+    border: none;  /* Removes the default border */
+    font-family: 'Binggrae', sans-serif; /* Ensures font consistency */
+    text-align: center;
+}
+
+button:hover {
+    background-color: gray;
+}
