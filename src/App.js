@@ -10,6 +10,7 @@ import PasswordCheck from './pages/PasswordCheck';
 import MyPage from './pages/MyPage';
 import Error from './pages/Error';
 import SignUp from './pages/SignUp';
+import Cart from './pages/Cart';
 import "./App.css";
 
 /* 추가 설치해야 하는 패키지 목록
@@ -44,7 +45,8 @@ function App() {
 						<Route path="passwordcheck" >
 							<Route path=":id" element={<PasswordCheck />} />
 						</Route>
-					</Route>	
+					</Route>
+					<Route path="cart"  element={<Cart/>} />	
 				</Route>
 				<Route path="*" element={<Error />} />
 			</Routes>

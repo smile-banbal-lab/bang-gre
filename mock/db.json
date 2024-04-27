@@ -50,6 +50,34 @@
       "password": "secret"
     }
   ],
+  "item":[
+    {
+      "id": "1",
+      "name": "팥빙수",
+      "date": "2024-04-26",
+      "userid": "david202",
+      "Confirm": "false",
+      "menuid": "menu.id",
+      "Quantity": "2"
+    },
+    {
+      "id": "2",
+      "name": "찹쌀떡아이스",
+      "date": "2024-04-25",
+      "userid": "david202",
+      "Confirm": "false",
+      "menuid": "menu.id",
+      "Quantity": "1"
+    },{
+      "id": "3",
+      "name": "팥빙수",
+      "date": "2024-04-26",
+      "userid": "david202",
+      "Confirm": "false",
+      "menuid": "menu.id",
+      "Quantity": "3"
+    }
+  ],
   "menu": [
     {
       "id": 1,

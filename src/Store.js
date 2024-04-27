@@ -1,13 +1,7 @@
-import rootReducer from './modules';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import { createStore } from 'redux';
-import { applyMiddleware } from 'redux';
-import ReduxThunk from 'redux-thunk';
-import logger from 'redux-logger';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk'; // redux-thunk를 import해야 합니다.
+import rootReducer from './modules'; // rootReducer를 import합니다.
 
-const store = createStore(
-	rootReducer,
-	composeWithDevTools(applyMiddleware(ReduxThunk, logger))
-);
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 export default store;
