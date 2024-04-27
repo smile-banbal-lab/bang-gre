@@ -45,22 +45,23 @@ function MenuRegistForm() {
             case 'price':
                 value = parseInt(value);
                 break;
-            case 'description':
-				name = 'detail';
-				value = {
-					description: value,
-					image: registMenu.detail.image
-				};
-				break;
+
+			case 'category':
+				setRegistMenu({
+					...registMenu,
+					category:{
+						...registMenu.category,
+						type: value
+					}
+				});
+				return;
+            
         }
-
-		
-        setRegistMenu({
-            ...registMenu,
-            [name]: value
-        });
-
-        console.log(registMenu);
+				// 기본 동작
+				setRegistMenu({
+					...registMenu,
+					[name]: value
+				});
     };
 
 	const onChangeInformationHandler = (e) => {
@@ -196,7 +197,7 @@ function MenuRegistForm() {
             <br />
 
 			<label>카테고리 : </label>
-			<select name="categoryName" value={registMenu.category.type} onChange={onChangeHandler}>
+			<select name="category" value={registMenu.category.type} onChange={onChangeHandler}>
 				<option >아이스크림</option>
 				<option>우유</option>
 				<option >발효유</option>
