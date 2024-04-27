@@ -35,7 +35,7 @@ function PasswordVerifyForm() {
         <label>비밀번호: </label>
         <input type="password" name="password" value={password} onChange={(e) => {setPassword(e.target.value)}}></input>
         <button onClick={onClickHandler}>확인</button>
-        <button>취소</button>
+        <button >취소</button>
         </>
     );
 

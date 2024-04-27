@@ -2,6 +2,8 @@ import { request } from "./Api";
 import { login } from "../modules/UserModule";
 import { verify } from "../modules/UserModule";
 import { modifyUserInfo } from "../modules/UserModule";
+import { signOutUser } from "../modules/UserModule";
+
 /* 
  -> Redux-Thunk 미들 웨어를 사용하여 비동기 API 호출을 처리하고, 결과를 Redux 스토어에 반영
  -> 각 함수는 사용자 정보 검증, 로그인 처리, 정보 수정 등의 기능을 수행하며, 성공적인 처리 결과를 Rudux 스토어에 디스패치하여 애플리케이션의 상태를 업데이트
@@ -73,5 +75,19 @@ export function callModifyUserInfoAPI(userInfo) {
 		console.log('modifyUserInfo result : ', result);
 
 		dispatch(modifyUserInfo(result));
+	}
+}
+
+
+export function callDeleteUserAPI(signOutInfo) {
+
+	console.log('deleteUser api calls...');
+
+	return async (dispatch, getState) => {
+
+		const result = await request('DELETE', `/user/${signOutInfo.id}`);
+		console.log('deleteUser result : ', result);
+
+		dispatch(signOutUser(result));
 	}
 }

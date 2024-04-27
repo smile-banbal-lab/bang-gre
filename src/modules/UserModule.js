@@ -16,15 +16,18 @@ export const LOGIN = 'user/LOGIN';							// -> login()
 export const RESET_LOGIN_USER = 'user/RESET_LOGIN_USER';	// -> resetLoginUser()
 export const VERIFY = 'user/VERIFY';
 export const MODIFY_USER_INFO = 'user/MODIFY_USER_INFO';
+export const SIGN_OUT_USER = 'user/SiGN_OUT_USER';
+
 // 각 액션 타입은 Redux에서 사용될 각 액션의 고유 이름을 정의합니다. 이 이름들은 액션 생성 함수를 호출할 때 사용됩니다.
 
 
 /* 액션 생성 함수: Action Functions (User) */
-export const { user: { login, resetLoginUser, verify, modifyUserInfo } } = createActions({
+export const { user: { login, resetLoginUser, verify, modifyUserInfo, signOutUser } } = createActions({
 	[LOGIN]: (res) => ({ res }),
 	[RESET_LOGIN_USER]: (res = initialState) => ({ res }),
 	[VERIFY]: (res) => ({ res }),
-	[MODIFY_USER_INFO] : (res) => ({ modify: res })
+	[MODIFY_USER_INFO] : (res) => ({ modify: res }),
+	[SIGN_OUT_USER] : (res) => ({ delete: res })
 });
 // createActions 함수는 주어진 액션 타입에 대한 액션 생성 함수를 자동으로 생성합니다.
 // 각 함수는 받은 인자를 액션의 payload로 설정합니다. 예를 들어, login(res) 함수는 { type: LOGIN, payload: { res } }와 같은 액션 객체를 반환합니다.
@@ -64,7 +67,13 @@ const userReducer = handleActions(
 		[MODIFY_USER_INFO]: (state, { payload }) => {
 
 			return payload;
+		},
+		[SIGN_OUT_USER] : (state, { payload }) => {
+
+			return payload;
+
 		}
+		
 	},
 	initialState
 );

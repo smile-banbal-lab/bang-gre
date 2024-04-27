@@ -11,6 +11,7 @@ import MyPage from './pages/MyPage';
 import Error from './pages/Error';
 import SignUp from './pages/SignUp';
 import Cart from './pages/Cart';
+import SignOut from './pages/SignOut';
 import "./App.css";
 
 /* 추가 설치해야 하는 패키지 목록
@@ -44,6 +45,9 @@ function App() {
 						<Route path=":id" element={<MyPage/>} />
 						<Route path="passwordcheck" >
 							<Route path=":id" element={<PasswordCheck />} />
+						</Route>
+						<Route path="signout" >
+						<Route path=":id" element={<SignOut />} />
 						</Route>
 					</Route>
 					<Route path="cart"  element={<Cart/>} />	
