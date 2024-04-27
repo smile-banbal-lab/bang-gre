@@ -3,26 +3,26 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { callRegistMenuAPI } from '../../apis/MenuAPICalls';
+import { callGetMenuListAPI } from "../../apis/MenuAPICalls";
 
 function MenuRegistForm() {
 
 	const result = useSelector(state => state.menuReducer);
+	const menuList = result.menulist;
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
 	/* 입력 값 state 저장 */
 	const [registMenu, setRegistMenu] = useState(
 		{
-			id: '',
+			id: 0,
 			name: '',
 			category: {
 					type: '',
 					image: ''
 				},
-			flavor: [
-				''
-			],
-			price: 0,
+			flavor: [''],
+			price: '',
 			Information: {
 					Sodium: '',
 					Sugar: '',
@@ -45,16 +45,13 @@ function MenuRegistForm() {
             case 'price':
                 value = parseInt(value);
                 break;
-            case 'categoryName':
-                // 카테고리 이름을 선택할 때 category 객체의 type 속성을 업데이트합니다.
-                setRegistMenu({
-                    ...registMenu,
-                    category: {
-                        ...registMenu.category,
-                        type: value
-                    }
-                });
-                return; // 이후 코드를 실행하지 않고 종료합니다.
+            case 'description':
+				name = 'detail';
+				value = {
+					description: value,
+					image: registMenu.detail.image
+				};
+				break;
         }
 
 		
@@ -69,7 +66,7 @@ function MenuRegistForm() {
 	const onChangeInformationHandler = (e) => {
 		// infomation 객체를 저장하기 위한 핸들러
 		const { name, value } = e.target;
-		console.log('인포 핸들러 나와라')
+		console.log('인포 핸들러 나와라');
 		setRegistMenu({
 			...registMenu,
 			Information: {
@@ -78,6 +75,7 @@ function MenuRegistForm() {
 			}
 		});
 	}
+	
 
 
 	/* 파일 첨부 시 동작하는 이벤트 핸들러 */
@@ -89,10 +87,7 @@ function MenuRegistForm() {
 		setRegistMenu(
 			{
 				...registMenu,
-				// detail: {
-				// 	description: registMenu.detail.description,
-				// 	image: base64
-				// }
+				image: base64
 			}
 		);
 
@@ -113,6 +108,45 @@ function MenuRegistForm() {
 		})
 	}
 
+	useEffect(
+		() => {
+			/* 해당 컴포넌트 최초 마운트 시, menuList API 호출 */
+			dispatch(callGetMenuListAPI());
+		},
+		[]
+	);
+
+	useEffect(
+		() => {
+
+			/* menuList가 undefined가 아니고, 1개 이상의 응답이 도착했을 때 */
+			if (menuList && menuList.length > 0) {
+				
+				/* Array.reduce() 함수를 사용해 최대 id값 도출 */
+				let maxId = menuList.reduce((max, menu) => Math.max(max, menu.id), 0);
+				console.log('maxId: ', maxId);
+
+				/* 새로 추가될 메뉴의 id값 연산(MySQL의 auto_increment와 같은 효과) */
+				let nextId = (maxId + 1).toString();
+				console.log('nextId: ', nextId);
+	
+				setRegistMenu(
+					{
+						...registMenu,
+						id: nextId
+					}
+				);
+			}
+		},
+		/*
+			menuList가 변경될 때만 side-effect 함수를 실행.
+			즉, 해당 화면 랜더링 시점에 비동기 요청인 callGetMenuListAPI 콜에 대한 응답이 도착하지 않았다면
+			menuList는 undefined일 것이고, undefined에 대해 reduce()함수를 동작시키지 못한다.
+			그러나 API 콜에 대한 응답이 도착한다면 더이상 undefined가 아니고 메뉴 객체 배열이기 때문에
+			이를 의존성 배열이 감지(메모리 주소 변화)하고 side-effect 함수를 실행해 nextId를 구할 수 있다.
+		*/
+		[menuList]
+	);
 
 	useEffect(
 		() => {
@@ -160,6 +194,7 @@ function MenuRegistForm() {
             <label>단백질 : </label>
             <input type="text" name="protein" value={registMenu.Information.protein} onChange={onChangeInformationHandler} />
             <br />
+
 			<label>카테고리 : </label>
 			<select name="categoryName" value={registMenu.category.type} onChange={onChangeHandler}>
 				<option >아이스크림</option>
