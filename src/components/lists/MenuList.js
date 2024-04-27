@@ -6,7 +6,7 @@ import "../commons/Commons.css"
 
 
 function MenuList() {
-    const [searchValue, setSearchValue] = useState('');
+    const [searchInput, setSearchInput] = useState('');
     const [selectedCategories, setSelectedCategories] = useState([]);
     const [filteredMenuList, setFilteredMenuList] = useState([]);
 
@@ -26,7 +26,7 @@ function MenuList() {
 			filterMenuList();
 
 		}
-    }, [menuList, selectedCategories, searchValue]);
+    }, [menuList, selectedCategories]);
     // }, [menuList]);
 
     const filterMenuList = () => {
@@ -36,8 +36,8 @@ function MenuList() {
             filtered = filtered.filter(menu => selectedCategories.includes(menu.category.type));
         }
 
-        if (searchValue.trim() !== '') {
-            filtered = filtered.filter(menu => menu.name.toLowerCase().includes(searchValue.toLowerCase()));
+        if (searchInput.trim() !== '') {
+            filtered = filtered.filter(menu => menu.name.toLowerCase().includes(searchInput.toLowerCase()));
         }
 
         // filteredMenuList 상태를 업데이트합니다.
@@ -58,6 +58,18 @@ function MenuList() {
 
         // 선택된 카테고리 목록을 업데이트합니다.
         setSelectedCategories(newSelectedCategories);
+    };
+
+    const handleSearch = () => {
+        // 검색어 상태를 업데이트하고 필터링을 수행합니다.
+        filterMenuList();
+    };
+
+    const handleKeyPress = e => {
+        // 엔터를 누르면 검색이 실행됩니다.
+        if (e.key === 'Enter') {
+            handleSearch();
+        }
     };
 
 	return (
@@ -108,12 +120,13 @@ function MenuList() {
                         <input
                             type='search'
                             placeholder={'메뉴 이름을 입력해주세요'}
-                            value={searchValue}
-                            onChange={e => setSearchValue(e.target.value)}
+                            value={searchInput}
+                            onChange={e => setSearchInput(e.target.value)}
+                            onKeyDown= {handleKeyPress} // 엔터를 눌렀을 때 검색이 실행됩니다.
                             id="category-search-input"
                         />
                         <br/>
-                        <button onClick={filterMenuList} id="category-search-button">SEARCH</button>
+                        <button onClick={handleSearch} id="category-search-button">SEARCH</button>
                     </div>
                 </div>
 
