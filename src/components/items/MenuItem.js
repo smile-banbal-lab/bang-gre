@@ -21,7 +21,7 @@ function MenuItem({ menu }) {
 				<img src={menu.image} style={{ maxWidth: 200 , maxHeight: 200}} alt={menu.name} />
 			</div>
 		</Link>
-				<button onClick={addToCartHandler}>장바구니 넣기</button>
+				<button className='menuItem-button' onClick={addToCartHandler}>장바구니 넣기</button>
 			</>
 );
 }
