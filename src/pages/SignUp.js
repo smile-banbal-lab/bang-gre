@@ -79,6 +79,7 @@ function SignUp() {
 	return (
 		
 		<section id="section01">
+		<div className='Main-background'></div>
 		<h1>회원가입</h1>
 		<div className="login-form-container">
 			<form onSubmit={onSubmitHandler}>
