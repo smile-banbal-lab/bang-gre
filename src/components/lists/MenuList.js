@@ -55,7 +55,7 @@ function MenuList() {
 
     const handleCategoryChange = categoryType => {
         const newSelectedCategories = [...selectedCategories];
-
+    
         if (newSelectedCategories.includes(categoryType)) {
             // 이미 선택된 카테고리면 제거합니다.
             const index = newSelectedCategories.indexOf(categoryType);
@@ -64,10 +64,11 @@ function MenuList() {
             // 선택된 카테고리 목록에 추가합니다.
             newSelectedCategories.push(categoryType);
         }
-
+    
         // 선택된 카테고리 목록을 업데이트합니다.
         setSelectedCategories(newSelectedCategories); 
     };
+
 
     const handleSearch = () => {
         // 검색어 상태를 업데이트하고 필터링을 수행합니다.
@@ -86,43 +87,15 @@ function MenuList() {
 			<>
 				<div id='MenuList'>
 					{/* 카테고리 선택 필터 */}
-					<label>카테고리 선택:</label>
-					<input
-						type="checkbox"
-						checked={selectedCategories.includes('아이스크림')}
-						onChange={() => handleCategoryChange('아이스크림')}
-					/>
-					<label>아이스크림</label>
-					<input
-						type="checkbox"
-						checked={selectedCategories.includes('우유')}
-						onChange={() => handleCategoryChange('우유')}
-					/>
-					<label>우유</label>
-					<input
-						type="checkbox"
-						checked={selectedCategories.includes('발효유')}
-						onChange={() => handleCategoryChange('발효유')}
-					/>
-					<label>발효유</label>
-					<input
-						type="checkbox"
-						checked={selectedCategories.includes('커피')}
-						onChange={() => handleCategoryChange('커피')}
-					/>
-					<label>커피</label>
-					<input
-						type="checkbox"
-						checked={selectedCategories.includes('주스')}
-						onChange={() => handleCategoryChange('주스')}
-					/>
-					<label>주스</label>
-					<input
-						type="checkbox"
-						checked={selectedCategories.includes('음료')}
-						onChange={() => handleCategoryChange('음료')}
-					/>
-					<label>음료</label>
+                    <div id='category-select'>
+                    <button onClick={() => handleCategoryChange('아이스크림')} style={{ backgroundColor: selectedCategories.includes('아이스크림') ? '#FFDEFE' : 'rgb(19, 157, 232)', color: 'black', fontWeight: 'bold' }}>아이스크림</button>
+                    <button onClick={() => handleCategoryChange('우유')} style={{ backgroundColor: selectedCategories.includes('우유') ? '#FFDEFE' : 'rgb(19, 157, 232)', color: 'black', fontWeight: 'bold' }}>우유</button>
+                    <button onClick={() => handleCategoryChange('발효유')} style={{ backgroundColor: selectedCategories.includes('발효유') ? '#FFDEFE' : 'rgb(19, 157, 232)', color: 'black', fontWeight: 'bold' }}>발효유</button>
+                    <button onClick={() => handleCategoryChange('커피')} style={{ backgroundColor: selectedCategories.includes('커피') ? '#FFDEFE' : 'rgb(19, 157, 232)', color: 'black', fontWeight: 'bold' }}>커피</button>
+                    <button onClick={() => handleCategoryChange('주스')} style={{ backgroundColor: selectedCategories.includes('주스') ? '#FFDEFE' : 'rgb(19, 157, 232)', color: 'black', fontWeight: 'bold' }}>주스</button>
+                    <button onClick={() => handleCategoryChange('음료')} style={{ backgroundColor: selectedCategories.includes('음료') ? '#FFDEFE' : 'rgb(19, 157, 232)', color: 'black'}}>음료</button>
+                    </div>
+					<br/>
 					<br/>
 					{/* 검색 필터 */}
                     <div id='Category-Searchbar'>

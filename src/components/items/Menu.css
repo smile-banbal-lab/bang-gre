@@ -60,9 +60,9 @@
     background-color: rgb(255, 213, 0);
 }
 .menuItem-button{
-    background-color: white;
-    width: 300px;
-    margin-left: -310px;
+    background-color: #FFDEFE ;
+    width: 250px;
+    margin-left: auto;
     border:none;
     color:rgb(61, 61, 61);
 

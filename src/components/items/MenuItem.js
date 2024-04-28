@@ -19,9 +19,9 @@ function MenuItem({ menu }) {
 				<h3>가격 : {menu.price}</h3>
 				<h4>종류 : {categoryType}</h4>
 				<img src={menu.image} style={{ maxWidth: 200 , maxHeight: 200}} alt={menu.name} />
+				<button className='menuItem-button' onClick={addToCartHandler}>장바구니 넣기</button>
 			</div>
 		</Link>
-				<button className='menuItem-button' onClick={addToCartHandler}>장바구니 넣기</button>
 			</>
 );
 }
