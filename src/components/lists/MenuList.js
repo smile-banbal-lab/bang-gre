@@ -2,10 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import MenuItem from '../items/MenuItem';
 import { callGetMenuListAPI } from "../../apis/MenuAPICalls";
+import { useLocation } from 'react-router-dom';
 import "../commons/Commons.css"
 
 
 function MenuList() {
+    const location = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+    const initialSearch = queryParams.get('search') || '';
+
     const [searchInput, setSearchInput] = useState('');
     const [selectedCategories, setSelectedCategories] = useState([]);
     const [filteredMenuList, setFilteredMenuList] = useState([]);
@@ -18,7 +23,12 @@ function MenuList() {
     useEffect(() => {
         /* menuList 호출 API */
         dispatch(callGetMenuListAPI());
-    }, []);
+    }, [dispatch]);
+
+    useEffect(() => {
+        // URL의 쿼리 파라미터에서 검색어가 변경될 때 필터링을 다시 수행
+        setSearchInput(initialSearch);
+    }, [initialSearch]);
 
     useEffect(() => {
 		if (menuList && menuList.length > 0) {
@@ -26,7 +36,7 @@ function MenuList() {
 			filterMenuList();
 
 		}
-    }, [menuList, selectedCategories]);
+    }, [menuList, selectedCategories,searchInput]);
     // }, [menuList]);
 
     const filterMenuList = () => {
@@ -35,7 +45,6 @@ function MenuList() {
         if (selectedCategories.length > 0) {
             filtered = filtered.filter(menu => selectedCategories.includes(menu.category.type));
         }
-
         if (searchInput.trim() !== '') {
             filtered = filtered.filter(menu => menu.name.toLowerCase().includes(searchInput.toLowerCase()));
         }
