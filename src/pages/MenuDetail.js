@@ -7,7 +7,7 @@ import { callDeleteMenuAPI } from '../apis/MenuAPICalls';
 function MenuDetail() {
 
 	/* 로그인 상태 확인 */
-	const isAuthorized = !!localStorage.getItem('isLogin');
+	const isAuthorized = !!sessionStorage.getItem('isLogin');
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 	const { id } = useParams();

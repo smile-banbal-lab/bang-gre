@@ -8,7 +8,7 @@ function PasswordCheck() {
 
 	const { id } = user;
 
-    const verifyStatus = !!localStorage.getItem('isVerify');
+    const verifyStatus = !!sessionStorage.getItem('isVerify');
 
 	if(verifyStatus) {
 		return <Navigate to={`/user/${id}`} replace={ true }/>

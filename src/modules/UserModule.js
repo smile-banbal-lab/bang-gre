@@ -40,7 +40,7 @@ const userReducer = handleActions(
 
 			if (res) {
 				/* localStorage에 로그인 상태 저장 */
-				localStorage.setItem("isLogin", true);	// localStorage가 무엇인지는 검색해서 (가볍게)공부해보세요
+				sessionStorage.setItem("isLogin", true);	// localStorage가 무엇인지는 검색해서 (가볍게)공부해보세요
 			} else {
 				res = { message: 'LOGIN_FAIL' };
 			}
@@ -57,7 +57,7 @@ const userReducer = handleActions(
 		[VERIFY]: (state, { payload: {res}}) => {
 
 			if (res) {
-				localStorage.setItem("isVerify", true);
+				sessionStorage.setItem("isVerify", true);
 			} else {
 				res = { message: 'VERIFY_FAIL'};
 			}

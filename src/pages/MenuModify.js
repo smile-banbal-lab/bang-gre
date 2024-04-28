@@ -4,7 +4,7 @@ import MenuModifyForm from '../components/form/MenuModifyForm';
 function MenuModify() {
 
 	/* 로그인 상태가 아닌데 호출할 경우 메인으로 */
-	const isAuthorized = !!localStorage.getItem('isLogin');
+	const isAuthorized = !!sessionStorage.getItem('isLogin');
 
 	if (!isAuthorized) {
 		return <Navigate to="/login" replace={true} />

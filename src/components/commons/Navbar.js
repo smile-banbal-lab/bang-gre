@@ -4,7 +4,7 @@ import { resetLoginUser } from "../../modules/UserModule";
 
 function Navbar() {
 
-	const isAuthorized = !!localStorage.getItem('isLogin');
+	const isAuthorized = !!sessionStorage.getItem('isLogin');
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 
@@ -14,8 +14,8 @@ function Navbar() {
 
 	/* 로그아웃 호출 시: localStorage 저장 값 삭제, userReducer 값 리셋, 루트로 이동 */
 	const logoutHandler = () => {
-		localStorage.removeItem('isLogin');
-		localStorage.removeItem('isVerify');
+		sessionStorage.removeItem('isLogin');
+		sessionStorage.removeItem('isVerify');
 		dispatch(resetLoginUser());
 		navigate('/');
 	}

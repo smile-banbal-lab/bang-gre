@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 function Menus() {
 
-	const isAuthorized = !!localStorage.getItem('isLogin');
+	const isAuthorized = !!sessionStorage.getItem('isLogin');
 	const navigate = useNavigate();
 
 	return (

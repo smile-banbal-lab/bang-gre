@@ -18,7 +18,7 @@ function SignOut () {
     );
     const result = useSelector(state => state.userReducer);
 
-    const verifyStatus = !!localStorage.getItem('isVerify');
+    const verifyStatus = !!sessionStorage.getItem('isVerify');
 
     if(!verifyStatus) {
         return (
@@ -34,6 +34,8 @@ function SignOut () {
     }
 
     const onClickHandler = () => {
+
+        if (signOutInfo.userid == result.userid && signOutInfo.password == result.password) {
         dispatch(callDeleteUserAPI(signOutInfo));
 
         localStorage.removeItem('isLogin');
@@ -41,6 +43,13 @@ function SignOut () {
         alert('회원 탈퇴 완료');
 		dispatch(resetLoginUser());
 		navigate('/');
+        } else {
+            alert('아이디 혹은 비밀번호가 다릅니다');
+            setSignOutInfo({
+                userid: '',
+                password: ''
+            })
+        }
     };
 
 

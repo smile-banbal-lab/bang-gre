@@ -17,7 +17,7 @@ function LoginForm() {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 	const result = useSelector(state => state.userReducer);
-	const isAuthorized = !!localStorage.getItem('isLogin');
+	const isAuthorized = !!sessionStorage.getItem('isLogin');
 
 /**** 컴포넌트() input 태그 입력 값)의 상태(state) 관리 *****/
 	//usestate: React에서 상태관리를 위해 제공하는 훅 중 하나로, 함수형 컴포넌트 내에서 상태를 가질 수 있게 해줌.

@@ -9,7 +9,7 @@ function PasswordVerifyForm() {
     const navigate = useNavigate();
     const [password, setPassword] = useState('');
     const result = useSelector(state => state.userReducer);
-    const isVerify = !!localStorage.getItem('isVerify');
+    const isVerify = !!sessionStorage.getItem('isVerify');
 
     const onClickHandler = () => {
 
