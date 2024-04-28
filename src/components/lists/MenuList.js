@@ -36,7 +36,7 @@ function MenuList() {
 			filterMenuList();
 
 		}
-    }, [menuList, selectedCategories,searchInput]);
+    }, [menuList, selectedCategories]);
     // }, [menuList]);
 
     const filterMenuList = () => {
@@ -66,7 +66,7 @@ function MenuList() {
         }
 
         // 선택된 카테고리 목록을 업데이트합니다.
-        setSelectedCategories(newSelectedCategories);
+        setSelectedCategories(newSelectedCategories); 
     };
 
     const handleSearch = () => {
