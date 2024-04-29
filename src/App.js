@@ -13,6 +13,7 @@ import SignUp from './pages/SignUp';
 import Cart from './pages/Cart';
 import SignOut from './pages/SignOut';
 import "./App.css";
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import CustomerService from './pages/CustomerService';
 
 /* 추가 설치해야 하는 패키지 목록
