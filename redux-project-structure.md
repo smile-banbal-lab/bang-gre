@@ -7,8 +7,6 @@
 
 ```
 npx json-server ./db.json --port 4000
-npx json-server ./product.json --port 4000
-npx json-server ./user.json --port 4000
 ```
 
 - 가상의 데이터 서버의 역할을 할 수 있는 json-server를 db.json 파일을 이용해 4000번 포트로 동작시킨다.

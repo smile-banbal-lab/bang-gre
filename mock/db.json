@@ -48,6 +48,17 @@
       "admin": false,
       "userid": "david202",
       "password": "secret"
+    },
+    {
+      "id": "d51f",
+      "userid": "coffee",
+      "name": "커피",
+      "username": "완두콩",
+      "password": "1010",
+      "address": "에티오피아",
+      "email": "etiopea@gmail.com",
+      "phone": "01013141155",
+      "isAdmin": false
     }
   ],
   "item": [
