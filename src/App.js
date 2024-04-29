@@ -63,7 +63,7 @@ function App() {
 						</Route>
 					</Route>
 					<Route path="cart"  element={<Cart/>} />
-                    <Route path='/Contact' element={<FAQForm/>}></Route>	
+                    <Route path='/contact' element={<FAQForm/>}></Route>	
 				</Route>
 				<Route path="*" element={<Error />} />
 			</Routes>
