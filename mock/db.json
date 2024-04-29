@@ -92,6 +92,17 @@
       "email": "generalpark@gmail.com",
       "phone": "01022294421",
       "isAdmin": false
+    },
+    {
+      "id": "a3fc",
+      "userid": "kakao123",
+      "name": "김카카오",
+      "username": "카카오김",
+      "password": "1234",
+      "address": "아프리카",
+      "email": "kakao123@kakao.com",
+      "phone": "01099001255",
+      "isAdmin": false
     }
   ],
   "item": [
