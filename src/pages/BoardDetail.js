@@ -1,10 +1,6 @@
-import Menu from "../components/items/Menu";
 import { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { callDeleteMenuAPI } from '../apis/MenuAPICalls';
-import Button from 'react-bootstrap/Button';
-
 
 function MenuDetail() {
 
@@ -13,17 +9,17 @@ function MenuDetail() {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 	const { id } = useParams();
-	const result = useSelector(state => state.menuReducer);
+	const result = useSelector(state => state.CustomerReducer);
 
-	const updateHandler = () => navigate(`/menu/modify/${id}`);
-	const deleteHandler = () => dispatch(callDeleteMenuAPI(id));
+	const updateHandler = () => navigate(`/CustomerService/modify/${id}`);
+	const deleteHandler = () => dispatch(callDeleteCustomerServiceAPI(id));
 
 	useEffect(
 		() => {
 			/* 메뉴 삭제 완료 확인 후 /menu로 이동 */
 			if (result.delete) {
-				alert('메뉴 삭제');
-				navigate(`/menu`);
+				alert('게시판 삭제');
+				navigate(`/CustomerService`);
 			}
 		}, // eslint-disable-next-line
 		[result]
@@ -35,14 +31,14 @@ function MenuDetail() {
 			<div className="admin-buttonBox">
 				{ /* 로그인 된 상황에만 button이 보이도록 조건부 랜더링 */}
 				{(isAuthorized) &&
-                    <>
-                        <Button variant="primary"onClick={updateHandler}>메뉴수정</Button>{''}
-                        <Button variant="danger"onClick={deleteHandler}>메뉴삭제</Button>{''}
-                    </>
+					<>
+						<button onClick={updateHandler}>메뉴 수정</button>
+						<button onClick={deleteHandler}>메뉴 삭제</button>
+					</>
 				}
 			</div>
 		</div>
 	);
 }
 
-export default MenuDetail;
+export default BoardDetail;

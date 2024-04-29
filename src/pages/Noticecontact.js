@@ -19,9 +19,7 @@ function FAQForm() {
             <div className="category">
                 <ul>
                     <li className="active">고객상담</li>
-                    <li>제품공급문의</li>
-                    <li>사이버신고센터</li>
-                    <li>안전신문고</li>
+                    
                 </ul>
             </div>
             <form action="/submit_form" method="post" className="form">
@@ -42,7 +40,8 @@ function FAQForm() {
                             <select id="domain" name="domain">
                                 <option value="@gmail.com">@gmail.com</option>
                                 <option value="@naver.com">@naver.com</option>
-                                <option value="@hanmail.net">@outlook.com</option>
+                                <option value="@hanmail.net">@hanmail.net</option>
+                                <option value="@hanmail.net">@gmail.com</option>
                             </select>
                         </div>
                     </div>
@@ -64,7 +63,7 @@ function FAQForm() {
                     <div className="message">
                         <label htmlFor="message">내용</label>
                         <textarea id="message" name="message" rows="4" cols="50"
-                            placeholder="주민등록번호등의 개인정보는 절대 노출하시마세요."></textarea>
+                            placeholder="주민등록번호등의 개인정보는 절대 노출하지 마세요."></textarea>
                     </div>
                     <div className="file">
                         <label htmlFor="file">첨부파일</label>

@@ -53,7 +53,7 @@ function Menu({ id }) {
 						<img src={menu.image} style={{ maxWidth: 300 }} alt={menu.name} />
 					</div>
 				</div>
-				<p>기준용량(150ml)당 열량 265kcal / *영양성분 기준치 : 1일 영양성분 기준치에 대한 비율</p>
+				<p className='menu-detail-p'>기준용량(150ml)당 열량 265kcal / *영양성분 기준치 : 1일 영양성분 기준치에 대한 비율</p>
 			</>
 		)
 	);
