@@ -22,7 +22,7 @@ function Navbar() {
 
 	return (
 		<div>
-			<ul id='Navbar'>
+			<ul id='Navbar' fixed="top">
 				<li><NavLink to='/'>HOME</NavLink></li>
 				<li><NavLink to='/menu'>PRODUCT</NavLink></li>
 				<li><NavLink to='/'>MY</NavLink></li>

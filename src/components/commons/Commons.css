@@ -70,6 +70,14 @@
 
     background-color: rgb(255, 221, 0);
 }
+/* --------- Navbar----------- */
+#Navbar{
+    position:fixed;
+    top: 0 ;left: 0;
+}
+
+
+/* ---------------- 반응형 ---------------- */
 @media screen and (max-width: 768px) { /* 모바일 화면 크기 */
     input {
         height: 40px; /* 화면의 높이로 설정 */
