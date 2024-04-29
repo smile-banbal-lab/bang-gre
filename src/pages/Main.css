@@ -27,14 +27,10 @@
     flex-direction: column;
     align-items: center;
 }
-
-<<<<<<< HEAD
-=======
-#Searchbar {
+#Searchbar{
     width: 100%;
     position: relative;
 }
-
 #Searchbar input {
     width: 100%;
     height: 60px;
@@ -48,7 +44,6 @@
     background-color: rgb(19, 157, 232);
 }
 
->>>>>>> bang_gre/master
 .main-hash-tag {
     width: 80%;
     font-size: .7rem;
@@ -76,13 +71,12 @@
 /* ----------------section02---------------- */
 #section02 {
     width: 100%;
-    padding: 5% 0;
+    padding: 5%;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background-color: rgb(255, 225, 0);
+    background-color: white;
 }
 
 #main-category-box {
@@ -94,10 +88,9 @@
 
 #main-category-box>div {
     padding: 5%;
-    box-sizing: border-box;
-    margin: 5px 5px;
-    border-radius: 50px;
-    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #main-category-box>div:hover {
@@ -105,7 +98,9 @@
     transition-duration: .5s;
     cursor: pointer;
 }
-
+#main-category-box p{
+    margin-top: 5px;
+}
 #main-category-box img {
     width: 60%;
 }
@@ -113,9 +108,9 @@
 /* section03 */
 #section03 {
     width: 100%;
-    height: 1080px;
     padding: 5% 0;
     box-sizing: border-box;
+    background-color: white;
 
 }
 
@@ -143,6 +138,9 @@
         text-align: center;
         margin-top: 10px;
     }
+    #Searchbar{
+        display: none;
+    }
 }
 
 @media screen and (min-width: 769px) and (max-width:960px) {
@@ -157,6 +155,13 @@
     #section01 img {
         margin-top: 20%;
     }
+    #Searchbar{
+        width: 100%;
+    }
+    #Searchbar input{
+        width: 100%;
+    }
+
 }
 
 @media screen and (min-width: 960px) {
