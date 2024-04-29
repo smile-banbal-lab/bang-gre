@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { callDeleteMenuAPI } from '../apis/MenuAPICalls';
+import Button from 'react-bootstrap/Button';
+
 
 function MenuDetail() {
 
@@ -33,10 +35,10 @@ function MenuDetail() {
 			<div className="admin-buttonBox">
 				{ /* 로그인 된 상황에만 button이 보이도록 조건부 랜더링 */}
 				{(isAuthorized) &&
-					<>
-						<button onClick={updateHandler}>메뉴 수정</button>
-						<button onClick={deleteHandler}>메뉴 삭제</button>
-					</>
+                    <>
+                        <Button variant="primary"onClick={updateHandler}>메뉴수정</Button>{''}
+                        <Button variant="danger"onClick={deleteHandler}>메뉴삭제</Button>{''}
+                    </>
 				}
 			</div>
 		</div>
