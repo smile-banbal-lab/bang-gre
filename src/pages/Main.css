@@ -151,3 +151,237 @@
 }
 
 
+/* -------------------------------Noticecontact css -------------------------------*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.header ul h2 {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 70px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+    /**리스트 스타일 없애기**/
+}
+
+.text p{
+    text-align: center;
+    margin-top: 40px;
+}
+.category {
+    margin-top: 120px;
+}
+
+.category ul {
+    display: flex;
+    justify-content: center;
+    /**바로 아래의 자식 박스들 옆으로 배치*/
+}
+
+.category ul li {
+    border-radius: 25px;
+    box-shadow: inset 0px 5px 10px 0 rgb(121 121 121 / 3%);
+    background-color: #f9f9f9;
+    width: 116px;
+    height: 34px;
+    color: #1f1f1f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.category ul li.active {
+    border: 1px solid #e0462e;
+    color: #e0462e;
+    background-color: #fff;
+}
+
+.category ul li:last-child {
+    margin-right: 0;
+}
+
+input {
+    width: 410px;
+    height: 40px;
+    display: flex;
+    /* Flexbox를 사용하여 요소들을 가로로 정렬합니다. */
+    justify-content: center;
+    /* 가로로 중앙 정렬합니다. */
+    align-items: center;
+    /* 세로로 중앙 정렬합니다. */
+    padding-left: 20px;
+
+    border: 1px solid #373737;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-left: 40px;
+    border-radius: 25px;
+    border: solid 1px #e8e8e8;
+}
+
+
+#domain {
+
+    width: 140px;
+    height: 40px;
+    border-radius: 25px;
+    padding-left: 20px;
+    border: solid 1px #e8e8e8;
+    margin-left: 20px;
+}
+
+#phonenumber {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 300px;
+    padding: 5px;
+    border: 1px solid #373737;
+    border-radius: 5px;
+}
+
+
+/* 내용(textarea) 스타일 */
+#message {
+    display: flex;
+    width: 100%;
+    height: 280px;
+    padding: 20px;
+    border: 1px solid #e8e8e8;
+    margin-left: 40px;
+    border-radius: 10px;
+}
+
+.form-button {
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #df3737;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 13px;
+    cursor: pointer;
+    margin-top: 40px;
+}
+
+form.form {
+    width: 1300px;
+    margin: 0 auto;
+}
+
+form.form>div {
+    margin-top: 40px;
+    padding: 20px;
+    border-radius: 30px;
+    border: solid 1px #e8e8e8;
+}
+
+form.form>div>div {
+    display: flex;
+}
+
+form.form>div>div.file label {
+    height: 170px;
+}
+
+form.form>div>div.file input {
+    margin-top: 40px;;
+}
+
+form.form>div>div.btn {
+    display: flex;
+    justify-content: center;
+}
+
+form.form>div>div.btn button:first-child {
+    margin-right: 20px;
+    background-color: #f9f9f9;
+    color: #000;
+}
+
+form.form>div>div.message label {
+    height: 280px;
+}
+
+form.form>div>div.address input {
+    width: 100%;
+}
+
+form.form>div>div.phone>div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+form.form>div>div.phone>div input {
+    width: 120px;
+}
+
+form.form>div>div.phone>div input#phone1 {
+    margin-right: 10px;
+}
+
+form.form>div>div.phone>div input#phone2 {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+form.form>div>div.phone>div input#phone3 {
+    margin-left: 10px;
+}
+
+
+form.form>div>div label {
+    min-width: 260px;
+    height: 50px;
+    background-color: #f9f9f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+form.form>div>div.email input.eamil1 {
+    width: 230px;
+    margin-right: 10px;
+}
+
+form.form>div>div.email input.eamil2 {
+    width: 120px;
+    margin-left: 10px;
+
+}
+
+form.form>div>div.email>div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer#footer {
+    height: 320px;
+    background-color: #1b1b1b;
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    font-size: 14px;
+    padding-top: 100px;
+    padding-left: 40px;
+    line-height: 28px;
+    margin-top: 80px;
+}
