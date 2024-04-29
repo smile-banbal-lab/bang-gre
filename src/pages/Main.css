@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'Binggrae';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    font-family: 'Binggrae',sans-serif;
+}
 #section01 {
     width: 100%;
     display: flex;
@@ -61,6 +70,7 @@
     margin-left: 5px;
     border-radius: 20px;
     cursor: pointer;
+    font-family: 'Binggrae',sans-serif;
     background-color: rgba(255, 255, 255, 0.7);
 }
 
@@ -77,6 +87,7 @@
     flex-direction: column;
     align-items: center;
     background-color: white;
+
 }
 
 #main-category-box {
@@ -100,6 +111,8 @@
 }
 #main-category-box p{
     margin-top: 5px;
+    font-family: 'Binggrae',sans-serif;
+
 }
 #main-category-box img {
     width: 60%;
@@ -108,10 +121,19 @@
 /* section03 */
 #section03 {
     width: 100%;
+    text-align: center;
     padding: 5% 0;
     box-sizing: border-box;
     background-color: white;
-
+}
+#section02>h2{
+    font-weight: bold;
+    font-family: 'Binggrae',sans-serif;
+}
+#section03>h2{
+    font-weight: bold;
+    margin-bottom: 50px;
+    font-family: 'Binggrae',sans-serif;
 }
 
 @media screen and (max-width: 768px) {

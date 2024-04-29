@@ -70,7 +70,7 @@ function Main() {
                 </div>
             </section>
             <section id="section03">
-                <h2>그 다음엔...?</h2>
+                <h2>자주 묻는 질문</h2>
                 <ServiceAccodion/>
             </section>
 		</div>
