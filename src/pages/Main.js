@@ -1,8 +1,15 @@
 import React from 'react';
 import Searchbar from "../components/commons/Searchbar";
+import { useNavigate } from 'react-router-dom'; // useNavigate 가져오기
+import "../../src/components/lists/MenuList"
 import "./Main.css";
 function Main() {
+    const navigate = useNavigate(); // useNavigate 사용
 
+    const handleSearchClick = (keyWord) => {
+        // /menuList 경로로 이동하면서 검색값을 쿼리 파라미터로 전달
+        navigate(`/menu?search=${keyWord}`);
+    }
 	return (
 		<div id="mainContainer">
             <section id="section01">
@@ -12,12 +19,23 @@ function Main() {
                     <div className="main-search-bar">
                         <Searchbar/>
                     </div>
-                        <div className='main-hash-tag'>
-                        <div className='main-hash-tag-item'>#바나나맛</div>
-                        <div className='main-hash-tag-item'>#우유</div>
-                        <div className='main-hash-tag-item'>#아이스크림</div>
-                        <div className='main-hash-tag-item'>#MD추천</div>
-                        <div className='main-hash-tag-item'>#여름추천</div>
+                        <div className='main-hash-tag' >
+                        {/* 바나나맛 태그를 클릭하면 handleSearchClick 함수를 호출합니다. */}
+                        <a onClick={() => handleSearchClick("바나나")}>
+                            <div className='main-hash-tag-item'>#바나나맛</div>
+                        </a>             
+                        <a onClick={() => handleSearchClick("우유")}>          
+                            <div className='main-hash-tag-item'>#우유</div>
+                        </a> 
+                        <a onClick={() => handleSearchClick("아이스크림")}> 
+                            <div className='main-hash-tag-item'>#아이스크림</div>
+                        </a>
+                        <a onClick={() => handleSearchClick("투게더")}>
+                            <div className='main-hash-tag-item'>#MD추천</div>
+                        </a>
+                        <a onClick={() => handleSearchClick("에이드")}>
+                            <div className='main-hash-tag-item'>#여름추천</div>
+                        </a>
                     </div>
                 </div>
             </section>
