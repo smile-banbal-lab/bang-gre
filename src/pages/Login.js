@@ -23,7 +23,7 @@ function Login(){
 	return (
 		<section id="section01">
 		<div className='Main-background'></div>
-		<div className="login-container">
+		<div>
 			<h1>로그인</h1>
 			<LoginForm/>
 		</div>
