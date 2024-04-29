@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './Login.css';
+import './Main.css';
+import '../components/form/LoginForm.css';
 
 function SearchIdPw() {
     const [email, setEmail] = useState('');
@@ -39,10 +42,13 @@ function SearchIdPw() {
     };
 
     return (
-        <div>
-            <h1>사용자 ID 및 비밀번호 찾기</h1>
+        <section id="section01">
+        <div className='Main-background'></div>
+        <h1>사용자 ID 및 비밀번호 찾기</h1>
+        <div className="login-form-container">
+            
             <form onSubmit={handleSearch}>
-                <div>
+                <div className="input-group">
                     <label>이메일 입력:</label>
                     <input
                         type="email"
@@ -50,13 +56,17 @@ function SearchIdPw() {
                         onChange={e => setEmail(e.target.value)}
                         required
                     />
-                    <button type="submit">찾기</button>
                 </div>
+                    <div className="signup-button-group">
+                        <button type="submit">ID/PW 찾기</button>
+                    </div>
+                
             </form>
             {foundData.error && <p style={{ color: 'red' }}>{foundData.error}</p>}
             {foundData.userid && <p>사용자 ID: {foundData.userid}</p>}
             {foundData.password && <p>비밀번호: {foundData.password}</p>}
         </div>
+        </section>
     );
 }
 

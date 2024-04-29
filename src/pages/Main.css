@@ -31,6 +31,7 @@
     justify-content: center;
     align-items: center;
 }
+
 .main-hash-tag {
     width: 80%;
     font-size: .7rem;
@@ -384,4 +385,18 @@ footer#footer {
     padding-left: 40px;
     line-height: 28px;
     margin-top: 80px;
+}
+
+
+h1 {
+    text-align: center; /* 텍스트를 수평 중앙에 정렬 */
+    width: 100%;        /* 부모 컨테이너의 전체 너비를 사용 */
+    margin-top: 20px;   /* 상단 여백 조정 */
+    margin-bottom: 20px;/* 하단 여백 조정 */
+}
+
+.input-group input {
+    width: 100%;    /* input의 너비를 부모 요소의 100%로 설정 */
+    padding: 8px;   /* 입력 내용과 input 경계 사이의 여백 */
+    box-sizing: border-box; /* 패딩과 테두리를 너비에 포함 */
 }
