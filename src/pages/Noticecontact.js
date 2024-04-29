@@ -2,7 +2,7 @@ import React from 'react';
 
 function FAQForm() {
     return (
-        <body>
+        <>
             <div className="header">
                 <ul>
                     <h2>FAQ</h2>
@@ -86,7 +86,7 @@ function FAQForm() {
                 </ul>
                 </div>
             </footer>
-        </body>
+        </>
     );
 }
 
