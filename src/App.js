@@ -16,6 +16,7 @@ import "./App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CustomerService from './pages/CustomerService';
 import FAQForm from './pages/Noticecontact';
+import SearchIdPw from './pages/SearchIdPw';
 
 /* 추가 설치해야 하는 패키지 목록
  * react-router-dom
@@ -52,6 +53,7 @@ function App() {
 
 					<Route path="login" element={<Login />} />
 					<Route path="/signup" element={<SignUp />} />
+					<Route path="/searchidpw" element={<SearchIdPw/>} />
 
 					<Route path="user" >
 						<Route path=":id" element={<MyPage/>} />

@@ -2,7 +2,8 @@ import React from 'react';
 import Searchbar from "../components/commons/Searchbar";
 import { useNavigate } from 'react-router-dom'; // useNavigate 가져오기
 import "../../src/components/lists/MenuList"
-import "./Main.css";
+import ServiceAccodion from '../components/commons/ServiceAccodion';
+// import "./Main.css";
 function Main() {
     const navigate = useNavigate(); // useNavigate 사용
 
@@ -70,7 +71,7 @@ function Main() {
             </section>
             <section id="section03">
                 <h2>그 다음엔...?</h2>
-                <div></div>
+                <ServiceAccodion/>
             </section>
 		</div>
 	);

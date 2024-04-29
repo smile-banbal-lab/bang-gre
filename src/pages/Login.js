@@ -31,9 +31,10 @@ function Login(){
 	);
 }
 /*
-(1) loginStatus: 로컬 스토리지에서 'isLogin' 키의 값을 조회하여 존재하는지 확인함.
-	 !! 연산자를 사용하여 값을 불린 타입으로 강제 변환한다. 
-	 만일 값이 존재하면 true가 되어 로그인 상태임을 나타낸다.
+(1) loginStatus: 로컬
+스토리지에서 'isLogin' 키의 값을 조회하여 존재하는지 확인함.
+	!! 연산자를 사용하여 값을 불린 타입으로 강제 변환한다. 
+	만일 값이 존재하면 true가 되어 로그인 상태임을 나타낸다.
 
 (2) if (loginStatus): 만약 loginStatus가 true일 경우, 즉 사용자가 로그인 상태라면, 	
 	<Navigate to="/" replace={ true }/>를 반환함. 

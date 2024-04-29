@@ -77,6 +77,11 @@ function LoginForm() {
 	회원가입 버튼 클릭 시, 회원가입 페이지(/signup)로 라우팅
 	*/
 
+	/* Id,pw찾기 버튼 클릭시, id/pw찾기 페이지(/searchidpw)로 라우팅 */
+	const onSearchIdPwClickHandler = () => {
+		navigate('/searchidpw');
+	}
+
 
 	/* 로그인 요청 후 성공 or 실패 동작 */
 	useEffect(
@@ -124,8 +129,15 @@ function LoginForm() {
                 />
             </div>
             <div className="button-group">
+				<div>
                 <button onClick={onClickHandler}>로그인</button>
-                <button onClick={onSignUpClickHandler}>회원가입</button>
+				</div>
+				<div>
+                <button onClick={onSearchIdPwClickHandler}>ID,PW찾기</button>
+				</div>
+				<div>
+				<button onClick={onSignUpClickHandler}>회원가입</button>
+				</div>
             </div>
         </div>
 		
