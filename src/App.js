@@ -15,6 +15,7 @@ import SignOut from './pages/SignOut';
 import "./App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CustomerService from './pages/CustomerService';
+import FAQForm from './pages/Noticecontact';
 
 /* 추가 설치해야 하는 패키지 목록
  * react-router-dom
@@ -39,7 +40,7 @@ function App() {
 						<Route path="modify" >
 							<Route path=":id" element={<MenuModify />} />
 						</Route>
-						</Route>
+                    </Route>
 					{/* <Route index element={<CustomerService />} /> */}
 						<Route path="customerservice" element={<CustomerService/>} >
 						{/* <Route path=":id" element={<BoardDetail />} />
@@ -47,7 +48,8 @@ function App() {
 						<Route path="modify" >
 							<Route path=":id" element={<BoardModify />} />
 						</Route> */}
-						</Route>
+                    </Route>
+
 					<Route path="login" element={<Login />} />
 					<Route path="/signup" element={<SignUp />} />
 
@@ -60,7 +62,8 @@ function App() {
 						<Route path=":id" element={<SignOut />} />
 						</Route>
 					</Route>
-					<Route path="cart"  element={<Cart/>} />	
+					<Route path="cart"  element={<Cart/>} />
+                    <Route path='/Contact' element={<FAQForm/>}></Route>	
 				</Route>
 				<Route path="*" element={<Error />} />
 			</Routes>
