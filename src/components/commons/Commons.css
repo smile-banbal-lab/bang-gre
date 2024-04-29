@@ -1,21 +1,8 @@
 /*  --------------------Header----------------- */
-#Header{
-    width: 100%;
-    height: 100px;
-    background-color: rgb(255, 225, 0);
-}
-.main-logo-img{
-    width: 100px;    
-    text-shadow: 1px 1px 1px black;
-    cursor: pointer;
-}
-
 /*  --------------------Navbar----------------- */
 
 #Navbar{
-    top: 25px; right: 5%;
-    position: absolute;
-    z-index: 99999;
+    color: white;
 }
 
 #Navbar li *{
