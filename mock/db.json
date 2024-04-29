@@ -17,7 +17,6 @@
       "email": "emily@example.com",
       "address": "456 Elm St",
       "admin": false,
-      
       "userid": "emily456",
       "password": "abc123"
     },
@@ -59,6 +58,39 @@
       "address": "에티오피아",
       "email": "etiopea@gmail.com",
       "phone": "01013141155",
+      "isAdmin": false
+    },
+    {
+      "id": "9ba8",
+      "userid": "myid",
+      "name": "나마에와",
+      "username": "나의 별명은",
+      "password": "0000",
+      "address": "일본 신주쿠",
+      "email": "namaewa@gmail.com",
+      "phone": "012345678",
+      "isAdmin": false
+    },
+    {
+      "id": "dc04",
+      "userid": "joojoo",
+      "name": "윤주주",
+      "username": "주주윤",
+      "password": "0123",
+      "address": "서울 동대문구 답십리로",
+      "email": "younjojo@gmail.com",
+      "phone": "0102331122",
+      "isAdmin": false
+    },
+    {
+      "id": "9ec4",
+      "userid": "parkbill",
+      "name": "박장군",
+      "username": "제너럴파크",
+      "password": "1234",
+      "address": "뉴욕시",
+      "email": "generalpark@gmail.com",
+      "phone": "01022294421",
       "isAdmin": false
     }
   ],

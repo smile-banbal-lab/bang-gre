@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom'; // useNavigate import 추가
 import './Login.css';
 import './Main.css';
 import '../components/form/LoginForm.css';
 
 function SignUp() {
+	const navigate = useNavigate();
 	const [formData, setFormData] = useState({
 		userid: '', //'id' 대신 'userid'를 사용함 (id는 pk로 해야되기 때문임)
 		name: '',
@@ -70,6 +72,7 @@ function SignUp() {
             .then(response => {
                 console.log(response.data);
                 alert('회원가입 성공!');
+				navigate('/login'); //회원 가입 성공 후 로그인 페이지로 이동
             })
             .catch(error => {
                 console.error('회원가입 에러', error);
