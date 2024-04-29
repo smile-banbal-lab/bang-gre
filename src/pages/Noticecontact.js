@@ -19,7 +19,6 @@ function FAQForm() {
             <div className="category">
                 <ul>
                     <li className="active">고객상담</li>
-                    <li>1:1문의하기</li>
                     
                 </ul>
             </div>
