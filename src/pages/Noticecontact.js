@@ -41,7 +41,8 @@ function FAQForm() {
                             <select id="domain" name="domain">
                                 <option value="@gmail.com">@gmail.com</option>
                                 <option value="@naver.com">@naver.com</option>
-                                <option value="@hanmail.net">@outlook.com</option>
+                                <option value="@hanmail.net">@hanmail.net</option>
+                                <option value="@hanmail.net">@gmail.com</option>
                             </select>
                         </div>
                     </div>
