@@ -39,7 +39,7 @@ function App() {
 							<Route path=":id" element={<MenuModify />} />
 						</Route>
 						</Route>
-						<Route index element={<Board />} />
+						{/* <Route index element={<Board />} />
 					<Route path="board" >
 						<Route index element={<CustomerService/>} />
 						<Route path=":id" element={<BoardDetail />} />
@@ -47,7 +47,7 @@ function App() {
 						<Route path="modify" >
 							<Route path=":id" element={<BoardModify />} />
 						</Route>
-						</Route>
+						</Route> */}
 					<Route path="login" element={<Login />} />
 					<Route path="/signup" element={<SignUp />} />
 
