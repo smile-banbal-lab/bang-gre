@@ -2,9 +2,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #f6f87e;
+    justify-content:flex-start; /* 컨테이너의 시작 부분으로 요소들을 이동 */
+    height:50vh;
+    padding-top: 3vh; /* 상단에 공간 추가 */
+    background-color: rgba(246, 248, 126, 0); /* 반투명 배경색 */
 }
 
 .login-container h1 {
@@ -29,6 +30,8 @@
 #section01 h1 {
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    margin-top: 2rem; /* 상단의 마진을 2rem으로 설정 */
+    margin-bottom: 2rem; /* 하단의 마진을 2rem으로 설정 */
 }
 
 #section01 .login-form-container label,
