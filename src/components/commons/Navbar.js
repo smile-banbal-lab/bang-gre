@@ -26,6 +26,7 @@ function Navbar() {
 				<li><NavLink to='/'>HOME</NavLink></li>
 				<li><NavLink to='/menu'>PRODUCT</NavLink></li>
 				<li><NavLink to='/'>MY</NavLink></li>
+				<li><NavLink to='/'>Board</NavLink></li>
 				{/* localStorage 안의 값으로 로그인 여부 판단하여 조건부 랜더링 */}
 				{!isAuthorized ? (
 					<li><NavLink to='/login'>LOGIN</NavLink></li>

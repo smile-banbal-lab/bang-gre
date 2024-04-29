@@ -13,7 +13,8 @@ import SignUp from './pages/SignUp';
 import Cart from './pages/Cart';
 import SignOut from './pages/SignOut';
 import "./App.css";
-
+import CustomerService from './pages/CustomerService';
+import Noticecontact from './pages/Noticecontact';
 /* 추가 설치해야 하는 패키지 목록
  * react-router-dom
  * redux
@@ -37,7 +38,16 @@ function App() {
 						<Route path="modify" >
 							<Route path=":id" element={<MenuModify />} />
 						</Route>
-					</Route>
+						</Route>
+						<Route index element={<Board />} />
+					<Route path="board" >
+						<Route index element={<CustomerService/>} />
+						<Route path=":id" element={<BoardDetail />} />
+						<Route path="regist" element={<BoardRegist />} />
+						<Route path="modify" >
+							<Route path=":id" element={<BoardModify />} />
+						</Route>
+						</Route>
 					<Route path="login" element={<Login />} />
 					<Route path="/signup" element={<SignUp />} />
 

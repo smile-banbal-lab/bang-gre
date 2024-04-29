@@ -2,7 +2,7 @@ import React from 'react';
 
 function CustomerService() {
     return (
-        <body>
+        <>
             <div>
                 <p className="notice-title">고객센터</p>
             </div>
@@ -70,7 +70,7 @@ function CustomerService() {
                     <li>5</li>
                 </ul>
             </div>
-        </body>
+        </>
     );
 }
 
