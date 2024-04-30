@@ -1,9 +1,6 @@
-import { Link } from 'react-router-dom';
 import { callDeleteCartAPI, callModifyCartAPI } from '../../apis/CartAPICalls';
-import { getMenu } from '../../modules/MenuModule';
-import { useDispatch, useSelector } from 'react-redux';
-import { callGetMenuAPI } from '../../apis/MenuAPICalls';
-import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import React, { useState } from 'react';
 
 
 
@@ -17,12 +14,12 @@ function CartItem({ menu, prod }) {
 	const [modifyCart, setModifyCart] = useState(
 		{
 			id: menu.id,
-			Quantity: menu.Quantity,
-			menuid: menu.menuid,
+			name: menu.name,
+			date: menu.date,
 			userid: menu.userid,
 			Confirm: menu.Confirm,
-			date: menu.date,
-			name: menu.name
+			menuid: menu.menuid,
+			Quantity: menu.Quantity
 		}
 	);
 

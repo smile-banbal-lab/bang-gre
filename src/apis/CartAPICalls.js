@@ -96,12 +96,12 @@ export function callAddToCartAPI(menu, userid) {
         }
 
         const newItem = {
-            menuid: menu.id,
-            name: menu.name,
-            userid: userid,
-            date: today,
             id: id.toString(),
+            name: menu.name,
+            date: today,
+            userid: userid,
             Confirm: false,
+            menuid: menu.id,
             Quantity: 1
         };
 

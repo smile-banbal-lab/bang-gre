@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import React, { useEffect, useState } from 'react';
-import { callGetCartListAPI, callAddToCartAPI } from '../../apis/CartAPICalls';
-import CheckCart from './CheckCart';
-import { registCart } from '../../modules/CartModule';
+import { useDispatch } from 'react-redux';
+import React, { useState } from 'react';
+import { callAddToCartAPI } from '../../apis/CartAPICalls';
+
 
 
 
@@ -19,9 +18,6 @@ function MenuItem({ menu, categoryType, userid }) {
 		alert("장바구니 넣기 성공, 수량 변경은 나의 장바구니에서 부탁드립니다!");
 	};
 
-	const [cartItem, setCartItem] = useState(
-
-	);
 
 	return (
 		<>
