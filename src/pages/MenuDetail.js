@@ -36,8 +36,8 @@ function MenuDetail() {
 				{ /* 로그인 된 상황에만 button이 보이도록 조건부 랜더링 */}
 				{(isAuthorized) &&
                     <>
-                        <Button variant="primary"onClick={updateHandler}>메뉴수정</Button>{''}
-                        <Button variant="danger"onClick={deleteHandler}>메뉴삭제</Button>{''}
+                        <Button variant="primary" onClick={updateHandler}>메뉴수정</Button>{''}
+                        <Button variant="danger" onClick={deleteHandler}>메뉴삭제</Button>{''}
                     </>
 				}
 			</div>

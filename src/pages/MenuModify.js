@@ -11,10 +11,10 @@ function MenuModify() {
 	}
 
 	return (
-		<>
+		<div id='Menus-modify-page'>
 			<h1>메뉴 수정 페이지</h1>
 			<MenuModifyForm />
-		</>
+		</div>
 	);
 }
 
