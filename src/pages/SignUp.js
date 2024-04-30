@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom'; // useNavigate import 추가
 import './Login.css';
 import './Main.css';
 import '../components/form/LoginForm.css';
 
 function SignUp() {
+	const navigate = useNavigate();
 	const [formData, setFormData] = useState({
 		userid: '', //'id' 대신 'userid'를 사용함 (id는 pk로 해야되기 때문임)
 		name: '',
@@ -70,6 +72,7 @@ function SignUp() {
             .then(response => {
                 console.log(response.data);
                 alert('회원가입 성공!');
+				navigate('/login'); //회원 가입 성공 후 로그인 페이지로 이동
             })
             .catch(error => {
                 console.error('회원가입 에러', error);
@@ -79,80 +82,80 @@ function SignUp() {
 	return (
 		
 		<section id="section01">
-		<div className='Main-background'></div>
-		<h1>회원가입</h1>
-		<div className="login-form-container">
-			<form onSubmit={onSubmitHandler}>
-				<div className="input-group">
-					<label>사용자 ID:</label>
-					<input
-						type="text"
-						name="userid"
-						value={formData.userid}
-						onChange={onChangeHandler}
-					/>
-					{duplicate.userid && <p style={{color: 'red'}}>이 아이디는 사용할 수 없습니다.</p>}
-				</div>
-				<div className="input-group">
-					<label>이름:</label>
-					<input
-						type="text"
-						name="name"
-						value={formData.name}
-						onChange={onChangeHandler}
-					/>
-				</div>
-				<div className="input-group">
-					<label>별명:</label>
-					<input
-						type="text"
-						name="username"
-						value={formData.username}
-						onChange={onChangeHandler}
-					/>
-				</div>
-				<div className="input-group">
-					<label>비밀번호:</label>
-					<input
-						type="password"
-						name="password"
-						value={formData.password}
-						onChange={onChangeHandler}
-					/>
-				</div>
-				<div className="input-group">
-					<label>주소:</label>
-					<input
-						type="text"
-						name="address"
-						value={formData.address}
-						onChange={onChangeHandler}
-					/>
-				</div>
-				<div className="input-group">
-					<label>이메일:</label>
-					<input
-						type="email"
-						name="email"
-						value={formData.email}
-						onChange={onChangeHandler}
-					/>
-				</div>
-				<div className="input-group">
-					<label>핸드폰번호:</label>
-					<input
-						type="tel"
-						name="phone"
-						value={formData.phone}
-						onChange={onChangeHandler}
-					/>
-					{duplicate.phone && <p style={{color: 'red'}}>이 핸드폰 번호는 사용할 수 없습니다.</p>}
-				</div>
-				<div className="signup-button-group">
-					<button type="submit">가입하기</button>
-				</div>
-			</form>
-		</div>
+			<div className='Main-background'></div>
+			<h1>회원가입</h1>
+			<div className="login-form-container">
+				<form onSubmit={onSubmitHandler}>
+					<div className="input-group">
+						<label>사용자 ID:</label>
+						<input
+							type="text"
+							name="userid"
+							value={formData.userid}
+							onChange={onChangeHandler}
+						/>
+						{duplicate.userid && <p style={{color: 'red'}}>이 아이디는 사용할 수 없습니다.</p>}
+					</div>
+					<div className="input-group">
+						<label>이름:</label>
+						<input
+							type="text"
+							name="name"
+							value={formData.name}
+							onChange={onChangeHandler}
+						/>
+					</div>
+					<div className="input-group">
+						<label>별명:</label>
+						<input
+							type="text"
+							name="username"
+							value={formData.username}
+							onChange={onChangeHandler}
+						/>
+					</div>
+					<div className="input-group">
+						<label>비밀번호:</label>
+						<input
+							type="password"
+							name="password"
+							value={formData.password}
+							onChange={onChangeHandler}
+						/>
+					</div>
+					<div className="input-group">
+						<label>주소:</label>
+						<input
+							type="text"
+							name="address"
+							value={formData.address}
+							onChange={onChangeHandler}
+						/>
+					</div>
+					<div className="input-group">
+						<label>이메일:</label>
+						<input
+							type="email"
+							name="email"
+							value={formData.email}
+							onChange={onChangeHandler}
+						/>
+					</div>
+					<div className="input-group">
+						<label>핸드폰번호:</label>
+						<input
+							type="tel"
+							name="phone"
+							value={formData.phone}
+							onChange={onChangeHandler}
+						/>
+						{duplicate.phone && <p style={{color: 'red'}}>이 핸드폰 번호는 사용할 수 없습니다.</p>}
+					</div>
+					<div className="signup-button-group">
+						<button type="submit">가입하기</button>
+					</div>
+				</form>
+			</div>
 		</section>
 	);
 }
