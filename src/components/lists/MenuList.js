@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import MenuItem from '../items/MenuItem';
 import { callGetMenuListAPI } from "../../apis/MenuAPICalls";
 import { useLocation } from 'react-router-dom';
+import '../../pages/Menus.css';
+
 
 
 function MenuList( { categoryType } ) {
@@ -95,12 +97,12 @@ function MenuList( { categoryType } ) {
 				<div id='MenuList'>
 					{/* 카테고리 선택 필터 */}
                     <div id='category-select'>
-                    <button onClick={() => handleCategoryChange('아이스크림')} style={{ backgroundColor: selectedCategories.includes('아이스크림') ? 'rgb(255, 225, 0)' : 'rgb(19, 157, 232)' }}>아이스크림</button>
-                    <button onClick={() => handleCategoryChange('우유')} style={{ backgroundColor: selectedCategories.includes('우유') ? 'rgb(255, 225, 0)' : 'rgb(19, 157, 232)' }}>우유</button>
-                    <button onClick={() => handleCategoryChange('발효유')} style={{ backgroundColor: selectedCategories.includes('발효유') ? 'rgb(255, 225, 0)' : 'rgb(19, 157, 232)' }}>발효유</button>
-                    <button onClick={() => handleCategoryChange('커피')} style={{ backgroundColor: selectedCategories.includes('커피') ? 'rgb(255, 225, 0)' : 'rgb(19, 157, 232)' }}>커피</button>
-                    <button onClick={() => handleCategoryChange('주스')} style={{ backgroundColor: selectedCategories.includes('주스') ? 'rgb(255, 225, 0)' : 'rgb(19, 157, 232)' }}>주스</button>
-                    <button onClick={() => handleCategoryChange('음료')} style={{ backgroundColor: selectedCategories.includes('음료') ? 'rgb(255, 225, 0)' : 'rgb(19, 157, 232)'}}>음료</button>
+                    <button onClick={() => handleCategoryChange('아이스크림')} className={selectedCategories.includes('아이스크림') ? 'selected' : ''}>아이스크림</button>
+                    <button onClick={() => handleCategoryChange('우유')} className={selectedCategories.includes('우유') ? 'selected' : '' }>우유</button>
+                    <button onClick={() => handleCategoryChange('발효유')} className={selectedCategories.includes('발효유') ? 'selected' : '' }>발효유</button>
+                    <button onClick={() => handleCategoryChange('커피')} className={selectedCategories.includes('커피') ? 'selected' : '' }>커피</button>
+                    <button onClick={() => handleCategoryChange('주스')} className={selectedCategories.includes('주스') ? 'selected' : '' }>주스</button>
+                    <button onClick={() => handleCategoryChange('음료')} className={selectedCategories.includes('음료') ? 'selected' : '' }>음료</button>
                     </div>
 					<br/>
 					<br/>
