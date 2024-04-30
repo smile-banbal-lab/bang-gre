@@ -107,15 +107,6 @@
   ],
   "item": [
     {
-      "id": "1",
-      "name": "그라시아",
-      "date": "2024-04-26",
-      "userid": "david202",
-      "Confirm": "false",
-      "menuid": "1",
-      "Quantity": "2"
-    },
-    {
       "id": "2",
       "name": "찹쌀떡아이스",
       "date": "2024-04-25",
@@ -132,6 +123,24 @@
       "Confirm": "false",
       "menuid": "1",
       "Quantity": "3"
+    },
+    {
+      "id": "1",
+      "Quantity": "3",
+      "menuid": "3",
+      "userid": "john123",
+      "Confirm": false,
+      "date": "2024-04-30",
+      "name": "찹쌀떡아이스"
+    },
+    {
+      "id": "1",
+      "menuid": "1",
+      "name": "그라시아",
+      "userid": "john123",
+      "date": "2024-04-30",
+      "Confirm": false,
+      "Quantity": 1
     }
   ],
   "menu": [
