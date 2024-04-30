@@ -47,6 +47,8 @@ function CustomeNavbar() {
 						<NavDropdown title="MyPage" id="basic-nav-dropdown">
 							<NavDropdown.Item as={NavLink} to={`/user/passwordcheck/${id}`}>MyPage</NavDropdown.Item>
 							<NavDropdown.Item onClick={logoutHandler}>LogOut</NavDropdown.Item>
+							<NavDropdown.Item as={NavLink} to='/cart'>Cart</NavDropdown.Item>
+
 						</NavDropdown>
 						</>
 					)

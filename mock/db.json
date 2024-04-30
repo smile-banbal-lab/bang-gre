@@ -108,11 +108,11 @@
   "item": [
     {
       "id": "1",
-      "name": "팥빙수",
+      "name": "그라시아",
       "date": "2024-04-26",
       "userid": "david202",
       "Confirm": "false",
-      "menuid": "menu.id",
+      "menuid": "1",
       "Quantity": "2"
     },
     {
@@ -121,16 +121,16 @@
       "date": "2024-04-25",
       "userid": "david202",
       "Confirm": "false",
-      "menuid": "menu.id",
+      "menuid": "3",
       "Quantity": "1"
     },
     {
       "id": "3",
-      "name": "팥빙수",
+      "name": "그라시아",
       "date": "2024-04-26",
       "userid": "david202",
       "Confirm": "false",
-      "menuid": "menu.id",
+      "menuid": "1",
       "Quantity": "3"
     }
   ],
