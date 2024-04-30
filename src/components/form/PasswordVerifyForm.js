@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from 'react-router-dom';
 import { callVerifyAPI } from '../../apis/UserAPICalls';
+import './PasswordVerifyForm.css';
 
 function PasswordVerifyForm() {
 
@@ -32,10 +33,17 @@ function PasswordVerifyForm() {
 
     return (
         <>
-        <label>비밀번호: </label>
-        <input type="password" name="password" value={password} onChange={(e) => {setPassword(e.target.value)}}></input>
-        <button onClick={onClickHandler}>확인</button>
-        <button >취소</button>
+        <div className="check-container">
+            <div className="check-form-container">
+                <h1>비밀번호를 다시 한번 확인해 주세요</h1>
+                <label>비밀번호: </label>
+                <input type="password" name="password" value={password} onChange={(e) => {setPassword(e.target.value)}}></input>
+            <div className="button-container">
+                <button onClick={onClickHandler}>확인</button>
+                <button onClick={() => navigate('/')}>취소</button>
+            </div>
+            </div>
+        </div>
         </>
     );
 

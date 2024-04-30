@@ -17,7 +17,6 @@ function PasswordCheck() {
 	return (
 
 		<>
-			<h1>비밀번호를 다시 한번 확인해 주세요</h1>
 			<VerifyForm />
 		</>
 	);

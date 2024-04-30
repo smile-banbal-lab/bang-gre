@@ -5,6 +5,8 @@ import { callModifyUserInfoAPI } from '../../apis/UserAPICalls';
 
 function MyPageForm() {
 
+	const StoredUserInfoString = sessionStorage.getItem('userInfo');
+	const storedUserInfo = JSON.parse(StoredUserInfoString);
 	const { id } = useParams();
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
@@ -13,13 +15,13 @@ function MyPageForm() {
 	/* 입력 값 state 저장 */
 	const [userInfo, setUserInfo] = useState(
 		{
-			id: result.id,
-			name: result.name,
-			phone: result.phone,
-			email: result.email,
-			address: result.address,
-			userid: result.userid,
-            password: result.password
+			id: storedUserInfo.id,
+			name: storedUserInfo.name,
+			phone: storedUserInfo.phone,
+			email: storedUserInfo.email,
+			address: storedUserInfo.address,
+			userid: storedUserInfo.userid,
+            password: storedUserInfo.password
 		}
 	);
 

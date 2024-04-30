@@ -8,18 +8,22 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function CustomeNavbar() {
 
+	const userInfoString = sessionStorage.getItem('userInfo');
+	const userInfo = JSON.parse(userInfoString);
+
 	const isAuthorized = !!sessionStorage.getItem('isLogin');
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
-
+	
 	const user = useSelector(state => state.userReducer);
 
 	const { id } = user;
 
-	/* 로그아웃 호출 시: localStorage 저장 값 삭제, userReducer 값 리셋, 루트로 이동 */
+	/* 로그아웃 호출 시: sessionStorage 저장 값 삭제, userReducer 값 리셋, 루트로 이동 */
 	const logoutHandler = () => {
 		sessionStorage.removeItem('isLogin');
 		sessionStorage.removeItem('isVerify');
+		sessionStorage.removeItem('userInfo');
 		dispatch(resetLoginUser());
 		navigate('/');
 	}
@@ -33,16 +37,20 @@ function CustomeNavbar() {
 						<Nav.Link as={NavLink} to='/'>HOME</Nav.Link>
 						<Nav.Link as={NavLink} to='/menu'>PRODUCT</Nav.Link>
 						<Nav.Link as={NavLink} to='/contact'>FAQ</Nav.Link>
+						<Nav.Link as={NavLink} to='/voc'>FAQLIST</Nav.Link>
 					</Nav>
 					{!isAuthorized ? (
 						<Nav.Link as={NavLink} to='/login'>LOGIN</Nav.Link>
 					) : (
+						<>
+						<Navbar.Text style={{marginRight:'15px'}}>{`${userInfo.userid} 님 안녕하세요.`}</Navbar.Text>
 						<NavDropdown title="MyPage" id="basic-nav-dropdown">
 							<NavDropdown.Item as={NavLink} to={`/user/passwordcheck/${id}`}>MyPage</NavDropdown.Item>
 							<NavDropdown.Item onClick={logoutHandler}>LogOut</NavDropdown.Item>
 							<NavDropdown.Item as={NavLink} to='/cart'>Cart</NavDropdown.Item>
 
 						</NavDropdown>
+						</>
 					)
 					}
 				</Container>
