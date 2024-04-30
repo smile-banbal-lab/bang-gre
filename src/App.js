@@ -12,6 +12,8 @@ import Error from './pages/Error';
 import SignUp from './pages/SignUp';
 import Cart from './pages/Cart';
 import SignOut from './pages/SignOut';
+import SearchIdPw from './pages/SearchIdPw';
+import FAQForm from './pages/Noticecontact';
 import "./App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CustomerService from './pages/CustomerService';
@@ -30,43 +32,45 @@ import MenuList from './components/lists/MenuList';
 function App() {
 	return (
 		<BrowserRouter>
-			<Routes>
-				<Route path="/" element={<Layout />}>
-					<Route index element={<Main />} />
-					<Route path="menu" >
-						<Route index element={<Menus />} />
-						<Route path=":id" element={<MenuDetail />} />
-						<Route path=":category" element={<MenuList />} />
-						<Route path="regist" element={<MenuRegist />} />
-						<Route path="modify" >
-							<Route path=":id" element={<MenuModify />} />
-						</Route>
-						</Route>
-					{/* <Route index element={<CustomerService />} /> */}
-						<Route path="customerservice" element={<CustomerService/>} >
-						{/* <Route path=":id" element={<BoardDetail />} />
-						<Route path="regist" element={<BoardRegist />} />
-						<Route path="modify" >
-							<Route path=":id" element={<BoardModify />} />
-						</Route> */}
-						</Route>
-					<Route path="login" element={<Login />} />
-					<Route path="/signup" element={<SignUp />} />
-
-					<Route path="user" >
-						<Route path=":id" element={<MyPage/>} />
-						<Route path="passwordcheck" >
-							<Route path=":id" element={<PasswordCheck />} />
-						</Route>
-						<Route path="signout" >
-						<Route path=":id" element={<SignOut />} />
-						</Route>
+		<Routes>
+			<Route path="/" element={<Layout />}>
+				<Route index element={<Main />} />
+				<Route path="menu" >
+					<Route index element={<Menus />} />
+					<Route path=":id" element={<MenuDetail />} />
+					<Route path="regist" element={<MenuRegist />} />
+					<Route path="modify" >
+						<Route path=":id" element={<MenuModify />} />
 					</Route>
-					<Route path="cart"  element={<Cart/>} />	
 				</Route>
-				<Route path="*" element={<Error />} />
-			</Routes>
-		</BrowserRouter>
+				{/* <Route index element={<CustomerService />} /> */}
+					<Route path="customerservice" element={<CustomerService/>} >
+					{/* <Route path=":id" element={<BoardDetail />} />
+					<Route path="regist" element={<BoardRegist />} />
+					<Route path="modify" >
+						<Route path=":id" element={<BoardModify />} />
+					</Route> */}
+				</Route>
+
+				<Route path="login" element={<Login />} />
+				<Route path="/signup" element={<SignUp />} />
+				<Route path="/searchidpw" element={<SearchIdPw/>} />
+
+				<Route path="user" >
+					<Route path=":id" element={<MyPage/>} />
+					<Route path="passwordcheck" >
+						<Route path=":id" element={<PasswordCheck />} />
+					</Route>
+					<Route path="signout" >
+					<Route path=":id" element={<SignOut />} />
+					</Route>
+				</Route>
+				<Route path="cart"  element={<Cart/>} />
+				<Route path='/contact' element={<FAQForm/>}></Route>	
+			</Route>
+			<Route path="*" element={<Error />} />
+		</Routes>
+	</BrowserRouter>
 	);
 }
 
