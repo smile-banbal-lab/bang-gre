@@ -1,16 +1,29 @@
-import React,{ useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import './Main.css';
 
 function FAQForm() {
-    //폼데이터를 state로 관리함
-    const [formData, setFormData] =useState({
-        name: '',
-        userid: '',
-        email: '',
-        phone: '',
+    const userInfo = useSelector(state => state.userReducer); 
+    // 폼 데이터를 state로 관리함
+    const [formData, setFormData] = React.useState({
+        name: userInfo.name || '',
+        userid: userInfo.userid || '',
+        email: userInfo.email || '',
+        phone: userInfo.phone || '',
         address: '',
         message: ''
     });
+
+    useEffect(() => {
+        // 사용자 정보가 업데이트되면 폼 데이터 업데이트
+        setFormData(prevFormData => ({
+            name: userInfo.name || '',
+            userid: userInfo.userid || '',
+            email: userInfo.email || '',
+            phone: userInfo.phone || ''
+        }));
+    }, [userInfo]);
+
     //입력 필드의 변화를 처리
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -22,47 +35,27 @@ function FAQForm() {
 
     // 폼 제출 처리
     const handleSubmit = async (e) => {
-        e.preventDefault(); //폼의 기본 제출 동작을 방지
-        const completeEmail = `${formData.email}@${formData.domain}`;
-        const phone = `${formData.phone1}-${formData.phone2}-${formData.phone3}`
-    
-    // POST 요청으로 데이터 전송
-    try{
-        const response = await fetch('http://localhost:4000/qna', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                name: formData.name,
-                userId: formData.userId,
-                email: completeEmail,
-                phone: phone,
-                address: formData.address,
-                message: formData.message
-            })
-
-        });
-        if(response.ok){
-            // 성공적으로 데이터가 저장되면, 폼을 초기화하거나 사용자에게 알림
-            alert('문의가 등록되었습니다.');
-            // 폼 데이터 초기화
-            setFormData({
-                name: '',
-                userId: '',
-                email: '',
-                phone1: '',
-                phone2: '',
-                phone3: '',
-                address: '',
-                message: ''
-
+        e.preventDefault();
+        const payload = {
+            id: formData.userid, // Assuming `userid` is the ID to be sent
+            message: formData.message
+        };
+        try {
+            const response = await fetch('http://localhost:4000/qna', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
             });
-        }
-    } catch (error){
-        alert('문의 등록에 실패하였습니다.');
-    }
 
+            if (response.ok) {
+                alert('문의가 등록되었습니다.');
+                setFormData({ name: '', userid: '', email: '', phone: '', address: '', message: '' });
+            }
+        } catch (error) {
+            alert('문의 등록에 실패하였습니다.');
+        }
     };
     return (
         <>          
@@ -97,7 +90,7 @@ function FAQForm() {
                     </div>
                     <div className="email">
                         <label htmlFor="email">Email</label>
-                        <div>
+                        {/* <div>
                             <input type="email" id="email" name="email" className="email1" value={formData.email} onChange={handleChange}/> @
                             <input type="emailaddress" id="emailaddress" name="emailaddress" className="email2" value={formData.emailaddress} onChange={handleChange}/>
                             <select id="domain" name="domain">
@@ -106,7 +99,7 @@ function FAQForm() {
                                 <option value="@hanmail.net">@hanmail.net</option>
                                 <option value="@hanmail.net">@gmail.com</option>
                             </select>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="phone">
                         <label htmlFor="phoneNumber">연락처</label>
@@ -128,10 +121,10 @@ function FAQForm() {
                         <textarea id="message" name="message" rows="4" cols="50"
                             placeholder="주민등록번호등의 개인정보는 절대 노출하지 마세요."></textarea>
                     </div>
-                    <div className="file">
+                    {/* <div className="file">
                         <label htmlFor="file">첨부파일</label>
                         <input type="file" id="attachment" name="attachment"/>
-                    </div>
+                    </div> */}
                     <div className="btn">
                         <button type="button" className="form-button">취소하기</button>
                         <button type="submit" className="form-button">등록하기</button>
