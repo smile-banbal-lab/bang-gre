@@ -6,9 +6,10 @@
       "phone": "123-456-7890",
       "email": "john@example.com",
       "address": "123 Main St",
-      "admin": true,
       "userid": "john123",
-      "password": "password"
+      "password": "password",
+      "isAdmin": true,
+      "username": "Johnny"
     },
     {
       "id": "user2",
@@ -16,9 +17,11 @@
       "phone": "987-654-3210",
       "email": "emily@example.com",
       "address": "456 Elm St",
-      "admin": false,
       "userid": "emily456",
-      "password": "abc123"
+      "password": "abc123",
+      "isAdmin": false,
+      "username": "EJ"
+
     },
     {
       "id": "user3",
@@ -26,9 +29,10 @@
       "phone": "555-123-4567",
       "email": "michael@example.com",
       "address": "789 Oak St",
-      "admin": false,
       "userid": "mike789",
-      "password": "pass456"
+      "password": "pass456",
+      "isAdmin": false,
+      "username": "Miams"
     },
     {
       "id": "user4",
@@ -37,7 +41,9 @@
       "email": "sarah@example.com",
       "address": "101 Pine St",
       "userid": "sarah101",
-      "password": "qwerty"
+      "password": "qwerty",
+      "isAdmin": true,
+      "username": "Sared"
     },
     {
       "id": "user5",
@@ -45,9 +51,10 @@
       "phone": "888-999-0000",
       "email": "david@example.com",
       "address": "202 Cedar St",
-      "admin": false,
       "userid": "david202",
-      "password": "secret"
+      "password": "secret",
+      "isAdmin": false,
+      "username": "DD"
     },
     {
       "id": "d51f",

@@ -3,6 +3,7 @@ import { login } from "../modules/UserModule";
 import { verify } from "../modules/UserModule";
 import { modifyUserInfo } from "../modules/UserModule";
 import { signOutUser } from "../modules/UserModule";
+import { getUserList } from "../modules/UserModule";
 
 /* 
  -> Redux-Thunk 미들 웨어를 사용하여 비동기 API 호출을 처리하고, 결과를 Redux 스토어에 반영
@@ -89,5 +90,22 @@ export function callDeleteUserAPI(signOutInfo) {
 		console.log('deleteUser result : ', result);
 
 		dispatch(signOutUser(result));
+	}
+}
+
+
+export function callGetUserListAPI() {
+
+	console.log('getUserList api calls...');
+
+	/* redux-thunk(미들 웨어)를 이용한 비동기 처리 */
+	return async (dispatch, getState) => {
+
+		/* Api의 axios 처리 참조  */
+		const result = await request('GET', '/user');
+		console.log('getUserList result : ', result);
+
+		/* action 생성 함수에 결과 전달하며 dispatch 호출 */
+		dispatch(getUserList(result));
 	}
 }
