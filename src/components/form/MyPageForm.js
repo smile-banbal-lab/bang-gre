@@ -2,12 +2,14 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { callModifyUserInfoAPI } from '../../apis/UserAPICalls';
+import './MyPageForm.css';
 
 function MyPageForm() {
 
+	const { id } = useParams();
+
 	const StoredUserInfoString = sessionStorage.getItem('userInfo');
 	const storedUserInfo = JSON.parse(StoredUserInfoString);
-	const { id } = useParams();
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 	const result = useSelector(state => state.userReducer);
@@ -54,7 +56,7 @@ function MyPageForm() {
 			/* 메뉴 수정 완료 확인 후 회원 정보로 이동 */
 			if (result.modify) {
 				alert('회원 정보 수정');
-				navigate(`/user/${id}`);
+				navigate(`/user/${storedUserInfo.id}`);
 			}
 		},
 		[result]
@@ -67,29 +69,36 @@ function MyPageForm() {
 
         return (
 		<>
-            <button onClick={toggleModify}>회원정보 수정</button><br />
-			<label>이름 : </label>
-            <br />
-			<input type="text" name="name" value={userInfo.name} onChange={onChangeHandler} readOnly={isReadOnly}/>
-			<br />
-			<label>전화 번호 : </label>
-			<input type="text" name="phone" value={userInfo.phone} onChange={onChangeHandler} readOnly={isReadOnly}/>
-			<br />
-			<label>이메일 : </label>
-			<input type="text" name="email" value={userInfo.email} onChange={onChangeHandler} readOnly={isReadOnly}/>
-			<br />
-			<label>주소 : </label>
-			<input type="text" name="address" value={userInfo.address} onChange={onChangeHandler} readOnly={isReadOnly}/>
-			<br />
-			<label>아이디 : </label>
-			<input type="text" name="userid" value={userInfo.userid} onChange={onChangeHandler} readOnly={isReadOnly}/>
-			<br />
-			<label>비밀번호 : </label>
-			<input type="text" name="password" value={userInfo.password} onChange={onChangeHandler} readOnly={isReadOnly}/>
-			<br />
-
-			<button onClick={onClickHandler}>수정</button>
+		<div className='modify-container'>
+  			<button className="modify-button" onClick={toggleModify}>회원정보 수정</button><br />
+  			<div className="form-group">
+  			  <label>이름</label>
+  			  <input className="form-input" type="text" name="name" value={userInfo.name} onChange={onChangeHandler} readOnly={isReadOnly} />
+  			</div>
+  			<div className="form-group">
+  			  <label>전화 번호</label>
+  			  <input className="form-input" type="text" name="phone" value={userInfo.phone} onChange={onChangeHandler} readOnly={isReadOnly} />
+  			</div>
+  			<div className="form-group">
+  			  <label>이메일</label>
+  			  <input className="form-input" type="text" name="email" value={userInfo.email} onChange={onChangeHandler} readOnly={isReadOnly} />
+  			</div>
+  			<div className="form-group">
+  			  <label>주소</label>
+  			  <input className="form-input" type="text" name="address" value={userInfo.address} onChange={onChangeHandler} readOnly={isReadOnly} />
+  			</div>
+  			<div className="form-group">
+  			  <label>아이디</label>
+  			  <input className="form-input" type="text" name="userid" value={userInfo.userid} onChange={onChangeHandler} readOnly={isReadOnly} />
+  			</div>
+  			<div className="form-group">
+  			  <label>비밀번호</label>
+  			  <input className="form-input" type="text" name="password" value={userInfo.password} onChange={onChangeHandler} readOnly={isReadOnly} />
+  			</div>
+  			<button className="submit-button" onClick={onClickHandler}>수정</button>
+		</div>
 		</>
+
     	)
     }
 
