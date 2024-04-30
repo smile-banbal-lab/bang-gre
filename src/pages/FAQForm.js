@@ -90,7 +90,7 @@ function FAQForm() {
                     </div>
                     <div className="email">
                         <label htmlFor="email">Email</label>
-                        <div>
+                        {/* <div>
                             <input type="email" id="email" name="email" className="email1" value={formData.email} onChange={handleChange}/> @
                             <input type="emailaddress" id="emailaddress" name="emailaddress" className="email2" value={formData.emailaddress} onChange={handleChange}/>
                             <select id="domain" name="domain">
@@ -99,7 +99,7 @@ function FAQForm() {
                                 <option value="@hanmail.net">@hanmail.net</option>
                                 <option value="@hanmail.net">@gmail.com</option>
                             </select>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="phone">
                         <label htmlFor="phoneNumber">연락처</label>
