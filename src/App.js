@@ -16,7 +16,7 @@ import SearchIdPw from './pages/SearchIdPw';
 import FAQForm from './pages/FAQForm';
 import "./App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Service from './pages/Service';
+import Voc from './pages/Voc';
 
 /* 추가 설치해야 하는 패키지 목록
  * react-router-dom
@@ -65,6 +65,7 @@ function App() {
 				</Route>
 				<Route path="cart"  element={<Cart/>} />
 				<Route path='contact' element={<FAQForm/>}/>
+				<Route path='voc' element={<Voc/>}/>
 			</Route>
 			<Route path="*" element={<Error />} />
 		</Routes>

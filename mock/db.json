@@ -1344,7 +1344,7 @@
   ],
   "qna": [
     {
-      "id": 1,
+      "id": "1",
       "title": "첫 번째 게시글",
       "date": "2024-04-15",
       "content": "첫 번째 게시글 내용입니다.",
@@ -1353,7 +1353,7 @@
       "type": "일반"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "첫 번째 게시글",
       "date": "2024-04-15",
       "content": "두 번째 게시글 내용입니다.",
@@ -1362,7 +1362,7 @@
       "type": "일반"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "첫 번째 게시글",
       "date": "2024-04-15",
       "content": "첫 번째 게시글 내용입니다.",
@@ -1371,7 +1371,7 @@
       "type": "일반"
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "첫 번째 게시글",
       "date": "2024-04-15",
       "content": "첫 번째 게시글 내용입니다.",
@@ -1380,7 +1380,7 @@
       "type": "일반"
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "첫 번째 게시글",
       "date": "2024-04-15",
       "content": "첫 번째 게시글 내용입니다.",
@@ -1389,7 +1389,7 @@
       "type": "일반"
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "첫 번째 게시글",
       "date": "2024-04-15",
       "content": "첫 번째 게시글 내용입니다.",
@@ -1398,7 +1398,7 @@
       "type": "일반"
     },
     {
-      "id": 7,
+      "id": "7",
       "title": "첫 번째 게시글",
       "date": "2024-04-15",
       "content": "첫 번째 게시글 내용입니다.",
@@ -1407,7 +1407,7 @@
       "type": "일반"
     },
     {
-      "id": 8,
+      "id": "8",
       "title": "첫 번째 게시글",
       "date": "2024-04-15",
       "content": "첫 번째 게시글 내용입니다.",
@@ -1416,7 +1416,7 @@
       "type": "일반"
     },
     {
-      "id": 9,
+      "id": "9",
       "title": "첫 번째 게시글",
       "date": "2024-04-15",
       "content": "첫 번째 게시글 내용입니다.",
@@ -1425,13 +1425,56 @@
       "type": "일반"
     },
     {
-      "id": 10,
+      "id": "10",
       "title": "첫 번째 게시글",
       "date": "2024-04-15",
       "content": "첫 번째 게시글 내용입니다.",
       "user_id": 10,
       "photo": "https://example.com/photo1.jpg",
       "type": "일반"
+    },
+    {
+      "id": "f383",
+      "name": "yoon",
+      "email": "yoon@kakao.com@undefined",
+      "phone": "010-1111-2222",
+      "address": "서울시 강남구",
+      "message": ""
+    },
+    {
+      "id": "1fc9",
+      "name": "윤경주",
+      "email": "ykj2002@naver.com@undefined",
+      "phone": "010-1122-2244",
+      "address": "경기도 고양시",
+      "message": ""
+    },
+    {
+      "id": "0bb3",
+      "name": "하영",
+      "email": "hihi222@kakao.com@undefined",
+      "phone": "010-1111-7777",
+      "address": "서울 성동구",
+      "message": ""
+    },
+    {
+      "id": "0b14",
+      "name": "박장군",
+      "userid": "parkbill",
+      "email": "generalpark@gmail.com",
+      "phone": "",
+      "address": "한양",
+      "message": "",
+      "phone1": "01000000"
+    },
+    {
+      "id": "2502",
+      "name": "김카카오",
+      "userid": "kakao123",
+      "email": "kakao123@kakao.com",
+      "phone": "01099001255",
+      "phone1": "01011111111",
+      "address": "thnwebnwldkf"
     }
   ]
 }
