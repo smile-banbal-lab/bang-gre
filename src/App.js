@@ -13,10 +13,10 @@ import SignUp from './pages/SignUp';
 import Cart from './pages/Cart';
 import SignOut from './pages/SignOut';
 import SearchIdPw from './pages/SearchIdPw';
-import FAQForm from './pages/Noticecontact';
+import FAQForm from './pages/Contact';
 import "./App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import CustomerService from './pages/CustomerService';
+import Service from './pages/Service';
 import MenuList from './components/lists/MenuList';
 
 /* 추가 설치해야 하는 패키지 목록
@@ -44,13 +44,12 @@ function App() {
 					</Route>
 				</Route>
 				{/* <Route index element={<CustomerService />} /> */}
-					<Route path="customerservice" element={<CustomerService/>} >
+					{/* <Route path="service" element={<CustomerService/>} > */}
 					{/* <Route path=":id" element={<BoardDetail />} />
 					<Route path="regist" element={<BoardRegist />} />
 					<Route path="modify" >
 						<Route path=":id" element={<BoardModify />} />
 					</Route> */}
-				</Route>
 
 				<Route path="login" element={<Login />} />
 				<Route path="/signup" element={<SignUp />} />
@@ -66,7 +65,10 @@ function App() {
 					</Route>
 				</Route>
 				<Route path="cart"  element={<Cart/>} />
-				<Route path='/contact' element={<FAQForm/>}></Route>	
+				<Route path='service' element={<Service/>}>
+					<Route path='contact' element={<FAQForm/>}/>
+					
+				</Route>	
 			</Route>
 			<Route path="*" element={<Error />} />
 		</Routes>
