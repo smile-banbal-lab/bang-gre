@@ -2,12 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import MenuItem from '../items/MenuItem';
 import { callGetMenuListAPI } from "../../apis/MenuAPICalls";
-import { useLocation } from 'react-router-dom';
 import "../commons/Commons.css"
 
 
 function MenuList( { categoryType } ) {
-    const location = useLocation();
 
     const [searchInput, setSearchInput] = useState('');
     const [selectedCategories, setSelectedCategories] = useState([categoryType]);

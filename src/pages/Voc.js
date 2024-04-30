@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect,useState } from 'react';
 import { callGetqnaListAPI } from '../apis/QnaAPICalls';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -7,20 +7,21 @@ import CommonTableColumn from '../components/table/CommonTableColumn';
 import CommonTableRow from '../components/table/CommonTableRow';
 
 function Voc() {
-    const { qna } = useSelector(state => state.menuReducer); // useSelector에서 바로 필요한 qna만 가져오도록 수정
+    const result = useSelector(state => state.qnaReducer);
+    const qnaList = result.qnalist;
     const dispatch = useDispatch();
     
 
     useEffect(() => {
-        /* menuList 호출 API */
-        dispatch(callGetqnaListAPI()); // API 호출 시 필요한 매개변수(id)가 빠졌습니다.
+        /* qnaList 호출 API */
+        dispatch(callGetqnaListAPI());
     }, [dispatch]);
 
-    if (!qna) {
+    if (!qnaList) {
         return <div>Loading...</div>;
     }
 
-    const items = Object.values(qna).map((item) => (
+    const items = Object.values(qnaList).map((item) => (
         <CommonTableRow key={item.id}>
             <CommonTableColumn>{item.id}</CommonTableColumn>
             <CommonTableColumn>{item.title}</CommonTableColumn>

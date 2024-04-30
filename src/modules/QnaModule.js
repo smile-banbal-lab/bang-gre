@@ -1,7 +1,8 @@
 import { createActions, handleActions } from "redux-actions";
 
 /* 초기 state값 */
-const initialState = {};
+const initialState = {
+};
 
 /* Action Types (qna) */						// 타입 별 생성되는 액션 함수 이름(LARGE_SNAKE_CASE -> camelCase)
 const GET_QNALIST = 'qna/GET_QNALIST';		// -> getQnalist()

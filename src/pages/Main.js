@@ -4,13 +4,10 @@ import { useNavigate } from 'react-router-dom'; // useNavigate 가져오기
 import "../../src/components/lists/MenuList"
 import "./Main.css";
 import { useDispatch, useSelector } from "react-redux"; // useSelector, useDispatch 추가
-import { callGetMenuListAPI } from "../apis/MenuAPICalls"; // API 호출 함수 추가
 
 
 function Main() {
     const navigate = useNavigate(); // useNavigate 사용
-    const dispatch = useDispatch(); // useDispatch 사용
-
      // 메뉴 목록을 Redux Store에서 가져옴
 
     const handleSearchClick = (keyWord) => {
@@ -21,12 +18,7 @@ function Main() {
     // 이미지 클릭 핸들러
     const handleCategoryClick = (categoryType) => {
         // 선택한 카테고리를 Redux Store에 업데이트
-        // dispatch(callGetMenuListAPI(categoryType)); // 선택한 카테고리를 기반으로 API 호출하여 메뉴 목록 가져옴
-        // console.log('카테고리 타입',categoryType)
-        // MenuList 페이지로 이동하면서 선택한 카테고리를 쿼리 파라미터로 전달
-        // navigate(`/menu?category=${categoryType}`);
         navigate('/menu', { state: { categoryType: categoryType } });
-        // console.log(`/menu?category=${categoryType}`);
     }
 
 
