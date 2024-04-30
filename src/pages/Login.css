@@ -26,6 +26,9 @@
     text-align: center;      /* 텍스트 중앙 정렬 */
 }
 
+#section01{
+    margin-top: 100px;
+}
 
 #section01 h1 {
     color: white;

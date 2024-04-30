@@ -7,8 +7,8 @@ function MenuItem({ menu, categoryType }) {
 	// const categoryType = menu.category ? menu.category.type : '';
 
 	const addToCartHandler = () =>{
-		dispatch(addToCart(menu)); 
-		// console.log('menu 확인', menu)
+		alert("장바구니 넣기 성공, 수량 변경은 나의 장바구니에서 부탁드립니다!");
+		// dispatch(addToCart(menu)); 
 	};
 
 	return (

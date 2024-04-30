@@ -11,7 +11,7 @@ import { createActions, handleActions } from "redux-actions";
 /* 초기 state값: 빈 객체로 설정되어있음. 이 상태는 리듀서의 기본값으로 사용됨 */
 const initialState = {};
 
-/* 액션 타입: Action Types (User) */									// 타입 별 생성되는 액션 함수 이름(LARGE_SNAKE_CASE -> camelCase)
+/* 액션 타입: Action Types (User) */				// 타입 별 생성되는 액션 함수 이름(LARGE_SNAKE_CASE -> camelCase)
 export const LOGIN = 'user/LOGIN';							// -> login()
 export const RESET_LOGIN_USER = 'user/RESET_LOGIN_USER';	// -> resetLoginUser()
 export const VERIFY = 'user/VERIFY';
