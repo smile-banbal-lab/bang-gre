@@ -31,7 +31,7 @@ function CustomeNavbar() {
 					<Navbar.Brand as={NavLink} to='/'>BANG-GRE</Navbar.Brand>
 					<Nav className="me-auto">
 						<Nav.Link as={NavLink} to='/'>Home</Nav.Link>
-						<Nav.Link as={NavLink} to='/menu'>Features</Nav.Link>
+						<Nav.Link as={NavLink} to='/menu'>PRODUCT</Nav.Link>
 						<Nav.Link as={NavLink} to='/'>QnA</Nav.Link>
 					</Nav>
 					{!isAuthorized ? (
