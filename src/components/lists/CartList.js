@@ -41,6 +41,7 @@ function CartList() {
     const cartList = cartResult.cartlist;
     const menuList = menuResult.menulist
 	console.log('장바구니 리스트: ', cartList);
+    console.log('장바구니 리스트 길이: ', cartList.length);
     console.log('메뉴 리스트 : ', menuList);
     const dispatch = useDispatch();
 
@@ -70,7 +71,7 @@ function CartList() {
                 </div>
 
 
-                <div className="cartBox">
+                <div className="menuBox">
                     {/* Menu 목록을 표시합니다. */}
                     {/* {cartList && cartList.map(cart => (
                         <MenuItem key={cart.id} menu={cart}/>
