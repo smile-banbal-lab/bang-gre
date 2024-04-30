@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { callDeleteUserAPI } from '../apis/UserAPICalls';
 import { resetLoginUser } from "../modules/UserModule";
+import './SignOut.css';
 
 function SignOut () {
 
@@ -16,6 +17,10 @@ function SignOut () {
             password: ''
         }
     );
+
+    const userString = sessionStorage.getItem('userInfo');
+	const user = JSON.parse(userString);
+    
     const result = useSelector(state => state.userReducer);
 
     const verifyStatus = !!sessionStorage.getItem('isVerify');
@@ -54,21 +59,26 @@ function SignOut () {
 
 
     return (
-        
-				<>
-           			<ul>
-				        <li><NavLink to={`/user/${id}`}>회원정보 조회 & 수정</NavLink></li>
-				        <li><NavLink to={`/user/orderhistory/${id}`}>주문내역 조회</NavLink></li>
-				        <li><NavLink to={`/user/signout/${id}`}>회원탈퇴</NavLink></li>
-		        	</ul>
-                    <h1>회원탈퇴를 하시려면 아이디와 비밀번호를 다시 입력해 주세요</h1>
-                    <label>아이디 : </label>
-                    <input name='userid' value={signOutInfo.userid} onChange={onChangeHandler}></input>
-                    <label>비밀번호 : </label>
-                    <input name='password' value={signOutInfo.password} onChange={onChangeHandler}></input>
-                    <button onClick={onClickHandler}>회원탈퇴</button>
-				</>
-	);
+        <div className="signout-container">
+        <ul>
+            <li><NavLink to={`/user/${id}`}>회원정보 조회 & 수정</NavLink></li>
+            <li><NavLink to={`/user/signout/${id}`}>회원탈퇴</NavLink></li>
+            {user && user.isAdmin && ( 
+                <li><NavLink to={`/user/list`}>유저 목록 조회</NavLink></li>
+			)}
+        </ul>
+        <h1>회원탈퇴를 하시려면 아이디와 비밀번호를 다시 입력해 주세요</h1>
+        <div className="form-group">
+            <label>아이디 : </label>
+            <input className='form-input' name='userid' value={signOutInfo.userid} onChange={onChangeHandler}></input>
+        </div>
+        <div className="form-group">
+            <label>비밀번호 : </label>
+            <input className='form-input' name='password' value={signOutInfo.password} onChange={onChangeHandler}></input>
+        </div>
+        <button className="submit-button" onClick={onClickHandler}>회원탈퇴</button>
+    </div>
+);
 
 }
 

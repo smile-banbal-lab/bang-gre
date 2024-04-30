@@ -6,6 +6,9 @@ import './PasswordVerifyForm.css';
 
 function PasswordVerifyForm() {
 
+    const userString = sessionStorage.getItem('userInfo');
+	const user = JSON.parse(userString);
+
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [password, setPassword] = useState('');
@@ -25,7 +28,7 @@ function PasswordVerifyForm() {
 				setPassword('');
 				
 			} else if (isVerify) {
-				navigate(`/user/${result.id}`);
+				navigate(`/user/${user.id}`);
 			}
 		}, // eslint-disable-next-line
 		[result, isVerify, navigate, dispatch]
@@ -36,12 +39,12 @@ function PasswordVerifyForm() {
         <div className="check-container">
             <div className="check-form-container">
                 <h1>비밀번호를 다시 한번 확인해 주세요</h1>
-                <label>비밀번호: </label>
-                <input type="password" name="password" value={password} onChange={(e) => {setPassword(e.target.value)}}></input>
-            <div className="button-container">
-                <button onClick={onClickHandler}>확인</button>
-                <button onClick={() => navigate('/')}>취소</button>
-            </div>
+                    <label>비밀번호: </label>
+                    <input type="password" name="password" value={password} onChange={(e) => {setPassword(e.target.value)}}></input>
+                <div className="button-container">
+                    <button onClick={onClickHandler}>확인</button>
+                    <button onClick={() => navigate('/')}>취소</button>
+                </div>
             </div>
         </div>
         </>

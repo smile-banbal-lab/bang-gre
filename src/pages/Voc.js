@@ -35,9 +35,6 @@ function Voc() {
 		</CommonTableRow>
 	));
 
-	const inputBoardHandler = () => {
-
-	}
 
 	return (
 		<>

@@ -6,9 +6,10 @@
       "phone": "123-456-7890",
       "email": "john@example.com",
       "address": "123 Main St",
-      "admin": true,
       "userid": "john123",
-      "password": "password"
+      "password": "password",
+      "isAdmin": true,
+      "username": "Johnny"
     },
     {
       "id": "user2",
@@ -16,9 +17,11 @@
       "phone": "987-654-3210",
       "email": "emily@example.com",
       "address": "456 Elm St",
-      "admin": false,
       "userid": "emily456",
-      "password": "abc123"
+      "password": "abc123",
+      "isAdmin": false,
+      "username": "EJ"
+
     },
     {
       "id": "user3",
@@ -26,9 +29,10 @@
       "phone": "555-123-4567",
       "email": "michael@example.com",
       "address": "789 Oak St",
-      "admin": false,
       "userid": "mike789",
-      "password": "pass456"
+      "password": "pass456",
+      "isAdmin": false,
+      "username": "Miams"
     },
     {
       "id": "user4",
@@ -37,7 +41,9 @@
       "email": "sarah@example.com",
       "address": "101 Pine St",
       "userid": "sarah101",
-      "password": "qwerty"
+      "password": "qwerty",
+      "isAdmin": true,
+      "username": "Sared"
     },
     {
       "id": "user5",
@@ -45,9 +51,10 @@
       "phone": "888-999-0000",
       "email": "david@example.com",
       "address": "202 Cedar St",
-      "admin": false,
       "userid": "david202",
-      "password": "secret"
+      "password": "secret",
+      "isAdmin": false,
+      "username": "DD"
     },
     {
       "id": "d51f",
@@ -95,14 +102,12 @@
     },
     {
       "id": "a3fc",
-      "userid": "kakao123",
-      "name": "김카카오",
-      "username": "카카오김",
-      "password": "1234",
-      "address": "아프리카",
-      "email": "kakao123@kakao.com",
+      "name": "장카카",
       "phone": "01099001255",
-      "isAdmin": false
+      "email": "kakao123@kakao.com",
+      "address": "아프리카",
+      "userid": "kakao123",
+      "password": "1234"
     }
   ],
   "item": [
@@ -1461,6 +1466,61 @@
       "email": "example@example.com",
       "phone": "01010101010",
       "address": "강원"
+    },
+    {
+      "id": "3144",
+      "name": "Sarah Red",
+      "userid": "sarah101",
+      "email": "sarah@example.com",
+      "phone": "333-555-7777",
+      "title": "추가테스트입니다",
+      "content": "추가 테스트 내용입니다."
+    },
+    {
+      "id": "b551",
+      "name": "Sarah Red",
+      "userid": "sarah101",
+      "email": "sarah@example.com",
+      "phone": "333-555-7777",
+      "title": "경주테스트",
+      "content": "경주테스트",
+      "date": "2024-04-30"
+    },
+    {
+      "id": "13",
+      "name": "Sarah Red",
+      "userid": "sarah101",
+      "email": "sarah@example.com",
+      "phone": "333-555-7777",
+      "address": "",
+      "message": "",
+      "title": "번호 순서대로 테스트",
+      "content": "번호 순서대로 내용",
+      "date": "2024-04-30"
+    },
+    {
+      "id": "14",
+      "name": "커피",
+      "userid": "coffee",
+      "email": "etiopea@gmail.com",
+      "phone": "01013141155",
+      "address": "",
+      "message": "",
+      "title": "제목 테스트 중입니다 ",
+      "content": "내용 테스트 중 입니다.",
+      "date": "2024-04-30"
+    },
+    {
+      "id": "15",
+      "name": "박장군",
+      "userid": "parkbill",
+      "email": "generalpark@gmail.com",
+      "phone": "01022294421",
+      "address": "",
+      "message": "",
+      "title": "테느스",
+      "content": "테스트",
+      "date": "2024-04-30"
     }
   ]
 }

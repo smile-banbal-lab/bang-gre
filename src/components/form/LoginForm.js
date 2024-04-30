@@ -122,7 +122,7 @@ function LoginForm() {
             <div className="input-group">
                 <label>PW:</label>
                 <input
-                    type="password"
+                    type="text"
                     name="password"
                     value={loginInfo.password}
                     onChange={onChangeHandler}
