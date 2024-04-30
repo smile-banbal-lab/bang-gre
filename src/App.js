@@ -10,7 +10,7 @@ import PasswordCheck from './pages/PasswordCheck';
 import MyPage from './pages/MyPage';
 import Error from './pages/Error';
 import SignUp from './pages/SignUp';
-import Cart from './pages/Cart';
+import Cart from './pages/Carts';
 import SignOut from './pages/SignOut';
 import SearchIdPw from './pages/SearchIdPw';
 import FAQForm from './pages/FAQForm';

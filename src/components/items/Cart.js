@@ -1,5 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import CartList from '../lists/CartList';
+
 
 function CartPage() {
     const cartItems = useSelector(state => state.cartReducer.cartItems);
@@ -8,11 +10,11 @@ function CartPage() {
         <div>
         <h2>장바구니</h2>
         <ul>
-            {cartItems.map(item => (
+            {cartItems && cartItems.map(item => (
             <li key={item.id}>
                 <div>
                 <span>{item.name}</span>
-                <span>{item.price}원</span>
+                {/* <span>{item.price}원</span> */}
                 <span>수량: {item.quantity}</span>
                 </div>
                 <div>
