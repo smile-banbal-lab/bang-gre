@@ -72,6 +72,19 @@
 }
 /* ———— Navbar————— */
 
+/* ———— Footer————— */
+#footer-page {
+
+}
+
+#footer-page card-header{
+    background-color: aquamarine;
+}
+
+#footer-text{
+    width: 80%;
+    margin: auto;
+}
 
 
 /* ———————— 반응형 ———————— */
