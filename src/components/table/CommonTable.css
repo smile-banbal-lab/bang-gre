@@ -2,7 +2,11 @@
     width: 80%;
     margin: 0 auto;
     text-align: center;
+<<<<<<< HEAD
     border-spacing: 0;
+=======
+    border: 1px solid black;
+>>>>>>> bang_gre/master
 }
 
 .common-table-header-column {
@@ -20,4 +24,28 @@
 
 .common-table-column {
     padding: 10px 5px;
+<<<<<<< HEAD
+=======
+}
+/* 'Voc-page' */
+#Voc-page{
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#Voc-page h2{
+    text-align: center;
+    margin-bottom: 50px;
+}
+#Voc-page button{
+    width: 80%;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+#Voc-page button:hover{
+    transition-duration: .5s;
+    background-color:  rgb(0, 125, 243);
+>>>>>>> bang_gre/master
 }
