@@ -6,24 +6,6 @@ const CommonTable = props => {
 
     return (
         <table className="common-table">
-<<<<<<< HEAD
-        <thead>
-            <tr>
-            {
-                headersName.map((item, index) => {
-                return (
-                    <td className="common-table-header-column" key={index}>{ item }</td>
-                )
-                })
-            }
-            </tr>
-        </thead>
-        <tbody>
-            {
-            children
-            }
-        </tbody>
-=======
             <thead>
                 <tr>
                     {
@@ -40,7 +22,6 @@ const CommonTable = props => {
                 children
                 }
             </tbody>
->>>>>>> bang_gre/master
         </table>
     )
 }

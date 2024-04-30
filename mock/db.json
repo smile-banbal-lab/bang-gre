@@ -1348,7 +1348,7 @@
       "title": "첫 번째 게시글",
       "date": "2024-04-15",
       "content": "첫 번째 게시글 내용입니다.",
-      "user_id": "john123",
+      "user_id": 1,
       "photo": "https://example.com/photo1.jpg",
       "type": "일반"
     },
@@ -1357,7 +1357,7 @@
       "title": "첫 번째 게시글",
       "date": "2024-04-15",
       "content": "두 번째 게시글 내용입니다.",
-      "user_id": "emily456",
+      "user_id": 2,
       "photo": "https://example.com/photo1.jpg",
       "type": "일반"
     },
@@ -1366,7 +1366,7 @@
       "title": "첫 번째 게시글",
       "date": "2024-04-15",
       "content": "첫 번째 게시글 내용입니다.",
-      "user_id": "mike789",
+      "user_id": 3,
       "photo": "https://example.com/photo1.jpg",
       "type": "일반"
     },
@@ -1375,7 +1375,7 @@
       "title": "첫 번째 게시글",
       "date": "2024-04-15",
       "content": "첫 번째 게시글 내용입니다.",
-      "user_id": "sarah101",
+      "user_id": 4,
       "photo": "https://example.com/photo1.jpg",
       "type": "일반"
     },
@@ -1384,7 +1384,7 @@
       "title": "첫 번째 게시글",
       "date": "2024-04-15",
       "content": "첫 번째 게시글 내용입니다.",
-      "user_id": "david202",
+      "user_id": 5,
       "photo": "https://example.com/photo1.jpg",
       "type": "일반"
     },
@@ -1393,7 +1393,7 @@
       "title": "첫 번째 게시글",
       "date": "2024-04-15",
       "content": "첫 번째 게시글 내용입니다.",
-      "user_id": "parkbill",
+      "user_id": 6,
       "photo": "https://example.com/photo1.jpg",
       "type": "일반"
     },
@@ -1402,7 +1402,7 @@
       "title": "첫 번째 게시글",
       "date": "2024-04-15",
       "content": "첫 번째 게시글 내용입니다.",
-      "user_id": "joojoo",
+      "user_id": 7,
       "photo": "https://example.com/photo1.jpg",
       "type": "일반"
     },
@@ -1411,7 +1411,7 @@
       "title": "첫 번째 게시글",
       "date": "2024-04-15",
       "content": "첫 번째 게시글 내용입니다.",
-      "user_id": "myid",
+      "user_id": 8,
       "photo": "https://example.com/photo1.jpg",
       "type": "일반"
     },
@@ -1420,7 +1420,7 @@
       "title": "첫 번째 게시글",
       "date": "2024-04-15",
       "content": "첫 번째 게시글 내용입니다.",
-      "user_id": "kakao123",
+      "user_id": 9,
       "photo": "https://example.com/photo1.jpg",
       "type": "일반"
     },
@@ -1475,6 +1475,15 @@
       "phone": "01099001255",
       "phone1": "01011111111",
       "address": "thnwebnwldkf"
+    },
+    {
+      "id": "4ce8",
+      "name": "커피",
+      "userid": "coffee",
+      "email": "etiopea@gmail.com",
+      "phone": "01013141155",
+      "phone1": "01011111111",
+      "address": "성남"
     }
   ]
 }
