@@ -15,7 +15,9 @@ function Menus() {
 
 	return (
 		<div id="Menus"> 
-			<h2>메뉴 목록 {(isAuthorized) && <button onClick={() => navigate(`/menu/regist`)}>메뉴 추가</button>} </h2>
+			<h2>메뉴 목록 {(isAuthorized) && 
+                <button id="Menus-regist" onClick={() => navigate(`/menu/regist`)}>메뉴 추가</button>} 
+            </h2>
 			<MenuList categoryType={categoryType}/>
 		</div>
 	);

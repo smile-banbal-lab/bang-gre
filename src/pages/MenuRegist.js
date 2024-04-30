@@ -1,6 +1,7 @@
 
 import { Navigate } from 'react-router-dom';
 import MenuRegistForm from '../components/form/MenuRegistForm';
+import './Menus.css';
 
 function MenuRegist() {
 
@@ -12,10 +13,10 @@ function MenuRegist() {
 	}
 
 	return (
-		<>
-			<h1>메뉴 등록 페이지</h1>
+		<div id='Menus-regist-page'>
+			<h2 >메뉴 등록 페이지</h2>
 			<MenuRegistForm />
-		</>
+		</div>
 	);
 }
 

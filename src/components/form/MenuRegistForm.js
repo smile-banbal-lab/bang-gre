@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { callRegistMenuAPI } from '../../apis/MenuAPICalls';
 import { callGetMenuListAPI } from "../../apis/MenuAPICalls";
 
+
 function MenuRegistForm() {
 
 	const result = useSelector(state => state.menuReducer);

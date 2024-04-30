@@ -117,7 +117,7 @@ function MenuList( { categoryType } ) {
                             id="category-search-input"
                         />
                         <br/>
-                        <button onClick={handleSearch} id="category-search-button">SEARCH</button>
+                        <button  onClick={handleSearch} id="category-search-button">SEARCH</button>
                     </div>
                 </div>
 

@@ -105,7 +105,7 @@ function MenuModifyForm() {
 
 	return (
 		<>
-			<h1>{id}번 메뉴 수정</h1>
+			<h2 style={{color:'rgb(0, 125, 243)',marginTop:50, fontWeight:'bold'}}>{id}번 메뉴 수정</h2>
 			<label>메뉴 이름 : </label>
 			<input type="text" name="name" value={modifyMenu.name} onChange={onChangeHandler} />
 			<br />
