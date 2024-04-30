@@ -39,7 +39,8 @@ const userReducer = handleActions(
 		[LOGIN]: (state, { payload: { res } }) => {
 
 			if (res) {
-				/* localStorage에 로그인 상태 저장 */
+				
+				sessionStorage.setItem("userInfo", JSON.stringify(res));
 				sessionStorage.setItem("isLogin", true);	// localStorage가 무엇인지는 검색해서 (가볍게)공부해보세요
 			} else {
 				res = { message: 'LOGIN_FAIL' };
