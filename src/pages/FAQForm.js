@@ -130,17 +130,6 @@ function FAQForm() {
 
 				</div>
 			</form>
-
-			<footer id="footer">
-				<div className="text">
-				<ul>
-					<li>회사명:빙그레</li>
-					<li>경기도 남양주시 다산동 4344-3 / 경기도 남양주시 다산순환로 45(다산동)</li>
-					<li>ⓒ Binggrae all rights reserved.</li>
-				</ul>
-				</div>
-			</footer>
-
 		</>
 		
 	);
