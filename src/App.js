@@ -13,11 +13,10 @@ import SignUp from './pages/SignUp';
 import Cart from './pages/Cart';
 import SignOut from './pages/SignOut';
 import SearchIdPw from './pages/SearchIdPw';
-import FAQForm from './pages/Contact';
+import FAQForm from './pages/FAQForm';
 import "./App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Service from './pages/Service';
-import MenuList from './components/lists/MenuList';
 
 /* 추가 설치해야 하는 패키지 목록
  * react-router-dom
@@ -65,10 +64,7 @@ function App() {
 					</Route>
 				</Route>
 				<Route path="cart"  element={<Cart/>} />
-				<Route path='service' element={<Service/>}>
-					<Route path='contact' element={<FAQForm/>}/>
-					
-				</Route>	
+				<Route path='contact' element={<FAQForm/>}/>
 			</Route>
 			<Route path="*" element={<Error />} />
 		</Routes>

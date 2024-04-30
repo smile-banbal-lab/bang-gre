@@ -32,7 +32,7 @@ function CustomeNavbar() {
 					<Nav className="me-auto">
 						<Nav.Link as={NavLink} to='/'>HOME</Nav.Link>
 						<Nav.Link as={NavLink} to='/menu'>PRODUCT</Nav.Link>
-						<Nav.Link as={NavLink} to='/service'>FAQ</Nav.Link>
+						<Nav.Link as={NavLink} to='/contact'>FAQ</Nav.Link>
 					</Nav>
 					{!isAuthorized ? (
 						<Nav.Link as={NavLink} to='/login'>LOGIN</Nav.Link>

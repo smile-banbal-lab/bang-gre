@@ -1,71 +1,9 @@
-import React,{ useState } from 'react';
+import React from 'react';
 import './Main.css';
 
 function FAQForm() {
-    //폼데이터를 state로 관리함
-    const [formData, setFormData] =useState({
-        name: '',
-        userid: '',
-        email: '',
-        phone: '',
-        address: '',
-        message: ''
-    });
-    //입력 필드의 변화를 처리
-    const handleChange = (e) => {
-        const { name, value } = e.targe;
-        setFormData(prev => ({
-            ...prev,
-            [name]:value
-        }));
-    };
-
-    // 폼 제출 처리
-    const handleSubmit = async (e) => {
-        e.preventDefault(); //폼의 기본 제출 동작을 방지
-        const completeEmail = `${formData.email}@${formData.domain}`;
-        const phone = `${formData.phone1}-${formData.phone2}-${formData.phone3}`
-    
-    // POST 요청으로 데이터 전송
-    try{
-        const response = await fetch('http://localhost:4000/qna', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                name: formData.name,
-                userId: formData.userId,
-                email: completeEmail,
-                phone: phone,
-                address: formData.address,
-                message: formData.message
-            })
-
-        });
-        if(response.ok){
-            // 성공적으로 데이터가 저장되면, 폼을 초기화하거나 사용자에게 알림
-            alert('문의가 등록되었습니다.');
-            // 폼 데이터 초기화
-            setFormData({
-                name: '',
-                userId: '',
-                email: '',
-                phone1: '',
-                phone2: '',
-                phone3: '',
-                address: '',
-                message: ''
-
-            });
-        }
-    } catch (error){
-        alert('문의 등록에 실패하였습니다.');
-    }
-
-    };
     return (
-        <>          
+        <>
             <div className="header">
                 <ul>
                     <h2>FAQ</h2>
@@ -84,22 +22,21 @@ function FAQForm() {
                     
                 </ul>
             </div>
-
-            <form onSubmit={handleSubmit} className="form">
+            <form action="/submit_form" method="post" className="form">
                 <div>
                     <div>
                         <label htmlFor="name">이름</label>
-                        <input type="text" id="name" name="name" value={formData.name} onChange={handleChange}/>
+                        <input type="text" id="name" name="name"/>
                     </div>
                     <div>
                         <label htmlFor="userId">사용자아이디</label>
-                        <input type="text" id="userid" name="userid" value={formData.userid} onChange={handleChange}/>
+                        <input type="text" id="userId" name="userId"/>
                     </div>
                     <div className="email">
                         <label htmlFor="email">Email</label>
                         <div>
-                            <input type="email" id="email" name="email" className="email1" value={formData.email} onChange={handleChange}/> @
-                            <input type="emailaddress" id="emailaddress" name="emailaddress" className="email2" value={formData.emailaddress} onChange={handleChange}/>
+                            <input type="email" id="email" name="email" className="email1"/> @
+                            <input type="emailaddress" id="emailaddress" name="emailaddress" className="email2"/>
                             <select id="domain" name="domain">
                                 <option value="@gmail.com">@gmail.com</option>
                                 <option value="@naver.com">@naver.com</option>
@@ -111,17 +48,17 @@ function FAQForm() {
                     <div className="phone">
                         <label htmlFor="phoneNumber">연락처</label>
                         <div>
-                            <input type="text" id="phone1" name="phone1" className="email2" value={formData.phone1} onChange={handleChange}/>
+                            <input type="text" id="phone1" name="phone1"/>
                             <span>-</span>
-                            <input type="text" id="phone2" name="phone2" value={formData.phone2} onChange={handleChange}/>
+                            <input type="text" id="phone2" name="phone2"/>
                             <span>-</span>
-                            <input type="text" id="phone3" name="phone3" value={formData.phone3} onChange={handleChange}/>
+                            <input type="text" id="phone3" name="phone3"/>
                         </div>
                     </div>
 
                     <div className="address">
                         <label htmlFor="address">주소</label>
-                        <input type="text" id="address" name="address" value={formData.address} onChange={handleChange}/>
+                        <input type="text" id="address" name="address"/>
                     </div>
                     <div className="message">
                         <label htmlFor="message">내용</label>
@@ -149,11 +86,8 @@ function FAQForm() {
                 </ul>
                 </div>
             </footer>
-
         </>
-        
     );
 }
 
 export default FAQForm;
-
