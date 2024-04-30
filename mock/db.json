@@ -102,14 +102,12 @@
     },
     {
       "id": "a3fc",
-      "userid": "kakao123",
-      "name": "김카카오",
-      "username": "카카오김",
-      "password": "1234",
-      "address": "아프리카",
-      "email": "kakao123@kakao.com",
+      "name": "장카카",
       "phone": "01099001255",
-      "isAdmin": false
+      "email": "kakao123@kakao.com",
+      "address": "아프리카",
+      "userid": "kakao123",
+      "password": "1234"
     }
   ],
   "item": [
@@ -1501,6 +1499,18 @@
       "message": "",
       "title": "제목 테스트 중입니다 ",
       "content": "내용 테스트 중 입니다.",
+      "date": "2024-04-30"
+    },
+    {
+      "id": "15",
+      "name": "박장군",
+      "userid": "parkbill",
+      "email": "generalpark@gmail.com",
+      "phone": "01022294421",
+      "address": "",
+      "message": "",
+      "title": "테느스",
+      "content": "테스트",
       "date": "2024-04-30"
     }
   ]
