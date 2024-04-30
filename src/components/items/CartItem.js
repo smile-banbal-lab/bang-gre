@@ -11,6 +11,7 @@ function CartItem({ menu }) {
     // const result = useSelector(state => state.menuReducer);
 	// console.log("result is: ", result);
     // const prod = result.prod;
+
 	const dispatch = useDispatch();
 	// const categoryType = menu.category ? menu.category.type : '';
     // const prodId = menu.id;

@@ -18,7 +18,7 @@ export function callGetCartAPI(id) {
     console.log('getCart api calls...');
 
     return async (dispatch, getState) => {
-        const result = await request('GET', '/menu');
+        const result = await request('GET', `/item/${id}`);
         console.log('getMenu result : ', result);
 
         dispatch(getCart(result));
@@ -79,4 +79,13 @@ export function callDeleteCartAPI(id) {
 
 		dispatch(deleteCart(result));
 	}
+}
+
+export function callAddToCartAPI(menu, userid) {
+    console.log('callAddToCartAPI api calls...');
+    
+
+    return async (dispatch, getState) => {
+
+    }
 }
