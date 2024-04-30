@@ -1348,7 +1348,7 @@
       "title": "첫 번째 게시글",
       "date": "2024-04-15",
       "content": "첫 번째 게시글 내용입니다.",
-      "user_id": 1,
+      "user_id": "john123",
       "photo": "https://example.com/photo1.jpg",
       "type": "일반"
     },
@@ -1357,7 +1357,7 @@
       "title": "첫 번째 게시글",
       "date": "2024-04-15",
       "content": "두 번째 게시글 내용입니다.",
-      "user_id": 2,
+      "user_id": "emily456",
       "photo": "https://example.com/photo1.jpg",
       "type": "일반"
     },
@@ -1366,7 +1366,7 @@
       "title": "첫 번째 게시글",
       "date": "2024-04-15",
       "content": "첫 번째 게시글 내용입니다.",
-      "user_id": 3,
+      "user_id": "mike789",
       "photo": "https://example.com/photo1.jpg",
       "type": "일반"
     },
@@ -1375,7 +1375,7 @@
       "title": "첫 번째 게시글",
       "date": "2024-04-15",
       "content": "첫 번째 게시글 내용입니다.",
-      "user_id": 4,
+      "user_id": "sarah101",
       "photo": "https://example.com/photo1.jpg",
       "type": "일반"
     },
@@ -1384,7 +1384,7 @@
       "title": "첫 번째 게시글",
       "date": "2024-04-15",
       "content": "첫 번째 게시글 내용입니다.",
-      "user_id": 5,
+      "user_id": "david202",
       "photo": "https://example.com/photo1.jpg",
       "type": "일반"
     },
@@ -1393,7 +1393,7 @@
       "title": "첫 번째 게시글",
       "date": "2024-04-15",
       "content": "첫 번째 게시글 내용입니다.",
-      "user_id": 6,
+      "user_id": "parkbill",
       "photo": "https://example.com/photo1.jpg",
       "type": "일반"
     },
@@ -1402,7 +1402,7 @@
       "title": "첫 번째 게시글",
       "date": "2024-04-15",
       "content": "첫 번째 게시글 내용입니다.",
-      "user_id": 7,
+      "user_id": "joojoo",
       "photo": "https://example.com/photo1.jpg",
       "type": "일반"
     },
@@ -1411,7 +1411,7 @@
       "title": "첫 번째 게시글",
       "date": "2024-04-15",
       "content": "첫 번째 게시글 내용입니다.",
-      "user_id": 8,
+      "user_id": "myid",
       "photo": "https://example.com/photo1.jpg",
       "type": "일반"
     },
@@ -1420,7 +1420,7 @@
       "title": "첫 번째 게시글",
       "date": "2024-04-15",
       "content": "첫 번째 게시글 내용입니다.",
-      "user_id": 9,
+      "user_id": "kakao123",
       "photo": "https://example.com/photo1.jpg",
       "type": "일반"
     },

@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from 'react';
+import React, { useEffect } from 'react';
 import { callGetqnaListAPI } from '../apis/QnaAPICalls';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -27,13 +27,22 @@ function Voc() {
             <CommonTableColumn>{item.title}</CommonTableColumn>
             <CommonTableColumn>{item.date}</CommonTableColumn>
             <CommonTableColumn>{item.user_id}</CommonTableColumn>
+            <CommonTableColumn>{item.content}</CommonTableColumn>
         </CommonTableRow>
     ));
 
+    const inputBoardHandler = () => {
+
+    }
+
     return (
-        <CommonTable headersName={['글번호', '제목', '등록일', '작성자']}>
-            {items}
-        </CommonTable>
+        <>
+            <h1>게시글 목록</h1>
+            <CommonTable headersName={['글번호', '제목', '등록일', '작성자', '내용']}>
+                {items}
+            </CommonTable>
+            <button onClick={inputBoardHandler}>게시글 작성하기</button>
+        </>
     );
 }
 

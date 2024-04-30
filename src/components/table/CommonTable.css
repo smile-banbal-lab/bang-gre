@@ -2,7 +2,7 @@
     width: 80%;
     margin: 0 auto;
     text-align: center;
-    border-spacing: 0;
+    border: 1px solid black;
 }
 
 .common-table-header-column {
