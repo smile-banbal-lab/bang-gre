@@ -60,7 +60,9 @@ export function callRegisterCartAPI(menu) {
 
 export function callModifyCartAPI(menu) {
     console.log('modifyMenu api calls...');
+    console.log('before return', menu)
     return async (dispatch, getState) => {
+        console.log('After menu', menu.id);
         const result = await request('PUT', `/item/${menu.id}`, menu);
         console.log('modifyCart result: ', result);
 
@@ -88,12 +90,15 @@ export function callAddToCartAPI(menu, userid) {
 
     return async (dispatch, getState) => {
         const today = new Date().toISOString().split('T')[0];
-        let id = 1; 
-        if (getState().cartReducer && Array.isArray(getState().cartReducer.items)) {
-            id = getState().cartReducer.items.length + 1;
-        }
+        const timestamp = new Date().toISOString().replace("T", " ").substring(0,19).replace(/(\s*)/g, "").replace("-","").replace(":", "");
+        let array = new Uint32Array(2);
+        window.crypto.getRandomValues(array);
+        const id = timestamp + array[0] + userid + array[1];
+        // if (getState().cartReducer && Array.isArray(getState().cartReducer.items)) {
+        //     id = getState().cartReducer.items.length + 1;
+        // }
         const newItem = {
-            id: id.toString(),
+            id: id.replace("-", "").replace(":", ""),
             name: menu.name,
             date: today,
             userid: userid,
@@ -109,4 +114,8 @@ export function callAddToCartAPI(menu, userid) {
             alert('장바구니 추가 과정에서 에러 발생', error);
         }
     };
+}
+
+export function callConfimOrderAPI(userid) {
+
 }

@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import CartItem from '../items/CartItem';
 import { callGetMenuListAPI } from "../../apis/MenuAPICalls";
-import { callGetCartListAPI } from '../../apis/CartAPICalls'; 
+import { callGetCartListAPI, callModifyCartAPI } from '../../apis/CartAPICalls'; 
 import "../commons/Commons.css"
+
 
 function CartList() {
 
@@ -26,6 +27,40 @@ function CartList() {
         dispatch(callGetMenuListAPI());
     }, [dispatch]);
 
+    const [confirmCart, setConfirmCart] = useState(
+        {
+            id: '',
+            name: '',
+            date: '',
+            userid: '',
+            Confirm: false,
+            menuid: '',
+            Quantity: ''
+        }
+    );
+
+
+    const onClickHandler = () => {
+        console.log("설마");
+
+        // cartList.map(menu => {
+        //     if ((menu.userid === userid)&&(menu.Confirm === false)) {
+        //         console.log("onClickHandler -> if is wroking");
+
+        //         setConfirmCart({
+        //                 id: menu.id,
+        //                 name: menu.name,
+        //                 date: menu.date,
+        //                 userid: menu.userid,
+        //                 Confirm: true,
+        //                 menuid: menu.menuid,
+        //                 Quantity: menu.Quantity
+        //         });
+        //         dispatch(callModifyCartAPI(confirmCart));
+        //     }
+        // });
+    }
+
     return (
         cartList && menuList && (
             <>
@@ -46,8 +81,9 @@ function CartList() {
                             );
                         }
                     })}
-
-
+                </div>
+                <div className="order-confirm">
+                    <button className='cart-order-confirm-button' name="Confirm" onClick={onClickHandler}>Order Cart</button>
                 </div>
             </>
         )
