@@ -3,49 +3,55 @@
     {
       "id": "user1",
       "name": "John Smith",
+      "username": "JS",
       "phone": "123-456-7890",
       "email": "john@example.com",
       "address": "123 Main St",
-      "admin": true,
+      "isAdmin": true,
       "userid": "john123",
       "password": "password"
     },
     {
       "id": "user2",
       "name": "Emily Johnson",
+      "username": "Emi",
       "phone": "987-654-3210",
       "email": "emily@example.com",
       "address": "456 Elm St",
-      "admin": false,
+      "isAdmin": false,
       "userid": "emily456",
       "password": "abc123"
     },
     {
       "id": "user3",
       "name": "Michael Williams",
+      "username": "Mike",
       "phone": "555-123-4567",
       "email": "michael@example.com",
       "address": "789 Oak St",
-      "admin": false,
+      "isAdmin": false,
       "userid": "mike789",
       "password": "pass456"
     },
     {
       "id": "user4",
       "name": "Sarah Red",
+      "username": "Sared",
       "phone": "333-555-7777",
       "email": "sarah@example.com",
       "address": "101 Pine St",
       "userid": "sarah101",
-      "password": "qwerty"
+      "password": "qwerty",
+      "isAdmin": false
     },
     {
       "id": "user5",
       "name": "David Davis",
+      "username": "DD",
       "phone": "888-999-0000",
       "email": "david@example.com",
       "address": "202 Cedar St",
-      "admin": false,
+      "isAdmin": false,
       "userid": "david202",
       "password": "secret"
     },
