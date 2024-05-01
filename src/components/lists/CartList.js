@@ -71,11 +71,8 @@ function CartList() {
     return (
         cartList && menuList && (
             <>
-                <div id="CartList">
-
-
-                </div>
-                <div className="cartBox">
+                <div className="cartContainer">
+                    
                     {/* 장바구니 목록을 표시합니다. */}
                     {cartList && cartList.map(cart => {
                         if (cart.userid === userid) {
@@ -90,6 +87,7 @@ function CartList() {
                     })}
                 </div>
                 <div className="order-confirm">
+                    <br></br>
                     <button className='cart-order-confirm-button' name="Confirm" onClick={onClickHandler}>장바구니 주문</button>
                 </div>
             </>
