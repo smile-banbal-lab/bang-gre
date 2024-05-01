@@ -126,20 +126,11 @@
     },
     {
       "id": "1",
-      "Quantity": "8",
-      "menuid": "3",
+      "name": "딸기 아이스크림",
+      "date": "2024-05-01",
       "userid": "john123",
       "Confirm": false,
-      "date": "2024-04-30",
-      "name": "찹쌀떡아이스"
-    },
-    {
-      "id": "1",
-      "menuid": "1",
-      "name": "그라시아",
-      "userid": "john123",
-      "date": "2024-04-30",
-      "Confirm": false,
+      "menuid": "6",
       "Quantity": 1
     }
   ],
