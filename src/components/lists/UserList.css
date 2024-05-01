@@ -1,0 +1,9 @@
+.userItem {
+    border: 1px solid black;
+    margin: 5px;
+    padding: 5px;
+}
+
+.userData > li {
+    font-weight: bold;
+}

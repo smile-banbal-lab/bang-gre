@@ -70,7 +70,7 @@ function MyPageForm() {
         return (
 		<>
 		<div className='modify-container'>
-  			<button className="modify-button" onClick={toggleModify}>회원정보 수정</button><br />
+  			<button className="modify-button" onClick={toggleModify}>회원정보 수정 시작</button><br />
   			<div className="form-group">
   			  <label>이름</label>
   			  <input className="form-input" type="text" name="name" value={userInfo.name} onChange={onChangeHandler} readOnly={isReadOnly} />

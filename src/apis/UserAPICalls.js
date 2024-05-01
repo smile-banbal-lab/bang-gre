@@ -43,7 +43,7 @@ export function callLoginAPI(loginInfo) {
 // 목적: 사용자 정보(userInfo 객체)를 업데이트하기 위해 서버에 PUT 요청을 보냅니다.
 // 비동기 처리: request('PUT', /user/${userInfo.id}, userInfo)를 사용하여, 서버에 해당 사용자의 정보를 업데이트합니다.
 // 디스패치: 업데이트 성공 시, modifyUserInfo 액션 생성 함수를 호출하여 Redux 스토어의 상태를 업데이트합니다.
-export function callVerifyAPI(password) {
+export function callVerifyAPI(id, password) {
 
 	console.log('verify api calls...');
 
@@ -55,7 +55,7 @@ export function callVerifyAPI(password) {
 
 		/* password 일치 여부 확인 - 서버에서 이루어져야 하는 로직 */
 		/* 배열의 find 메소드 : 메서드는 주어진 판별 함수를 만족하는 첫 번째 요소의 값을 반환 */
-		const result = await userList.find(user => user.password === password);
+		const result = await userList.find(user => user.userid === id && user.password === password);
 
 		console.log('login result : ', result);     // 해당 user 객체 반환
 
