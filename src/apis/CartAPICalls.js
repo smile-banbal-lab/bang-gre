@@ -1,6 +1,6 @@
 import { request } from "./Api";
 import { getMenulist, getMenu, registMenu, modifyMenu, deleteMenu } from "../modules/MenuModule";
-import { getCartlist, getCart, deleteCart, modifyCart, registCart } from "../modules/cartModule";
+import { getCartlist, getCart, deleteCart, modifyCart, registCart } from "../modules/CartModule";
 
 
 export function callGetCartListAPI() {
@@ -81,11 +81,36 @@ export function callDeleteCartAPI(id) {
 	}
 }
 
+
+
 export function callAddToCartAPI(menu, userid) {
     console.log('callAddToCartAPI api calls...');
-    
 
     return async (dispatch, getState) => {
+        const today = new Date().toISOString().split('T')[0];
+        let id = 1; 
 
-    }
+
+        if (getState().cartReducer && Array.isArray(getState().cartReducer.items)) {
+            id = getState().cartReducer.items.length + 1;
+        }
+
+        const newItem = {
+            id: id.toString(),
+            name: menu.name,
+            date: today,
+            userid: userid,
+            Confirm: false,
+            menuid: menu.id,
+            Quantity: 1
+        };
+
+        try {
+            const result = await request('POST', '/item', newItem);
+            console.log('Added to cart:', result);
+            dispatch(registCart(result));
+        } catch (error) {
+            alert('장바구니 추가 과정에서 에러 발생', error);
+        }
+    };
 }

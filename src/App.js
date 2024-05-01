@@ -13,10 +13,12 @@ import SignUp from './pages/SignUp';
 import Cart from './pages/Carts';
 import SignOut from './pages/SignOut';
 import SearchIdPw from './pages/SearchIdPw';
+import QnaPage from './pages/QnaPage';
+import QnaDetail from './pages/QnaDetail';
 import FAQForm from './pages/FAQForm';
 import "./App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Voc from './pages/Voc';
+import UserList from './components/lists/UserList';
 
 /* 추가 설치해야 하는 패키지 목록
  * react-router-dom
@@ -34,6 +36,7 @@ function App() {
 		<Routes>
 			<Route path="/" element={<Layout />}>
 				<Route index element={<Main />} />
+				<Route path='main' element={<Main />} />
 				<Route path="menu" >
 					<Route index element={<Menus />} />
 					<Route path=":id" element={<MenuDetail />} />
@@ -62,10 +65,14 @@ function App() {
 					<Route path="signout" >
 					<Route path=":id" element={<SignOut />} />
 					</Route>
+					<Route path="list" element={<UserList />} />
 				</Route>
 				<Route path="cart"  element={<Cart/>} />
-				<Route path='contact' element={<FAQForm/>}/>
-				<Route path='voc' element={<Voc/>}/>
+				<Route path="qna" element={<QnaPage />}>
+					<Route index element={<QnaPage />} />
+					<Route path=":id" element={<QnaDetail />} /> {/* QnaDetail 컴포넌트에 대한 라우트 설정 추가 */}
+				</Route>
+				<Route path="contact" element={<FAQForm />} />
 			</Route>
 			<Route path="*" element={<Error />} />
 		</Routes>

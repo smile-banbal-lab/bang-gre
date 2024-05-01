@@ -1,14 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-
-import MenuItem from '../items/MenuItem';
 import CartItem from '../items/CartItem';
 import { callGetMenuListAPI } from "../../apis/MenuAPICalls";
 import { callGetCartListAPI } from '../../apis/CartAPICalls'; 
-import { useLocation } from 'react-router-dom';
-import { useNavigate, useParams } from 'react-router-dom';
 import "../commons/Commons.css"
-import Menu from '../items/Menu';
 
 function CartList() {
 
@@ -22,12 +17,11 @@ function CartList() {
     const cartList = cartResult.cartlist;
     const menuList = menuResult.menulist
 	console.log('장바구니 리스트: ', cartList);
-    // console.log('장바구니 리스트 길이: ', cartList.length);
+    console.log('장바구니 리스트 길이: ', cartList);
     console.log('메뉴 리스트 : ', menuList);
     const dispatch = useDispatch();
 
     useEffect(() => {
-        /* cartList 호출 API */
         dispatch(callGetCartListAPI());
         dispatch(callGetMenuListAPI());
     }, [dispatch]);
@@ -44,31 +38,11 @@ function CartList() {
                     {cartList && cartList.map(cart => {
                         if (cart.userid === userid) {
                             console.log("userid, id is : ", cart.userid, userid);
-                            return(
-                                <CartItem key={cart.id} menu={cart}>
-                                </CartItem>
-                            );
-                        }
-                    })}
-
-
-                </div>
-
-
-                <div className="menuBox">
-                    {/* Menu 목록을 표시합니다. */}
-                    {/* {cartList && cartList.map(cart => (
-                        <MenuItem key={cart.id} menu={cart}/>
-                    ))} */}
-                    {cartList && cartList.map(cart => {
-                        if (cart.userid === userid) {
                             let menu = menuList.find(item => item.id === cart.menuid);
-                            return (
-                                <div key={cart.id}>
-                                    {/* <MenuItem menu={cart} /> */}
-                                    {menu && <div>Price: {menu.price}<img src={menu.image} style={{ maxWidth: 200 , maxHeight: 200}} alt={menu.name}></img></div>}
-    
-                                </div>
+                            console.log("menu in CartList is: ", menu);
+                            return(
+                                <CartItem key={cart.id} menu={cart} prod={menu}>
+                                </CartItem>
                             );
                         }
                     })}

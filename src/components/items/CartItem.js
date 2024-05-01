@@ -1,52 +1,101 @@
-import { Link } from 'react-router-dom';
-import { addToCart } from '../../actions/cartActions';
-import { getMenu } from '../../modules/MenuModule';
-import { useDispatch, useSelector } from 'react-redux';
-import { callGetMenuAPI } from '../../apis/MenuAPICalls';
-import { useEffect } from 'react';
+import { callDeleteCartAPI, callModifyCartAPI } from '../../apis/CartAPICalls';
+import { useDispatch } from 'react-redux';
+import React, { useState } from 'react';
 
-function CartItem({ menu }) {
+
+
+function CartItem({ menu, prod }) {
 
 	console.log("menu on CartItem is :", menu);
-    // const result = useSelector(state => state.menuReducer);
-	// console.log("result is: ", result);
-    // const prod = result.prod;
 
+	const currentQuantity = menu.Quantity;
 	const dispatch = useDispatch();
-	// const categoryType = menu.category ? menu.category.type : '';
-    // const prodId = menu.id;
-	// useEffect(
-	// 	() => {
-	// 		dispatch(callGetMenuAPI(prodId));
-	// 		console.log("useEffect on CartItem.js executed");
-	// 	},
-	// 	[dispatch]
-	// );
-	// callGetMenuAPI(prodId);
-	// console.log("prod is", prod);
+	const [quantity, setQuantity] = useState(menu.Quantity);
+	const [modifyCart, setModifyCart] = useState(
+		{
+			id: menu.id,
+			name: menu.name,
+			date: menu.date,
+			userid: menu.userid,
+			Confirm: menu.Confirm,
+			menuid: menu.menuid,
+			Quantity: menu.Quantity
+		}
+	);
 
-	
-    // const orderProd = dispatch(callGetMenuAPI(prodId));
+	const [product, setProduct] = useState(
+		{
+			id: prod.id,
+			name: prod.name,
+			category: {
+					type: prod.category.type,
+					image: prod.category.image
+				},
+			flavor: [''],
+			price: prod.price,
+			Information: {
+					Sodium: prod.Information.Sodium,
+					Sugar: prod.Information.Sugar,
+					Fat: prod.Information.Fat,
+					TransFat: prod.Information.TransFat,
+					Cholesterol: prod.Information.Cholesterol,
+					protein: prod.Information.protein
+				},
+			image: prod.image
+		}
+	);
 
-
-	const addToCartHandler = () =>{
-		dispatch(addToCart(menu)); 
-		console.log('menu 확인', menu);
+	const deleteOrderHandler = () => {
+		dispatch(callDeleteCartAPI(menu.id));
+		document.location.reload();
 	};
+
+	const onChangeHandler = (e) => {
+		let value = e.target.value;
+		let name = e.target.name;
+		setModifyCart({
+			...modifyCart,
+			[name]: value
+		});
+	};
+
+	const modifyQuantityHandler = () => {
+		dispatch(callModifyCartAPI(modifyCart));
+		document.location.reload();
+	}
+
+	// const decreaseQuantity = () => {
+    //     if (quantity > 1) {
+    //         setQuantity(prevQuantity => prevQuantity - 1);
+    //     }
+    // };
+
+    // const increaseQuantity = () => {
+    //     setQuantity(prevQuantity => prevQuantity + 1);
+    // };
+
+
+
 
 	return (
 		<>
-		<Link to={`/menu/${menu.id}`}>
+		
 			<div className="cartItem">
 				<h3>이름 : {menu.name}</h3>
-				<h3>수량 : {menu.Quantity}</h3>
-				{/* <h4>종류 : {prod.price}</h4>
-				<img src={prod.image} style={{ maxWidth: 200 , maxHeight: 200}} alt={menu.name} /> */}
-				<button className='menuItem-button' onClick={addToCartHandler}>Temp</button>
-				
+				<h4>개당 금액: {product.price}<br></br>총 금액: {(product.price)*(modifyCart.Quantity)}</h4>
+				<div>
+					<label>수량: </label>
+					<input type="number" name="Quantity" min="1" value={modifyCart.Quantity} onChange={onChangeHandler}></input>
+
+				</div>
+				<div>
+					<h3>수량 : {menu.Quantity}</h3>
+					<img src={product.image} style={{ maxWidth: 200 , maxHeight: 200}} alt={product.name}></img>
+				</div>
+				<button className='cart-delete-button' onClick={deleteOrderHandler}>Delete</button>
+				<button className='cart-modify-quantity-button' onClick={modifyQuantityHandler}>Confirm</button>
 			</div>
-		</Link>
-			</>
+		</>
 );
 }
 

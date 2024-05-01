@@ -8,14 +8,20 @@ import "../commons/Commons.css"
 
 function MenuList( { categoryType } ) {
 
+
     const [searchInput, setSearchInput] = useState('');
     const [selectedCategories, setSelectedCategories] = useState([categoryType]);
     const [filteredMenuList, setFilteredMenuList] = useState([]);
+
 
     const result = useSelector(state => state.menuReducer);
     const menuList = result.menulist;
 	// console.log('메뉴 리스트: ', menuList);
     const dispatch = useDispatch();
+    const userInfoString = sessionStorage.getItem('userInfo');
+	const userInfo = JSON.parse(userInfoString);
+	console.log("user ID is : ", userInfo.userid);
+    const userid = userInfo.userid;
 
 
     console.log('[MenuList] props{categoryType}', categoryType);
@@ -121,7 +127,7 @@ function MenuList( { categoryType } ) {
 
                 <div className="menuBox"> {/* 필터링된 메뉴를 보여주는 곳*/}
                     {filteredMenuList.map(menu => (
-                        <MenuItem key={menu.id} menu={menu} categoryType={menu.category ? menu.category.type : ''} />
+                        <MenuItem key={menu.id} menu={menu} categoryType={menu.category ? menu.category.type : ''} userid={userid} />
                     ))}
                 </div>
 			</>

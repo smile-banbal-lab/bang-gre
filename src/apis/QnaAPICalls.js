@@ -11,3 +11,12 @@ export function callGetqnaListAPI () {
 		dispatch(getQnalist(result));
 	}
 }
+
+export function callGetqnaAPI(id) {
+    console.log('callGetqnaAPI...');
+    return async (dispatch, getState) => {
+        const result = await request('GET', `/qna/${id}`);
+        console.log('getqna result: ', result);
+        dispatch(getQna(result));
+    };
+}

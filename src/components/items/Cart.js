@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import CartList from '../lists/CartList';
 
 
 function CartPage() {

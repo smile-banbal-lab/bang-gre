@@ -1,15 +1,23 @@
 import { Link } from 'react-router-dom';
-import { addToCart } from '../../actions/cartActions';
 import { useDispatch } from 'react-redux';
+import React, { useState } from 'react';
+import { callAddToCartAPI } from '../../apis/CartAPICalls';
 
-function MenuItem({ menu, categoryType }) {
+
+
+
+function MenuItem({ menu, categoryType, userid }) {
 	const dispatch = useDispatch();
-	// const categoryType = menu.category ? menu.category.type : '';
+	// const userInfoString = sessionStorage.getItem('userInfo');
+	// const userInfo = JSON.parse(userInfoString);
+	// console.log("user ID is : ", userInfo.userid);
+    // const userid = userInfo.userid;
 
 	const addToCartHandler = () =>{
+		dispatch(callAddToCartAPI(menu, userid ));
 		alert("장바구니 넣기 성공, 수량 변경은 나의 장바구니에서 부탁드립니다!");
-		// dispatch(addToCart(menu)); 
 	};
+
 
 	return (
 		<>
