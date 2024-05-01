@@ -724,4 +724,7 @@ h1 {
 }
 
 
-
+/* -----------------MenuDetail--------------- */
+#MenuDetail-page{
+    height: 80vh;
+}
