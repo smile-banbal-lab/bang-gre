@@ -1351,39 +1351,6 @@
   ],
   "qna": [
     {
-      "id": "1",
-      "title": "첫 번째 게시글",
-      "date": "2024-04-15",
-      "name": "커피",
-      "userid": "coffee",
-      "content": "첫 번째 게시글 내용입니다.",
-      "email": "etiopea@gmail.com",
-      "phone": "01013141155",
-      "address": "성남"
-    },
-    {
-      "id": "2",
-      "title": "두 번째 게시글",
-      "date": "2024-04-16",
-      "name": "차",
-      "userid": "tea",
-      "content": "두 번째 게시글 내용입니다.",
-      "email": "example@example.com",
-      "phone": "01022223333",
-      "address": "서울"
-    },
-    {
-      "id": "3",
-      "title": "세 번째 게시글",
-      "date": "2024-04-17",
-      "name": "우유",
-      "userid": "milk",
-      "content": "세 번째 게시글 내용입니다.",
-      "email": "test@test.com",
-      "phone": "01033334444",
-      "address": "부산"
-    },
-    {
       "id": "4",
       "title": "네 번째 게시글",
       "date": "2024-04-18",
