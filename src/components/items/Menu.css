@@ -62,23 +62,24 @@
 	margin: 2%5%;
 }
 
-.menuItem{
-	border: 1px solid black;
-}
-
 /* ------------------ menuItem ------------------ */
 .menuItem {
 	width: 300px;
 	border-radius: 10px;
-	border: 3px solid white;
 	box-sizing: border-box;
+    border: 1px solid rebeccapurple;
 	cursor: pointer;
 	color: rgb(46, 46, 46);
 	padding: 3% 2%;
     /* border: 1px solid rgb(19, 157, 232); */
 }
+.menuItem h3,h4{
+    font-size: 23px;
+}
+
 .menuItem>div{
     text-align: left;
+    
 }
 .menuItem:hover {
 	transition-duration: .5s;
