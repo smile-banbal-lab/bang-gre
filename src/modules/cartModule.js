@@ -23,7 +23,7 @@ export const { cart: { getCartlist, getCart, registCart, modifyCart, deleteCart 
     };
 
     // 리듀서
-    const cartReducer = handleActions(
+    const CartReducer = handleActions(
         {
             [GET_CARTLIST]: (state, { payload }) => {
                 return payload;
@@ -44,4 +44,4 @@ export const { cart: { getCartlist, getCart, registCart, modifyCart, deleteCart 
         initialState
     );
 
-export default cartReducer;
+export default CartReducer;
