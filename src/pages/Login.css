@@ -1,3 +1,4 @@
+
 .login-container {
     display: flex;
     flex-direction: column;
@@ -6,6 +7,7 @@
     height:50vh;
     padding-top: 3vh; /* 상단에 공간 추가 */
     background-color: rgba(246, 248, 126, 0); /* 반투명 배경색 */
+    height: 100vh;
 }
 
 .login-container h1 {
@@ -28,6 +30,7 @@
 
 #section01{
     margin-top: 100px;
+    height: 69vh;
 }
 
 #section01 h1 {
