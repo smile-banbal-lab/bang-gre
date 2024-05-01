@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { callModifyMenuAPI } from '../../apis/MenuAPICalls';
+import { callModifyMenuAPI, callGetMenuAPI } from '../../apis/MenuAPICalls';
 
 function MenuModifyForm() {
 
@@ -10,13 +10,15 @@ function MenuModifyForm() {
 	const navigate = useNavigate();
 	const result = useSelector(state => state.menuReducer);
 
+    
+    
 	/* 입력 값 state 저장 */
 	const [modifyMenu, setModifyMenu] = useState(
-		{
-			id: 0,
+        {
+            id: 0,
 			name: '',
 			category: {
-				type: '',
+                type: '',
 				image: ''
 			},
 			flavor: [''],
@@ -24,6 +26,34 @@ function MenuModifyForm() {
 			image: ''
 		}
 	);
+    
+    const [previousMenuInfo, setPreviousMenuInfo] = useState(
+        {
+            id: 0,
+			name: '',
+			category: {
+                type: '',
+				image: ''
+			},
+			flavor: [''],
+			price: '',
+			image: ''
+		}
+	);
+
+    useEffect(() => {
+        // 수정할 메뉴 정보를 불러옴
+        dispatch(callGetMenuAPI(id));
+    }, [id, dispatch]);
+
+    useEffect(() => {
+        // getMenuAPI에서 받은 메뉴 정보를 previousMenuInfo에 설정
+        if (result.menu) {
+            setPreviousMenuInfo(result.menu);
+            // 메뉴 정보를 수정 폼에 설정
+            setModifyMenu(result.menu);
+        }
+    }, [result]);
 
 	/* 입력 값 변경 시 이벤트 핸들러 */
 	const onChangeHandler = (e) => {
@@ -57,6 +87,15 @@ function MenuModifyForm() {
 		);
 
 	}
+    useEffect(() => {
+        /* 수정 전 메뉴 정보를 previousMenuInfo state에 업데이트 */
+        setPreviousMenuInfo({
+            name: previousMenuInfo.name,
+            price: previousMenuInfo.price,
+            flavor: previousMenuInfo.flavor
+        });
+    }, [id]);
+
 
 	/* 파일 첨부 시 동작하는 이벤트 핸들러 */
 	const fileChangeHandler = async (e) => {

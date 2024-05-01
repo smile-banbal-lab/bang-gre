@@ -1,17 +1,27 @@
-import React, { useState } from 'react'; // useState 가져오기
-import { useNavigate } from 'react-router-dom'; // useNavigate 가져오기
-import "../lists/MenuList"
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import "./Commons.css";
 
 function Searchbar() {
-    const [searchValue, setSearchValue] = useState(''); // useState 사용
-    const navigate = useNavigate(); // useNavigate 사용
+    const [searchValue, setSearchValue] = useState('');
+
+    const navigate = useNavigate();
 
     const handleSearchClick = () => {
-        // /menuList 경로로 이동하면서 검색값을 쿼리 파라미터로 전달
-        navigate(`/menu?search=${searchValue}`);
+        if (searchValue.trim()) {  // 검색어가 비어있지 않은 경우에만 네비게이트 실행
+            navigate(`/menu?search=${searchValue}`);
+        }
     }
 
+    const handleInputChange = (event) => {
+        setSearchValue(event.target.value);
+    }
+
+    const handleKeyPress = (event) => {
+        if (event.key === 'Enter' && searchValue.trim()) {
+            handleSearchClick();
+        }
+    }
 
     return (
         <div id="Searchbar">
@@ -20,8 +30,10 @@ function Searchbar() {
                 type="search"
                 placeholder="검색어를 입력해주세요"
                 value={searchValue}
-                onChange={(e) => setSearchValue(e.target.value)} />
-            <button id="menu-search-button" onClick={handleSearchClick} >SEARCH</button>
+                onChange={handleInputChange}
+                onKeyPress={handleKeyPress}
+            />
+            <button id="menu-search-button" onClick={handleSearchClick}>SEARCH</button>
         </div>
     );
 }

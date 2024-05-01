@@ -71,30 +71,32 @@ function MyPageForm() {
 		<>
 		<div className='modify-container'>
   			<button className="modify-button" onClick={toggleModify}>회원정보 수정 시작</button><br />
-  			<div className="form-group">
-  			  <label>이름</label>
-  			  <input className="form-input" type="text" name="name" value={userInfo.name} onChange={onChangeHandler} readOnly={isReadOnly} />
-  			</div>
-  			<div className="form-group">
-  			  <label>전화 번호</label>
-  			  <input className="form-input" type="text" name="phone" value={userInfo.phone} onChange={onChangeHandler} readOnly={isReadOnly} />
-  			</div>
-  			<div className="form-group">
-  			  <label>이메일</label>
-  			  <input className="form-input" type="text" name="email" value={userInfo.email} onChange={onChangeHandler} readOnly={isReadOnly} />
-  			</div>
-  			<div className="form-group">
-  			  <label>주소</label>
-  			  <input className="form-input" type="text" name="address" value={userInfo.address} onChange={onChangeHandler} readOnly={isReadOnly} />
-  			</div>
-  			<div className="form-group">
-  			  <label>아이디</label>
-  			  <input className="form-input" type="text" name="userid" value={userInfo.userid} onChange={onChangeHandler} readOnly={isReadOnly} />
-  			</div>
-  			<div className="form-group">
-  			  <label>비밀번호</label>
-  			  <input className="form-input" type="text" name="password" value={userInfo.password} onChange={onChangeHandler} readOnly={isReadOnly} />
-  			</div>
+			<div className='userData-container'>
+  				<div className="form-group">
+  					<label>이름</label>
+  					<input className="form-input" type="text" name="name" value={userInfo.name} onChange={onChangeHandler} readOnly={isReadOnly} />
+  				</div>
+  				<div className="form-group">
+  				  	<label>전화 번호</label>
+  				  	<input className="form-input" type="text" name="phone" value={userInfo.phone} onChange={onChangeHandler} readOnly={isReadOnly} />
+  				</div>
+  				<div className="form-group">
+  				  	<label>이메일</label>
+  				  	<input className="form-input" type="text" name="email" value={userInfo.email} onChange={onChangeHandler} readOnly={isReadOnly} />
+  				</div>
+  				<div className="form-group">
+  				  	<label>주소</label>
+  				  	<input className="form-input" type="text" name="address" value={userInfo.address} onChange={onChangeHandler} readOnly={isReadOnly} />
+  				</div>
+  				<div className="form-group">
+  				  	<label>아이디</label>
+  				  	<input className="form-input" type="text" name="userid" value={userInfo.userid} onChange={onChangeHandler} readOnly={isReadOnly} />
+  				</div>
+  				<div className="form-group">
+  				  	<label>비밀번호</label>
+  				  	<input className="form-input" type="text" name="password" value={userInfo.password} onChange={onChangeHandler} readOnly={isReadOnly} />
+  				</div>
+			</div>
   			<button className="submit-button" onClick={onClickHandler}>수정</button>
 		</div>
 		</>

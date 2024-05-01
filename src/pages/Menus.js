@@ -13,16 +13,16 @@ function Menus() {
 
     const navigate = useNavigate();
     const { state } = useLocation();
-    const categoryType = state ? state.categoryType || '' : '';
+    const categoryType = state?.categoryType || '';
 
     console.log('[Menus] state: ', state);
     console.log('[Menus] categoryCode : ', categoryType);
 
     return (
         <div id="Menus"> 
-            <h2>메뉴 목록 {(isAdmin) && 
-                <button id="Menus-regist" onClick={() => navigate(`/menu/regist`)}>메뉴 추가</button>} 
-            </h2>
+            <h2>메뉴 목록 {isAdmin && (
+                <button id="Menus-regist" onClick={() => navigate(`/menu/regist`)}>메뉴 추가</button>
+            )} </h2>
             <MenuList categoryType={categoryType}/>
         </div>
     );
