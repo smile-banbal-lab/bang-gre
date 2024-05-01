@@ -7,7 +7,7 @@ function Menus() {
 
     const userInfoString = sessionStorage.getItem('userInfo');
     const userInfo = userInfoString ? JSON.parse(userInfoString) : null;
-    const isAdmin = userInfo && userInfo.admin; // Check if user is admin
+    const isAdmin = userInfo && userInfo.isAdmin; // Check if user is admin
 
     console.log('[Menus] isAdmin:', isAdmin); // 확인을 위해 관리자 여부 출력
 

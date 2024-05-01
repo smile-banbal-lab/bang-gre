@@ -10,7 +10,9 @@ function MenuDetail() {
 
     /* 로그인 상태 확인 */
     const isAuthorized = !!sessionStorage.getItem('isLogin');
-    const isAdmin = !!sessionStorage.getItem('isAdmin'); // 관리자 여부 확인
+    const userInfoString = sessionStorage.getItem('userInfo');
+    const userInfo = userInfoString ? JSON.parse(userInfoString) : null;
+    const isAdmin = userInfo && userInfo.isAdmin; // Check if user is admin
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const { id } = useParams();
