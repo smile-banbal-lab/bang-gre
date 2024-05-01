@@ -111,35 +111,7 @@
       "isAdmin": true
     }
   ],
-  "item": [
-    {
-      "id": "202405010617134262989425john1233568392003",
-      "name": "찹쌀떡아이스",
-      "date": "2024-05-01",
-      "userid": "john123",
-      "Confirm": false,
-      "menuid": "3",
-      "Quantity": 1
-    },
-    {
-      "id": "202405010901441552323415john1232553658967",
-      "name": "그라시아",
-      "date": "2024-05-01",
-      "userid": "john123",
-      "Confirm": false,
-      "menuid": "1",
-      "Quantity": 1
-    },
-    {
-      "id": "202405010901472941572011john1233262456310",
-      "name": "투게더",
-      "date": "2024-05-01",
-      "userid": "john123",
-      "Confirm": false,
-      "menuid": "5",
-      "Quantity": 1
-    }
-  ],
+  "item": [],
   "menu": [
     {
       "id": "1",

@@ -122,28 +122,28 @@ function FAQForm() {
 
 
 				<form onSubmit={handleSubmit} className="FAQ-form">
-    <div className="input-group">
-        <label htmlFor="name">이름</label>
-        <input type="text" id="name" name="name" value={formData.name} onChange={handleChange}/>
-    </div>
-    <div className="input-group">
-        <label htmlFor="userid">사용자아이디</label>
-        <input type="text" id="userid" name="userid" value={formData.userid} onChange={handleChange}/>
-    </div>
-    <div className="input-group">
-        <label htmlFor="title">제목</label>
-        <input type="text" id="title" name="title" value={formData.title} onChange={handleChange}/>
-    </div>
-    <div className="content">
-        <label htmlFor="content">내용</label>
-        <textarea id="content" name="content" value={formData.content} onChange={handleChange} rows="4" cols="50"
-            placeholder="주민등록번호 등의 개인정보는 절대 노출하지 마세요."></textarea>
-    </div>
-    <div className="btn">
-        <button type="button" className="FAQ-button">취소하기</button>
-        <button type="submit" className="FAQ-button">등록하기</button>
-    </div>
-</form>
+					<div className="input-group">
+						<label htmlFor="name">이름</label>
+						<input type="text" id="name" name="name" value={formData.name} onChange={handleChange}/>
+					</div>
+					<div className="input-group">
+						<label htmlFor="userid">사용자아이디</label>
+						<input type="text" id="userid" name="userid" value={formData.userid} onChange={handleChange}/>
+					</div>
+					<div className="input-group">
+						<label htmlFor="title">제목</label>
+						<input type="text" id="title" name="title" value={formData.title} onChange={handleChange}/>
+					</div>
+					<div className="content">
+						<label htmlFor="content">내용</label>
+						<textarea id="content" name="content" value={formData.content} onChange={handleChange} rows="4" cols="50"
+							placeholder="주민등록번호 등의 개인정보는 절대 노출하지 마세요."></textarea>
+					</div>
+					<div className="btn">
+						<button type="button" className="FAQ-button">취소하기</button>
+						<button type="submit" className="FAQ-button">등록하기</button>
+					</div>
+				</form>
 			</div>
 			</section>
 		</>

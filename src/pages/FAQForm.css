@@ -7,7 +7,7 @@
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
     width: 690px; 
-    margin: auto; 
+    margin: 50px; 
 }
 
 .btn {
@@ -64,4 +64,8 @@
     justify-content: center; /* 중앙 정렬 */
     width: 100%; /* 최대 너비 설정 */
     margin-bottom: 20px; /* 각 입력 그룹 간의 여백 추가 */
+}
+
+#section01{
+    margin-bottom: 300px;
 }

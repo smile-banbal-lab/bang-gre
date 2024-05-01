@@ -19,7 +19,8 @@ function Menus() {
     console.log('[Menus] categoryCode : ', categoryType);
 
     return (
-        <div id="Menus"> 
+        <div id="Menus" > 
+        <div className='Main-background'></div>
             <h2>메뉴 목록 {isAdmin && (
                 <button id="Menus-regist" onClick={() => navigate(`/menu/regist`)}>메뉴 추가</button>
             )} </h2>

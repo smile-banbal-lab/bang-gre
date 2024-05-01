@@ -8,7 +8,7 @@
 }
 #category-search-input{
     width: 90%;
-    border: 1px solid rgb(19, 157, 232);
+    border: 1px solid black;
     border-radius: 100px;
     padding-left: 5%;
     box-sizing: border-box;
@@ -18,16 +18,17 @@
 #category-search-button{
     width: 15%;
     height: 100%;
-    border: 2px solid rgb(19, 157, 232);
+    border: 2px solid black;
     border-radius: 100px;
     position:absolute;
     top:0;right: 5%;
     text-align: center;
-    color: white;
+    color: black;
     z-index: 999;
     cursor: pointer;
-    background-color: rgb(19, 157, 232);
+    background-color: lightgray;
 }
+
 #category-search-button:hover{
     transition-duration: .5s;
     color: rgb(61, 61, 61);
@@ -63,7 +64,7 @@
     color: white;
     z-index: 999;
     cursor: pointer;
-    background-color: rgb(19, 157, 232);
+    background-color: white;
 }
 #menu-search-button:hover{
     color: rgb(61, 61, 61);
@@ -84,6 +85,11 @@
 #footer-text{
     width: 80%;
     margin: auto;
+}
+
+#category-button{
+    background-color: white;
+    color: black;
 }
 
 #category-button:hover{

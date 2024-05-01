@@ -37,6 +37,7 @@ function QnaPage() {
 
     return (
         <div id='Voc-page'>
+            <div className='Main-background'></div>
             <h2>게시글 목록 {(isAuthorized) && 
                 <button onClick={() => navigate(`/contact`)}>게시글 작성하기</button>}</h2>
             <table className="common-table">
