@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import CartItem from '../items/CartItem';
 import { callGetMenuListAPI } from "../../apis/MenuAPICalls";
-import { callGetCartListAPI } from '../../apis/CartAPICalls'; 
+import { callDeleteCartAPI, callGetCartListAPI, callModifyCartAPI } from '../../apis/CartAPICalls'; 
 import "../commons/Commons.css"
+
 
 function CartList() {
 
@@ -26,6 +27,47 @@ function CartList() {
         dispatch(callGetMenuListAPI());
     }, [dispatch]);
 
+    const [confirmCart, setConfirmCart] = useState(
+        {
+            id: '',
+            name: '',
+            date: '',
+            userid: '',
+            Confirm: false,
+            menuid: '',
+            Quantity: ''
+        }
+    );
+
+
+    const onClickHandler = () => {
+        console.log("설마");
+
+
+        cartList.map(menu => {
+            // if ((menu.userid === userid)&&(menu.Confirm === false)) {
+            //     console.log("onClickHandler -> if is wroking");
+
+            //     setConfirmCart({
+            //             id: menu.id,
+            //             name: menu.name,
+            //             date: menu.date,
+            //             userid: menu.userid,
+            //             Confirm: true,
+            //             menuid: menu.menuid,
+            //             Quantity: menu.Quantity
+            //     });
+            //     dispatch(callModifyCartAPI(confirmCart));
+            // }
+            dispatch(callDeleteCartAPI(menu.id));        
+
+        });
+
+        alert("주문완료, 따라서 텅~!");
+        document.location.reload();
+
+    }
+
     return (
         cartList && menuList && (
             <>
@@ -46,8 +88,9 @@ function CartList() {
                             );
                         }
                     })}
-
-
+                </div>
+                <div className="order-confirm">
+                    <button className='cart-order-confirm-button' name="Confirm" onClick={onClickHandler}>장바구니 주문</button>
                 </div>
             </>
         )

@@ -17,8 +17,6 @@ function MenuList( { categoryType } ) {
     const menuList = result.menulist;
 	// console.log('메뉴 리스트: ', menuList);
     const dispatch = useDispatch();
- 
-
 
     console.log('[MenuList] props{categoryType}', categoryType);
 
