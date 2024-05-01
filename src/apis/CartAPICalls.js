@@ -89,12 +89,9 @@ export function callAddToCartAPI(menu, userid) {
     return async (dispatch, getState) => {
         const today = new Date().toISOString().split('T')[0];
         let id = 1; 
-
-
         if (getState().cartReducer && Array.isArray(getState().cartReducer.items)) {
             id = getState().cartReducer.items.length + 1;
         }
-
         const newItem = {
             id: id.toString(),
             name: menu.name,
@@ -104,7 +101,6 @@ export function callAddToCartAPI(menu, userid) {
             menuid: menu.id,
             Quantity: 1
         };
-
         try {
             const result = await request('POST', '/item', newItem);
             console.log('Added to cart:', result);
