@@ -1,29 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
+import { useLocation } from 'react-router-dom'; // URL 쿼리 파라미터를 읽기 위해 추가
 import MenuItem from '../items/MenuItem';
 import { callGetMenuListAPI } from "../../apis/MenuAPICalls";
 import "../commons/Commons.css"
 
 
 function MenuList( { categoryType } ) {
-
-
     const [searchInput, setSearchInput] = useState('');
-    const [selectedCategories, setSelectedCategories] = useState([categoryType]);
+    const [selectedCategories, setSelectedCategories] = useState(categoryType ? [categoryType] : []);
     const [filteredMenuList, setFilteredMenuList] = useState([]);
 
-
-    const result = useSelector(state => state.menuReducer);
-    const menuList = result.menulist;
-	// console.log('메뉴 리스트: ', menuList);
+    const location = useLocation();
     const dispatch = useDispatch();
+    const menuList = useSelector(state => state.menuReducer.menulist);
 
     console.log('[MenuList] props{categoryType}', categoryType);
 
     useEffect(() => {
-        /* menuList 호출 API */
         dispatch(callGetMenuListAPI());
-    }, [dispatch]);
+        // URL에서 검색 쿼리 추출
+        const query = new URLSearchParams(location.search).get('search');
+        if (query) {
+            setSearchInput(query);
+        }
+    }, [dispatch, location.search]);
 
 
     useEffect(() => {
@@ -36,44 +37,27 @@ function MenuList( { categoryType } ) {
 
     const filterMenuList = () => {
         let filtered = [...menuList];
-        console.log('selectedCategories : ', selectedCategories);
-
         if (selectedCategories.length > 0) {
-            if(selectedCategories != ''){
-                filtered = filtered.filter(menu => selectedCategories.includes(menu.category.type));   
-            }
+            filtered = filtered.filter(menu => selectedCategories.includes(menu.category.type));   
         }
-        else if (searchInput.trim() !== '') {
+        if (searchInput.trim() !== '') {
             filtered = filtered.filter(menu => menu.name.toLowerCase().includes(searchInput.toLowerCase()));
         }
-
-        // filteredMenuList 상태를 업데이트합니다.
         setFilteredMenuList(filtered);
     };
 
 
     const handleCategoryChange = categoryType => {
-        const newSelectedCategories = [...selectedCategories];
-    
-        if (newSelectedCategories.includes('')) {
-            // 이미 선택된 카테고리면 제거합니다.
-            const index = newSelectedCategories.indexOf('');
-            newSelectedCategories.splice(index, 1);
-        } 
-        if(newSelectedCategories.includes(categoryType)) {
-            // 이미 선택된 카테고리면 제거합니다.
-            const index = newSelectedCategories.indexOf(categoryType);
-            newSelectedCategories.splice(index, 1);
-        } else {
-            // 선택된 카테고리 목록에 추가합니다.
-            newSelectedCategories.push(categoryType);
-        }
-    
-        // 선택된 카테고리 목록을 업데이트합니다.
-        setSelectedCategories(newSelectedCategories); 
-
-        filterMenuList();
+        setSelectedCategories(prevCategories => {
+            const index = prevCategories.indexOf(categoryType);
+            if (index > -1) {
+                return prevCategories.filter(c => c !== categoryType); // 카테고리 제거
+            } else {
+                return [...prevCategories, categoryType]; // 카테고리 추가
+            }
+        });
     };
+    
 
 
     const handleSearch = () => {
@@ -82,7 +66,6 @@ function MenuList( { categoryType } ) {
     };
 
     const handleKeyPress = e => {
-        // 엔터를 누르면 검색이 실행됩니다.
         if (e.key === 'Enter') {
             handleSearch();
         }

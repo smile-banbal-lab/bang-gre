@@ -1,6 +1,7 @@
 import { request } from "./Api";
 import { getMenulist, getMenu, registMenu, modifyMenu, deleteMenu } from "../modules/MenuModule";
 
+
 export function callGetMenuListAPI() {
 
 	console.log('getMenuList api calls...');

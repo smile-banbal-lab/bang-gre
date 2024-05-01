@@ -192,6 +192,7 @@
     #section01 {
         height: 100%;
         /* 특정 높이로 설정 */
+        margin-bottom: 100px;
     }
 
     #section01 img {
