@@ -11,7 +11,7 @@
     border-radius: 4px;
     cursor: pointer;
     margin-top: 16px;
-    background-color: #3c5be2;
+    background-color: #139de8;
     color: #fff;
 }
 
@@ -36,10 +36,10 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    background-color: #3c5be2;
+    background-color: #139de8;
     color: #fff;
 }
 
 .submit-button:hover {
-    background-color: #2a3e9d;
+    background-color: #3c5be2;
 }

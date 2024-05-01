@@ -67,16 +67,20 @@ function SignOut () {
                 <li><NavLink to={`/user/list`}>유저 목록 조회</NavLink></li>
 			)}
         </ul>
-        <h1>회원탈퇴를 하시려면 아이디와 비밀번호를 다시 입력해 주세요</h1>
-        <div className="form-group">
-            <label>아이디 : </label>
-            <input className='form-input' name='userid' value={signOutInfo.userid} onChange={onChangeHandler}></input>
-        </div>
-        <div className="form-group">
-            <label>비밀번호 : </label>
-            <input className='form-input' name='password' value={signOutInfo.password} onChange={onChangeHandler}></input>
-        </div>
+        <h2>회원탈퇴를 하시려면 아이디와 비밀번호를 다시 입력해 주세요</h2>
+        <br/>
+            <div className='form-box'>
+                <div className="form-group">
+                    <label>아이디 : </label>
+                    <input className='form-input' name='userid' value={signOutInfo.userid} onChange={onChangeHandler}></input>
+                </div>
+                <div className="form-group">
+                    <label>비밀번호 : </label>
+                    <input className='form-input' name='password' value={signOutInfo.password} onChange={onChangeHandler}></input>
+                </div>
+            </div>
         <button className="submit-button" onClick={onClickHandler}>회원탈퇴</button>
+        <br />
     </div>
 );
 
