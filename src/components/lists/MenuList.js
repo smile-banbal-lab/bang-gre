@@ -1,29 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
+import { useLocation } from 'react-router-dom'; // URL 쿼리 파라미터를 읽기 위해 추가
 import MenuItem from '../items/MenuItem';
 import { callGetMenuListAPI } from "../../apis/MenuAPICalls";
 import "../commons/Commons.css"
 
 
 function MenuList( { categoryType } ) {
-
-
     const [searchInput, setSearchInput] = useState('');
     const [selectedCategories, setSelectedCategories] = useState(categoryType ? [categoryType] : []);
     const [filteredMenuList, setFilteredMenuList] = useState([]);
 
-
-    const result = useSelector(state => state.menuReducer);
-    const menuList = result.menulist;
-	// console.log('메뉴 리스트: ', menuList);
+    const location = useLocation();
     const dispatch = useDispatch();
+    const menuList = useSelector(state => state.menuReducer.menulist);
 
     console.log('[MenuList] props{categoryType}', categoryType);
 
     useEffect(() => {
-        /* menuList 호출 API */
         dispatch(callGetMenuListAPI());
-    }, [dispatch]);
+        // URL에서 검색 쿼리 추출
+        const query = new URLSearchParams(location.search).get('search');
+        if (query) {
+            setSearchInput(query);
+        }
+    }, [dispatch, location.search]);
 
 
     useEffect(() => {
