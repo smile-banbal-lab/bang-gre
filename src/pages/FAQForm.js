@@ -10,8 +10,8 @@ function FAQForm() {
 		userid: userInfo.userid || '',
 		email: userInfo.email || '',
 		phone: userInfo.phone || '',
-		address: '',
-		message: '',
+		// address: '',
+		// message: '',
 		title: '',
 		content: '',
 		id: ''
@@ -48,6 +48,7 @@ function FAQForm() {
 	// 폼 제출 처리
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+		const { email, phone, ...rest } = formData; // email과 phone도 제거
 		const currentDate = new Date().toISOString().split('T')[0];
 	
 		try {
@@ -57,7 +58,7 @@ function FAQForm() {
 					'Content-Type': 'application/json'
 				},
 				body: JSON.stringify({
-					...formData,
+					...rest, // email과 phone을 제외한 나머지 데이터 전송
 					date: currentDate
 				})
 			});
@@ -67,13 +68,12 @@ function FAQForm() {
 				setFormData({
 					name: '',
 					userid: '',
-					email: '',
-					phone: '',
-					address: '',
-					message: '',
+					// email: '', // 필요없으면 주석 처리
+					// phone: '', // 필요없으면 주석 처리
+					// address: '', // 필요없으면 주석 처리
 					title: '',
 					content: '',
-					date: '',
+					// date: '',
 					id: '' // Reset the id along with other fields
 				});
 			}
