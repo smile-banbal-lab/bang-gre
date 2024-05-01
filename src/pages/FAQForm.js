@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import './Main.css';
+// import './Login.css';
+import './FAQForm.css';
 
 function FAQForm() {
 	
@@ -100,54 +102,50 @@ function FAQForm() {
 		}
 	};
 	return (
-		<>          
-			<div className="header">
-				<ul>
-					<h2>FAQ</h2>
-				</ul>
-			</div>
-			<div className="text">
-				<p>
-					빙그레에 궁금한 사항을 문의해 주세요.<br/>
-					최대한 빠른 시일 내에 친절하게 답변해드리겠습니다.<br/>
-					(토,일,공휴일 문의는 평일 운영시간 순차적으로 답변됩니다)
-				</p>
-			</div>
-			<div className="category">
-				<ul>
-					<li className="active">고객상담</li>
-					
-				</ul>
-			</div>
-
-			<form onSubmit={handleSubmit} className="form">
-				<div>
-					<div>
-						<label htmlFor="name">이름</label>
-						<input type="text" id="name" name="name" value={formData.name} onChange={handleChange}/>
-					</div>
-					<div>
-						<label htmlFor="userId">사용자아이디</label>
-						<input type="text" id="userid" name="userid" value={formData.userid} onChange={handleChange}/>
-					</div>
-
-					<div className="title">
-						<label htmlFor="title">제목</label>
-						<input type="text" id="title" name="title" value={formData.title} onChange={handleChange}/>
-					</div>
-					<div className="content">
-						<label htmlFor="content">내용</label>
-						<textarea id="content" name="content" value={formData.content} onChange={handleChange} rows="4" cols="50"
-							placeholder="주민등록번호등의 개인정보는 절대 노출하지 마세요."></textarea>
-					</div>
-
-					<div className="btn">
-						<button type="button" className="form-button">취소하기</button>
-						<button type="submit" className="form-button">등록하기</button>
-					</div>
-
+		
+		<>        
+		<section id='section01'>
+		<div className='Main-background'></div>
+			<div className='FAQ-container'>
+				<div className="header">
+					<ul>
+						<h1>FAQ</h1>
+					</ul>
 				</div>
-			</form>
+				<div className="text">
+					<p>
+						빙그레에 궁금한 사항을 문의해 주세요.<br/>
+						최대한 빠른 시일 내에 친절하게 답변해드리겠습니다.<br/>
+						(토,일,공휴일 문의는 평일 운영시간 순차적으로 답변됩니다)
+					</p>
+				</div>
+
+
+				<form onSubmit={handleSubmit} className="FAQ-form">
+    <div className="input-group">
+        <label htmlFor="name">이름</label>
+        <input type="text" id="name" name="name" value={formData.name} onChange={handleChange}/>
+    </div>
+    <div className="input-group">
+        <label htmlFor="userid">사용자아이디</label>
+        <input type="text" id="userid" name="userid" value={formData.userid} onChange={handleChange}/>
+    </div>
+    <div className="input-group">
+        <label htmlFor="title">제목</label>
+        <input type="text" id="title" name="title" value={formData.title} onChange={handleChange}/>
+    </div>
+    <div className="content">
+        <label htmlFor="content">내용</label>
+        <textarea id="content" name="content" value={formData.content} onChange={handleChange} rows="4" cols="50"
+            placeholder="주민등록번호 등의 개인정보는 절대 노출하지 마세요."></textarea>
+    </div>
+    <div className="btn">
+        <button type="button" className="FAQ-button">취소하기</button>
+        <button type="submit" className="FAQ-button">등록하기</button>
+    </div>
+</form>
+			</div>
+			</section>
 		</>
 		
 	);
