@@ -108,7 +108,7 @@
       "address": "아프리카",
       "email": "kakao123@kakao.com",
       "phone": "01099001255",
-      "isAdmin": false
+      "isAdmin": true
     }
   ],
   "item": [

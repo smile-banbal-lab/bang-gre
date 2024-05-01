@@ -1,6 +1,6 @@
 import { request } from "./Api";
 import { getMenulist, getMenu, registMenu, modifyMenu, deleteMenu } from "../modules/MenuModule";
-import { getCartlist, getCart, deleteCart, modifyCart, registCart } from "../modules/CartModule";
+import { getCartlist, getCart, deleteCart, modifyCart, registCart } from "../modules/cartModule";
 
 
 export function callGetCartListAPI() {

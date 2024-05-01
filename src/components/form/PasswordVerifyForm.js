@@ -8,6 +8,7 @@ function PasswordVerifyForm() {
 
     const userString = sessionStorage.getItem('userInfo');
 	const user = JSON.parse(userString);
+    const id = user.userid;
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -17,7 +18,7 @@ function PasswordVerifyForm() {
 
     const onClickHandler = () => {
 
-		dispatch(callVerifyAPI(password));
+		dispatch(callVerifyAPI(id, password));
 
 	};
 
@@ -27,11 +28,12 @@ function PasswordVerifyForm() {
 				alert('비밀번호를 확인해주세요');
 				setPassword('');
 				
-			} else if (isVerify) {
+			} else if (isVerify && user?.id) {
+                console.log(user.id);
 				navigate(`/user/${user.id}`);
 			}
-		}, // eslint-disable-next-line
-		[result, isVerify, navigate, dispatch]
+		},
+		[]
 	);
 
     return (

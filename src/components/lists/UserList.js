@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import UserItem from '../items/UserItem';
 import { callGetUserListAPI } from "../../apis/UserAPICalls";
 import { NavLink, Navigate } from 'react-router-dom';
+import './UserList.css';
 
 
 function UserList() {

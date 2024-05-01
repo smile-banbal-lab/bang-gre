@@ -1,5 +1,5 @@
 import { NavLink, useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { resetLoginUser } from "../../modules/UserModule";
 
 function Navbar() {
@@ -8,9 +8,8 @@ function Navbar() {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 
-	const user = useSelector(state => state.userReducer);
-
-	const { id } = user;
+    const userString = sessionStorage.getItem('userInfo');
+	const user = JSON.parse(userString);
 
 	/* 로그아웃 호출 시: localStorage 저장 값 삭제, userReducer 값 리셋, 루트로 이동 */
 	const logoutHandler = () => {
@@ -36,7 +35,7 @@ function Navbar() {
 					<li><NavLink to='/login'>LOGIN</NavLink></li>
 				) : (
 					<>
-					<li><NavLink to={`/user/passwordcheck/${id}`}>마이페이지</NavLink></li>
+					<li><NavLink to={`/user/passwordcheck/${user.id}`}>마이페이지</NavLink></li>
 					<li onClick={logoutHandler}><a href="">로그아웃</a></li>
 					</>
 				)
