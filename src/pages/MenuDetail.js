@@ -10,7 +10,9 @@ function MenuDetail() {
 
     /* 로그인 상태 확인 */
     const isAuthorized = !!sessionStorage.getItem('isLogin');
-    const isAdmin = !!sessionStorage.getItem('isAdmin'); // 관리자 여부 확인
+    const userInfoString = sessionStorage.getItem('userInfo');
+    const userInfo = userInfoString ? JSON.parse(userInfoString) : null;
+    const isAdmin = userInfo && userInfo.isAdmin; // Check if user is admin
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const { id } = useParams();
@@ -31,7 +33,7 @@ function MenuDetail() {
     );
 
     return (
-        <div>
+        <div id="MenuDetail-page">
             <Menu id={id} />
             <div className="admin-buttonBox">
                 { /* 로그인 된 상황에만 button이 보이도록 조건부 랜더링 */}

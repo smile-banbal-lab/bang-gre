@@ -1,19 +1,34 @@
-import React, { useEffect, useState } from 'react';
+// src/pages/QnaDetail.js
+import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { getQna } from '../modules/QnaModule';
 import { callGetqnaAPI } from '../apis/QnaAPICalls';
+import './Qna.css'
 
-function QnaDetail({ id }) {
-    const [qnaDetail, setQnaDetail] = useState(null);
+function QnaDetail() {
+    const { id } = useParams();
+    const dispatch = useDispatch();
+    const qnaDetail = useSelector(state => state.qnaReducer.qna);
 
     useEffect(() => {
-        // 게시글의 자세한 내용을 불러오는 API 호출
-        callGetqnaAPI(id)
-            .then(response => {
-                setQnaDetail(response.data); // API 응답으로 받은 자세한 내용 설정
-            })
-            .catch(error => {
+        const fetchQnaDetail = async () => {
+            try {
+                const response = await callGetqnaAPI(id);
+                if (response && response.data) {
+                    dispatch(getQna(response.data));
+                } else {
+                    console.log('No data received from the API');
+                }
+            } catch (error) {
                 console.error('Error fetching qna detail:', error);
-            });
-    }, [id]); // id가 변경될 때마다 호출
+            }
+        };
+
+        if (!qnaDetail || qnaDetail.id !== Number(id)) {
+            fetchQnaDetail();
+        }
+    }, [id, qnaDetail, dispatch]);
 
     if (!qnaDetail) {
         return <div>Loading...</div>;

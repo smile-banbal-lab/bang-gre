@@ -133,6 +133,12 @@
     {
       "id": "1",
       "name": "딸기 아이스크림",
+<<<<<<< HEAD
+      "date": "2024-05-01",
+      "userid": "john123",
+      "Confirm": false,
+      "menuid": "6",
+=======
       "date": "2024-04-30",
       "userid": "john123",
       "Confirm": false,
@@ -146,6 +152,7 @@
       "userid": "john123",
       "Confirm": false,
       "menuid": "11",
+>>>>>>> 53bae549a95ca2192ca03454c15219adfcdfefad
       "Quantity": 1
     }
   ],
@@ -1618,6 +1625,14 @@
       "userid": "joojoo",
       "title": "동치미맛 아이스크림",
       "content": "동치미맛 아이스크림 메뉴 개발해주세요",
+      "date": "2024-05-01"
+    },
+    {
+      "id": "23",
+      "name": "박장군",
+      "userid": "parkbill",
+      "title": "이순신",
+      "content": "장군을 브랜드로 하는 아이스크림 개발해주세요",
       "date": "2024-05-01"
     }
   ]

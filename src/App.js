@@ -45,14 +45,6 @@ function App() {
 						<Route path=":id" element={<MenuModify />} />
 					</Route>
 				</Route>
-				{/* <Route index element={<CustomerService />} /> */}
-					{/* <Route path="service" element={<CustomerService/>} > */}
-					{/* <Route path=":id" element={<BoardDetail />} />
-					<Route path="regist" element={<BoardRegist />} />
-					<Route path="modify" >
-						<Route path=":id" element={<BoardModify />} />
-					</Route> */}
-
 				<Route path="login" element={<Login />} />
 				<Route path="/signup" element={<SignUp />} />
 				<Route path="/searchidpw" element={<SearchIdPw/>} />
@@ -68,10 +60,8 @@ function App() {
 					<Route path="list" element={<UserList />} />
 				</Route>
 				<Route path="cart"  element={<Cart/>} />
-				<Route path="qna" element={<QnaPage />}>
-					<Route index element={<QnaPage />} />
-					<Route path=":id" element={<QnaDetail />} /> {/* QnaDetail 컴포넌트에 대한 라우트 설정 추가 */}
-				</Route>
+					<Route path="/qna" element={<QnaPage />} />
+					<Route path="/qna/:id" element={<QnaDetail />} />
 				<Route path="contact" element={<FAQForm />} />
 			</Route>
 			<Route path="*" element={<Error />} />

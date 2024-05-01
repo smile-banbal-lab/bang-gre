@@ -1,22 +1,30 @@
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import React, { useState } from 'react';
-import { callAddToCartAPI } from '../../apis/CartAPICalls';
+import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { callAddToCartAPI, callGetCartListAPI } from '../../apis/CartAPICalls';
 
 
 
 
-function MenuItem({ menu, categoryType, userid }) {
+function MenuItem({ menu, categoryType }) {
 	const dispatch = useDispatch();
-	// const userInfoString = sessionStorage.getItem('userInfo');
-	// const userInfo = JSON.parse(userInfoString);
-	// console.log("user ID is : ", userInfo.userid);
-    // const userid = userInfo.userid;
-
 	const addToCartHandler = () =>{
+		const userInfoString = sessionStorage.getItem('userInfo');
+		const userInfo = JSON.parse(userInfoString);
+		console.log("user ID is : ", userInfo.userid);
+		const userid = userInfo.userid;
 		dispatch(callAddToCartAPI(menu, userid ));
 		alert("장바구니 넣기 성공, 수량 변경은 나의 장바구니에서 부탁드립니다!");
 	};
+	// const cartResult = useSelector(state => state.cartReducer);
+    // const cartList = cartResult.cartlist;
+	// console.log('장바구니 리스트: ', cartList);
+    // console.log('장바구니 리스트 길이: ', cartList.length);
+	useEffect(() => {
+        /* cartList 호출 API */
+        dispatch(callGetCartListAPI());
+    }, [dispatch]);
+
 
 
 	return (

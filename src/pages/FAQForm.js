@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import './Main.css';
 
 function FAQForm() {
+	
 	const userInfo = useSelector(state => state.userReducer); 
 	// 폼 데이터를 state로 관리함
 	const [formData, setFormData] = React.useState({
@@ -10,12 +11,12 @@ function FAQForm() {
 		userid: userInfo.userid || '',
 		email: userInfo.email || '',
 		phone: userInfo.phone || '',
-		// address: '',
-		// message: '',
 		title: '',
 		content: '',
 		id: ''
 	});
+	console.log(userInfo);  // Redux로부터 불러온 사용자 정보
+	console.log(formData);  // 현재 폼 데이터의 상태
 
 	useEffect(() => {
         // Fetch current posts to determine the next id
@@ -35,7 +36,24 @@ function FAQForm() {
 
         fetchPosts();
     }, []);
-
+	// console.log(userInfo);  // Redux로부터 불러온 사용자 정보
+	// console.log(formData);  // 현재 폼 데이터의 상태
+	
+	    // 추가된 useEffect: userInfo가 변경될 때마다 formData 업데이트
+		useEffect(() => {
+			if (userInfo) {
+				setFormData({
+					name: userInfo.name || '',
+					userid: userInfo.userid || '',
+					email: userInfo.email || '',
+					phone: userInfo.phone || '',
+					title: '',
+					content: '',
+					id: ''
+				});
+			}
+		}, [userInfo]); // userInfo 의존성 추가
+		// console.log(userInfo);
 	//입력 필드의 변화를 처리
 	const handleChange = (e) => {
 		const { name, value } = e.target;

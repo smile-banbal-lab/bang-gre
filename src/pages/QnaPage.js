@@ -12,7 +12,6 @@ function QnaPage() {
     const isAuthorized = !!sessionStorage.getItem('isLogin');
     const navigate = useNavigate();
 
-
     useEffect(() => {
         /* qnaList 호출 API */
         dispatch(callGetqnaListAPI());
@@ -23,7 +22,7 @@ function QnaPage() {
     }
 
     const handleRowClick = (id) => {
-        navigate(`/qna/${id}`); // 각 게시글의 자세한 내용을 보여주는 페이지로 이동
+        navigate(`/qna/${id}`); // 클릭한 게시글의 id에 해당하는 디테일 페이지로 이동
     };
 
     const items = Object.values(qnaList).map((item) => (
@@ -36,29 +35,25 @@ function QnaPage() {
         </tr>
     ));
 
-
     return (
-        <>
-            <div id='Voc-page'>
-                <h2 >게시글 목록 {(isAuthorized) && 
-                <button onClick={() => navigate(`/contact`)}>게시글 작성하기</button>} </h2>
-
-                <table className="common-table">
-                    <thead>
-                        <tr>
-                            <th>글번호</th>
-                            <th>제목</th>
-                            <th>등록일</th>
-                            <th>작성자(id)</th>
-                            <th>내용</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {items}
-                    </tbody>
-                </table>
-            </div>
-        </>
+        <div id='Voc-page'>
+            <h2>게시글 목록 {(isAuthorized) && 
+                <button onClick={() => navigate(`/contact`)}>게시글 작성하기</button>}</h2>
+            <table className="common-table">
+                <thead>
+                    <tr>
+                        <th>글번호</th>
+                        <th>제목</th>
+                        <th>등록일</th>
+                        <th>작성자(id)</th>
+                        <th>내용</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {items}
+                </tbody>
+            </table>
+        </div>
     );
 }
 
