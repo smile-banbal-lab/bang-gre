@@ -109,6 +109,17 @@
       "email": "kakao123@kakao.com",
       "phone": "01099001255",
       "isAdmin": false
+    },
+    {
+      "id": "cde4",
+      "userid": "chchch",
+      "name": "김가람",
+      "username": "가라미",
+      "password": "1234",
+      "address": "경기도화성시",
+      "email": "kakakak@naver.com",
+      "phone": "01077777777",
+      "isAdmin": false
     }
   ],
   "item": [
@@ -1626,6 +1637,22 @@
       "userid": "parkbill",
       "title": "이순신",
       "content": "장군을 브랜드로 하는 아이스크림 개발해주세요",
+      "date": "2024-05-01"
+    },
+    {
+      "id": "24",
+      "name": "커피",
+      "userid": "coffee",
+      "title": "게시글 테스트입니다",
+      "content": "게시글 테스트 내용 부분입니다.",
+      "date": "2024-05-01"
+    },
+    {
+      "id": "25",
+      "name": "커피",
+      "userid": "coffee",
+      "title": "더위사냥",
+      "content": "이제 안나오나요?",
       "date": "2024-05-01"
     }
   ]

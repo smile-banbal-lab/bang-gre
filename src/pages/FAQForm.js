@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import './Login.css';
 import './Main.css';
+import '../components/form/LoginForm.css';
+
 
 function FAQForm() {
 	
@@ -100,12 +103,13 @@ function FAQForm() {
 		}
 	};
 	return (
+		<section id="section01">
+		<div className='Main-background'></div>
 		<>          
 			<div className="header">
 				<ul>
 					<h2>FAQ</h2>
 				</ul>
-			</div>
 			<div className="text">
 				<p>
 					빙그레에 궁금한 사항을 문의해 주세요.<br/>
@@ -113,15 +117,16 @@ function FAQForm() {
 					(토,일,공휴일 문의는 평일 운영시간 순차적으로 답변됩니다)
 				</p>
 			</div>
-			<div className="category">
+			</div>
+			{/* <div className="category">
 				<ul>
 					<li className="active">고객상담</li>
 					
 				</ul>
-			</div>
+			</div>  */}
 
 			<form onSubmit={handleSubmit} className="form">
-				<div>
+				<div className='login-form-container'>
 					<div>
 						<label htmlFor="name">이름</label>
 						<input type="text" id="name" name="name" value={formData.name} onChange={handleChange}/>
@@ -149,6 +154,7 @@ function FAQForm() {
 				</div>
 			</form>
 		</>
+		</section>
 		
 	);
 }
