@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import './Main.css';
 
 function FAQForm() {
+	
 	const userInfo = useSelector(state => state.userReducer); 
 	// 폼 데이터를 state로 관리함
 	const [formData, setFormData] = React.useState({
@@ -10,12 +11,12 @@ function FAQForm() {
 		userid: userInfo.userid || '',
 		email: userInfo.email || '',
 		phone: userInfo.phone || '',
-		address: '',
-		message: '',
 		title: '',
 		content: '',
 		id: ''
 	});
+	console.log(userInfo);  // Redux로부터 불러온 사용자 정보
+	console.log(formData);  // 현재 폼 데이터의 상태
 
 	useEffect(() => {
         // Fetch current posts to determine the next id
@@ -35,7 +36,24 @@ function FAQForm() {
 
         fetchPosts();
     }, []);
-
+	// console.log(userInfo);  // Redux로부터 불러온 사용자 정보
+	// console.log(formData);  // 현재 폼 데이터의 상태
+	
+	    // 추가된 useEffect: userInfo가 변경될 때마다 formData 업데이트
+		useEffect(() => {
+			if (userInfo) {
+				setFormData({
+					name: userInfo.name || '',
+					userid: userInfo.userid || '',
+					email: userInfo.email || '',
+					phone: userInfo.phone || '',
+					title: '',
+					content: '',
+					id: ''
+				});
+			}
+		}, [userInfo]); // userInfo 의존성 추가
+		// console.log(userInfo);
 	//입력 필드의 변화를 처리
 	const handleChange = (e) => {
 		const { name, value } = e.target;
@@ -48,6 +66,7 @@ function FAQForm() {
 	// 폼 제출 처리
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+		const { email, phone, ...rest } = formData; // email과 phone도 제거
 		const currentDate = new Date().toISOString().split('T')[0];
 	
 		try {
@@ -57,7 +76,7 @@ function FAQForm() {
 					'Content-Type': 'application/json'
 				},
 				body: JSON.stringify({
-					...formData,
+					...rest, // email과 phone을 제외한 나머지 데이터 전송
 					date: currentDate
 				})
 			});
@@ -67,13 +86,12 @@ function FAQForm() {
 				setFormData({
 					name: '',
 					userid: '',
-					email: '',
-					phone: '',
-					address: '',
-					message: '',
+					// email: '', // 필요없으면 주석 처리
+					// phone: '', // 필요없으면 주석 처리
+					// address: '', // 필요없으면 주석 처리
 					title: '',
 					content: '',
-					date: '',
+					// date: '',
 					id: '' // Reset the id along with other fields
 				});
 			}
@@ -130,17 +148,6 @@ function FAQForm() {
 
 				</div>
 			</form>
-
-			<footer id="footer">
-				<div className="text">
-				<ul>
-					<li>회사명:빙그레</li>
-					<li>경기도 남양주시 다산동 4344-3 / 경기도 남양주시 다산순환로 45(다산동)</li>
-					<li>ⓒ Binggrae all rights reserved.</li>
-				</ul>
-				</div>
-			</footer>
-
 		</>
 		
 	);

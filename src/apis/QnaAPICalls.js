@@ -11,3 +11,17 @@ export function callGetqnaListAPI () {
 		dispatch(getQnalist(result));
 	}
 }
+
+// src/apis/QnaAPICalls.js
+export const callGetqnaAPI = async (id) => {
+    try {
+        const response = await fetch(`/api/qna/${id}`);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return await response.json();
+    } catch (error) {
+        console.error('Failed to fetch qna:', error);
+        return null;
+    }
+};
