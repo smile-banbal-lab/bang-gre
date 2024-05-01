@@ -33,7 +33,7 @@ function MenuDetail() {
     );
 
     return (
-        <div>
+        <div id="MenuDetail-page">
             <Menu id={id} />
             <div className="admin-buttonBox">
                 { /* 로그인 된 상황에만 button이 보이도록 조건부 랜더링 */}
