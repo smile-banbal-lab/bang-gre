@@ -82,18 +82,20 @@ function CartItem({ menu, prod }) {
 		
 			<div className="cartItem">
 				<h3>이름 : {menu.name}</h3>
-				<h4>개당 금액: {product.price}<br></br>총 금액: {(product.price)*(modifyCart.Quantity)}</h4>
+				<h4>개당 금액: {product.price}<br></br>예상 총 금액: {(product.price)*(modifyCart.Quantity)}</h4>
 				<div>
-					<label>수량: </label>
+					<label>변경 수량: </label>
 					<input type="number" name="Quantity" min="1" value={modifyCart.Quantity} onChange={onChangeHandler}></input>
 
 				</div>
 				<div>
 					<h3>수량 : {menu.Quantity}</h3>
+					<h4>총 금액: {(product.price)*(menu.Quantity)}</h4>
+
 					<img src={product.image} style={{ maxWidth: 200 , maxHeight: 200}} alt={product.name}></img>
 				</div>
-				<button className='cart-delete-button' onClick={deleteOrderHandler}>Delete</button>
-				<button className='cart-modify-quantity-button' onClick={modifyQuantityHandler}>Confirm</button>
+				<button className='cart-delete-button' onClick={deleteOrderHandler}>품목삭제</button>
+				<button className='cart-modify-quantity-button' onClick={modifyQuantityHandler}>변경확정</button>
 			</div>
 		</>
 );
