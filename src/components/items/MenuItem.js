@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect } from 'react';
 import { callAddToCartAPI, callGetCartListAPI } from '../../apis/CartAPICalls';
+import './Menu.css'
 
 
 

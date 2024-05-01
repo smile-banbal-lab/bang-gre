@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react'; // useCallback을 추가로 임포트
 import Searchbar from "../components/commons/Searchbar";
+import Collapse from './Collapse';
 import { useNavigate } from 'react-router-dom';
 import "./Main.css";
 
@@ -76,8 +77,9 @@ function Main() {
                 </div>
             </section>
             <section id="section03">
-                <h2>그 다음엔...?</h2>
-                <div></div>
+                <div>
+                    <Collapse id="collapse"/>
+                </div>
             </section>
         </div>
     );

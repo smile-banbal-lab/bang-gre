@@ -98,10 +98,13 @@
 }
 
 #main-category-box>div {
+    background-color: #A9E2F3;
     padding: 5%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 40px;
+    margin: 20px;
 }
 
 #main-category-box>div:hover {
@@ -728,4 +731,18 @@ h1 {
 /* -----------------MenuDetail--------------- */
 #MenuDetail-page{
     height: 80vh;
+}
+
+/* -----------------MenuDetail--------------- */
+#section03{
+    background-color: #F3F781;
+    width: 100%;
+    align-items: center;
+    margin: auto;
+    padding: 10%;
+}
+
+#collapse{
+    width: 80%;
+
 }

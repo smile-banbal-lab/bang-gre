@@ -62,6 +62,10 @@
 	margin: 2%5%;
 }
 
+.menuItem{
+	border: 1px solid black;
+}
+
 /* ------------------ menuItem ------------------ */
 .menuItem {
 	width: 300px;

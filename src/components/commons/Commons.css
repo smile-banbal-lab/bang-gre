@@ -31,8 +31,8 @@
 #category-search-button:hover{
     transition-duration: .5s;
     color: rgb(61, 61, 61);
-    border: 2px solid rgb(255, 221, 0);
-    background-color: rgb(255, 221, 0);
+    border: 2px solid #F8E0F7;
+    background-color: #F8E0F7;
 }
 /*  ——————————Searchbar———————— */
 
@@ -85,6 +85,14 @@
     width: 80%;
     margin: auto;
 }
+
+#category-button:hover{
+    transition-duration: .5s;
+    color: rgb(61, 61, 61);
+    border: 2px solid #F8E0F7;
+    background-color: #F8E0F7;
+}
+
 
 
 /* ———————— 반응형 ———————— */
