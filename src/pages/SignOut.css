@@ -1,0 +1,45 @@
+.signout-container {
+    display: flex;
+    flex-direction: column; /* 세로로 나열 */
+    justify-content: center;
+    align-items: center;
+}
+
+.signout-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 16px;
+    background-color: #139de8;
+    color: #fff;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.form-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.submit-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #139de8;
+    color: #fff;
+}
+
+.submit-button:hover {
+    background-color: #3c5be2;
+}

@@ -1,0 +1,71 @@
+.FAQ-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: #FCE436;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    width: 690px; 
+    margin: 50px; 
+}
+
+.btn {
+    display: flex;
+    justify-content: space-between; /* 버튼을 좌우로 분산 배치 */
+    width: 100%; /* 부모 컨테이너의 전체 너비 사용 */
+}
+
+.FAQ-button {
+    background: #009ED2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
+    text-shadow: none; /* 이전의 텍스트 그림자 제거 */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.FAQ-button:hover {
+    background-color: #3c5be2; /* 호버 효과 추가 */
+}
+
+.content textarea {
+    width: 100%; /* 너비를 100%로 설정 */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.input-group input {
+    width: 100%; /* 모든 입력 필드와 텍스트 영역의 너비를 동일하게 설정 */
+    padding: 10px; /* 일관된 패딩 추가 */
+    margin-bottom: 10px; /* 각 입력 필드 아래의 여백 설정 */
+    border-radius: 5px; /* 입력 필드의 모서리 둥글게 처리 */
+    border: 1px solid #ccc; /* 경계선 스타일 */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* 약간의 그림자 효과 추가 */
+}
+.input-group textarea {
+    width: 90%; /* textarea의 너비를 늘림 */
+    padding: 10px; /* 일관된 패딩 추가 */
+    margin-bottom: 10px; /* 각 입력 필드 아래의 여백 설정 */
+    border-radius: 5px; /* 입력 필드의 모서리 둥글게 처리 */
+    border: 1px solid #ccc; /* 경계선 스타일 */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* 약간의 그림자 효과 추가 */
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column; /* 요소들을 수직으로 정렬 */
+    align-items: center; /* 중앙 정렬 */
+    justify-content: center; /* 중앙 정렬 */
+    width: 100%; /* 최대 너비 설정 */
+    margin-bottom: 20px; /* 각 입력 그룹 간의 여백 추가 */
+}
+
+#section01{
+    margin-bottom: 300px;
+}

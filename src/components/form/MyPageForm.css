@@ -1,0 +1,54 @@
+.modify-container {
+    display: flex;
+    flex-direction: column; /* 세로로 나열 */
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+    margin: auto;
+  }
+
+.userData-container {
+  margin: 5px;
+  border: 1px solid black;
+}
+
+.modify-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 16px;
+    background-color: #139de8;
+    color: #fff;
+  }
+  
+  .form-group {
+    margin: 15px;
+
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  .form-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+  }
+  
+  .submit-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #139de8;
+    color: #fff;
+  }
+  
+  .submit-button:hover {
+    background-color: #3c5be2;
+  }
+  
