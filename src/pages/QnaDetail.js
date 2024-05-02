@@ -6,6 +6,10 @@ import { callGetqnaAPI, callDeleteqnaAPI } from '../apis/QnaAPICalls';
 import './Qna.css'
 
 function QnaDetail() {
+
+    const userString = sessionStorage.getItem('userInfo');
+	const user = JSON.parse(userString);
+
     const { id } = useParams();
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -55,12 +59,16 @@ function QnaDetail() {
     }
 
     return (
-        <div className="qna-detail">
-            <h2>{qnaDetail.title}</h2>
-            <p>작성일: {qnaDetail.date}</p>
-            <p>작성자: {qnaDetail.userid}</p>
-            <p>내용: {qnaDetail.content}</p>
-            <button onClick={onClickHandler}>글 삭제</button>
+        <div className='qna-container'>
+            <div className="qna-detail">
+                <h2>{qnaDetail.title}</h2>
+                <p>작성일: {qnaDetail.date}</p>
+                <p>작성자: {qnaDetail.userid}</p>
+                <p>내용: {qnaDetail.content}</p>
+                { user && user.id != null && (user.userid === qnaDetail.userid || user.isAdmin) && (
+                <button onClick={onClickHandler}>글 삭제</button>
+                )}
+            </div>
         </div>
     );
 }
