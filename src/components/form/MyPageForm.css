@@ -30,6 +30,21 @@
   .modify-button:hover {
     background-color: #a5b60b;
   }
+
+  .modify-button-clicked {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-bottom: 16px;
+    background-color: #ee4337;
+    color: #333;
+  }
+
+  .modify-button-clicked:hover {
+    background-color: #f0685e;
+  }
   
   .form-group {
     margin: 15px;

@@ -27,10 +27,13 @@ function MyPageForm() {
 		}
 	);
 
+	const [isToggleModify, setIsToggleModify] = useState(false);
+
     const [isReadOnly, setIsReadOnly] = useState(true);
 
     const toggleModify = () => {
 
+		setIsToggleModify(!isToggleModify);
         setIsReadOnly(!isReadOnly);
 
     };
@@ -70,7 +73,7 @@ function MyPageForm() {
         return (
 		<>
 		<div className='modify-container'>
-  			<button className="modify-button" onClick={toggleModify}>회원정보 수정 시작</button><br />
+  			<button className={isToggleModify ? 'modify-button-clicked' : 'modify-button'} onClick={toggleModify}>{isToggleModify ? '회원정보 수정 종료' : '회원정보 수정 시작'}</button><br />
 			<div className='userData-container'>
   				<div className="form-group">
   					<label>이름</label>
@@ -97,7 +100,7 @@ function MyPageForm() {
   				  	<input className="form-input" type="text" name="password" value={userInfo.password} onChange={onChangeHandler} readOnly={isReadOnly} />
   				</div>
 			</div>
-  			<button className="submit-button" onClick={onClickHandler}>수정</button>
+  			<button className="submit-button" onClick={onClickHandler}>수정하기</button>
 		</div>
 		</>
 
