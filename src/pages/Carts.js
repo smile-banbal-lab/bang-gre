@@ -10,8 +10,8 @@ function Carts() {
 
 	return (
 		<div id="carts">
-			<div id="carts-footer" class="container">
-				<h2>장바구니 {(isAuthorized) && <button id="order-history-button" onClick={() => navigate(`/menu/regist`)}>주문내역 보기</button>} </h2>
+			<div id="carts-footer" className="container">
+				<h2>장바구니 {(isAuthorized) && <button id="order-history-button" onClick={() => navigate(`/carthistory`)}>주문내역 보기</button>} </h2>
 			</div>
 			
 			<CartList />
