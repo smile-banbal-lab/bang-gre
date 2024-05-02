@@ -37,10 +37,17 @@ function QnaPage() {
 
     return (
         <div id='Voc-page'>
-            <div className='Main-background'></div>
-            <h2>게시글 목록 {(isAuthorized) && 
+            <div className='Main-background qna-background'></div>
+            <h2 className='qnaTitle'>게시글 목록 {(isAuthorized) && 
                 <button onClick={() => navigate(`/contact`)}>게시글 작성하기</button>}</h2>
-            <table className="common-table">
+            <table className="qna-table">
+                <colgroup>
+                    <col style={{width: '8%'}}/>
+                    <col style={{width: '20%'}}/>
+                    <col style={{width: '15%'}}/>
+                    <col style={{width: '20%'}}/>
+                    <col style={{width: '37%'}}/>
+                </colgroup>
                 <thead>
                     <tr>
                         <th>글번호</th>
