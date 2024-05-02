@@ -1354,27 +1354,6 @@
       "image": "../images/product88.png"
     },
     {
-      "id": "89",
-      "name": "",
-      "category": {
-        "type": "",
-        "image": ""
-      },
-      "flavor": [
-        ""
-      ],
-      "price": "",
-      "Information": {
-        "Sodium": "",
-        "Sugar": "",
-        "Fat": "",
-        "TransFat": "",
-        "Cholesterol": "",
-        "protein": ""
-      },
-      "image": ""
-    },
-    {
       "id": "90",
       "name": "김치우유",
       "category": {

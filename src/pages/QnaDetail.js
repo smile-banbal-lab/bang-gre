@@ -68,8 +68,6 @@ function QnaDetail() {
                         <p>작성일: {qnaDetail.date}</p>
                         <p>작성자: {qnaDetail.userid}</p>
                         <p>내용: {qnaDetail.content}</p>
-                        <br/><br/>
-                        <br/><br/>
                         <br/>
                         { user && user.id != null && (user.userid === qnaDetail.userid || user.isAdmin) && (
                         <button onClick={onClickHandler}>글 삭제</button>

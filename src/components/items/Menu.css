@@ -7,6 +7,15 @@
 * {
     font-family: 'Binggrae',sans-serif;
 }
+
+#root{
+    --tablebackground : #FCE436;
+    --bingraeDown: #e6cd5ebd;
+    --bingrae: #f2d864;
+    --bingraeGreen: #009345;
+	--blueSearch: rgb(19, 157, 232);
+}
+
 #menu-detail {
 	width: 90%;
 	margin: 0 auto;
@@ -64,27 +73,31 @@
 
 /* ------------------ menuItem ------------------ */
 .menuItem {
-	background-color: #FCE436;
+	background-color: var(--bingraeDown );
 	width: 300px;
 	border-radius: 10px;
 	box-sizing: border-box;
 	cursor: pointer;
-	color: rgb(46, 46, 46);
+	/* color: rgb(46, 46, 46); */
 	padding: 3% 2%;
     /* border: 1px solid rgb(19, 157, 232); */
 }
-.menuItem h3,h4{
-    font-size: 16px;
+.menuItem h3,
+.menuItem h4{
+	font-size: 16px;
+	font-weight: bold !important;
 }
 
 .menuItem>div{
-    text-align: left;
+	text-align: left;
     
 }
 .menuItem:hover {
+	transform: scale(1.03);
+	background-color: var(--bingrae);
 	transition-duration: .5s;
 	color: rgb(61, 61, 61);
-	background-color:white;
+	box-shadow: 2px 2px 6px #222;
 }
 
 .menuItem-button {
@@ -94,17 +107,19 @@
 	border: none;
 	color: black;	
     border-radius: 30px;
-    background-color: white;
+	transition:  background-color 0.4s ease ;
+	transition:  color 0.4s ease ;
+    background-color: rgba(255, 255, 255, 0.7);
 }
 .menuItem-button:hover{
-    color: rgb(46, 46, 46);
-    background-color: #F8E0F7;
+	color: white;
+	background-color: var(--bingraeGreen);
 }
 
 /*  */
-#category-select>button{
-    margin-right: 2%;
-    border-radius: 5px;
+#category-select > button{
+    margin-right: 5px;
+    border-radius: 25px;
     box-sizing: border-box;
 }
 #Category-Searchbar{
@@ -122,6 +137,8 @@
     height: 60px;
     top: 0;
     right: 0;
+	color: white;
+	font-weight: bold;
     background-color: rgb(19, 157, 232);
 }
 .admin-buttonBox {
@@ -136,8 +153,9 @@
 }
 
 .selected{
-    border:1px solid rgb(19, 157, 232);
-    color:rgb(46, 46, 46);
-    background-color: rgb(250,250,250);
+    border:1px solid var(--bingraeDown) !important;
+    color:rgb(46, 46, 46) !important;
+    background-color: var(--bingrae) !important;
+	font-weight: bold;;
 }
 
