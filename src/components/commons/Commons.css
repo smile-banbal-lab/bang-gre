@@ -8,7 +8,7 @@
 }
 #category-search-input{
     width: 90%;
-    border: 1px solid black;
+    border: 2px solid #fff;
     border-radius: 100px;
     padding-left: 5%;
     box-sizing: border-box;
@@ -18,7 +18,8 @@
 #category-search-button{
     width: 15%;
     height: 100%;
-    border: 2px solid black;
+    /* border: 2px solid rgb(12, 65, 163); */
+    border: 2px solid #fff;
     border-radius: 100px;
     position:absolute;
     top:0;right: 5%;
@@ -90,6 +91,7 @@
 #category-button{
     background-color: white;
     color: black;
+    border: 1px solid #ccc;
 }
 
 #category-button:hover{
@@ -97,6 +99,7 @@
     color: rgb(61, 61, 61);
     border: 2px solid #F8E0F7;
     background-color: #F8E0F7;
+    font-weight: bold;
 }
 
 

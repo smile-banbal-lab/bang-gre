@@ -20,10 +20,13 @@ function Menus() {
 
     return (
         <div id="Menus" > 
-        <div className='Main-background'></div>
-            <h2>메뉴 목록 {isAdmin && (
-                <button id="Menus-regist" onClick={() => navigate(`/menu/regist`)}>메뉴 추가</button>
-            )} </h2>
+        <div className='Main-background menu-background'></div>
+            <div className="menuHead">
+                <h2>메뉴 목록 </h2>
+                {isAdmin && (
+                    <button id="Menus-regist" onClick={() => navigate(`/menu/regist`)}>메뉴 추가</button>
+                )} 
+            </div>
             <MenuList categoryType={categoryType}/>
         </div>
     );

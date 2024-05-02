@@ -1,5 +1,7 @@
 #root{
     --tablebackground : #FCE436;
+    --bingrae: #f2d864;
+    --bingraeGreen: #009345;
 }
 
 .qna-container{
@@ -12,7 +14,9 @@
     margin-bottom: 100px;
 }
 
-
+.menu-background{
+    opacity: 0.6 !important;
+}
 
 .qna-detail{
     margin-top: 100px;
@@ -30,6 +34,10 @@
     font-weight: 400;
     color: white;
     text-shadow: 1px 1px 4px #222;
+}
+
+.qnaTitle button{
+    font-size: 30px;
 }
 
 .qna-table{
@@ -87,6 +95,23 @@
     position: relative;
 }
 
+.qna-detail button{
+    position: absolute;
+    top: 85%;
+    left: calc(50% - 75px);
+    width: 150px;
+    border-radius: 10px;
+    background-color: #2392d3;
+    color: white;
+    transition: color 0.4s ease;
+    transition: background-color 0.4s ease;
+    
+}
+
+.qna-detail button:hover{
+    background-color: #FCE436;
+    color: black;
+}
 
 .qna-detail h2{
     text-align: center;
