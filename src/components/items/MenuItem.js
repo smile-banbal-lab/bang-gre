@@ -10,12 +10,16 @@ import './Menu.css'
 function MenuItem({ menu, categoryType }) {
 	const dispatch = useDispatch();
 	const addToCartHandler = () =>{
-		const userInfoString = sessionStorage.getItem('userInfo');
-		const userInfo = JSON.parse(userInfoString);
-		console.log("user ID is : ", userInfo.userid);
-		const userid = userInfo.userid;
-		dispatch(callAddToCartAPI(menu, userid ));
-		alert("장바구니 넣기 성공, 수량 변경은 나의 장바구니에서 부탁드립니다!");
+		if(!!sessionStorage.getItem('isLogin')) {
+			const userInfoString = sessionStorage.getItem('userInfo');
+			const userInfo = JSON.parse(userInfoString);
+			console.log("user ID is : ", userInfo.userid);
+			const userid = userInfo.userid;
+			dispatch(callAddToCartAPI(menu, userid ));
+			alert("장바구니 넣기 성공, 수량 변경은 나의 장바구니에서 부탁드립니다!");
+		} else {
+			alert("먼저 로그인 부탁드립니다.");
+		}
 	};
 	// const cartResult = useSelector(state => state.cartReducer);
     // const cartList = cartResult.cartlist;
