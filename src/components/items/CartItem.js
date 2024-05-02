@@ -64,6 +64,18 @@ function CartItem({ menu, prod, history }) {
 		document.location.reload();
 	}
 
+	const confirmItemChangeHandler = () => {
+		let name = "Confirm";
+		setModifyCart({
+			...modifyCart,
+			[name]: true
+		});
+	}
+	const confirmItemHandler = () => {
+		dispatch(callModifyCartAPI(modifyCart));
+		document.location.reload();
+	};
+
 	// const decreaseQuantity = () => {
     //     if (quantity > 1) {
     //         setQuantity(prevQuantity => prevQuantity - 1);
@@ -100,6 +112,11 @@ function CartItem({ menu, prod, history }) {
 					</div>
 					<button className='cart-delete-button' onClick={deleteOrderHandler}>품목삭제</button>
 					<button className='cart-modify-quantity-button' onClick={modifyQuantityHandler}>변경확정</button>
+					<button className='cart-confirm-button' onClick={confirmItemHandler} name="Confirm">주문확정</button>
+					<select name="confirm" onChange={confirmItemChangeHandler} value={modifyCart.Confirm}>
+						<option value="true">주문확정</option>
+						<option value="false">장바구니 대기</option>
+					</select>
 				</div>
 				<div className="cartBox">
 					<img src={product.image} style={{ maxWidth: 200 , maxHeight: 200}} alt={product.name}></img>
