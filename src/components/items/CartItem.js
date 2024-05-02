@@ -112,7 +112,7 @@ function CartItem({ menu, prod, history }) {
 					</div>
 					<button className='cart-delete-button' onClick={deleteOrderHandler}>품목삭제</button>
 					<button className='cart-modify-quantity-button' onClick={modifyQuantityHandler}>변경확정</button>
-					<button className='cart-confirm-button' onClick={confirmItemHandler} name="Confirm">주문확정</button>
+					{/* <button className='cart-confirm-button' onClick={confirmItemHandler} name="Confirm">주문확정</button> */}
 					<select name="confirm" onChange={confirmItemChangeHandler} value={modifyCart.Confirm}>
 						<option value="true">주문확정</option>
 						<option value="false">장바구니 대기</option>

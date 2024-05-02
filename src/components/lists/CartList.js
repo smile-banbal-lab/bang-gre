@@ -66,7 +66,7 @@ function CartList() {
 
         });
 
-        alert("주문완료, 따라서 텅~!");
+        alert("장바구니 비우기 완료");
         document.location.reload();
 
     }
@@ -97,7 +97,7 @@ function CartList() {
                 <div className="order-confirm">
                     <br></br>
                     <h4>전체 주문금액: {totalPrice}</h4>
-                    <button className='cart-order-confirm-button' name="Confirm" onClick={onClickHandler}>장바구니 주문</button>
+                    <button className='cart-order-confirm-button' name="Confirm" onClick={onClickHandler}>장바구니 비우기</button>
                 </div>
             </>
         )

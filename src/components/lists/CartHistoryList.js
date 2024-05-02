@@ -61,11 +61,12 @@ function CartHistoryList() {
             //     });
             //     dispatch(callModifyCartAPI(confirmCart));
             // }
-            dispatch(callDeleteCartAPI(menu.id));        
-
+            if (menu.Confirm) {
+                dispatch(callDeleteCartAPI(menu.id));        
+            }
         });
 
-        alert("주문완료, 따라서 텅~!");
+        alert("주문내역 삭제 완료");
         document.location.reload();
 
     }
