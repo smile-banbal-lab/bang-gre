@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import UserItem from '../items/UserItem';
 import { callGetUserListAPI } from "../../apis/UserAPICalls";
-import { NavLink, Navigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import './UserList.css';
 
 
@@ -13,6 +13,7 @@ function UserList() {
 
     const result = useSelector(state => state.userReducer);
     const userList = result.userList;
+    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -42,13 +43,15 @@ function UserList() {
 	return (
 		userList && (
 			<>
-                <ul>
-				    <li><NavLink to={`/user/${user.id}`}>회원정보 조회 & 수정</NavLink></li>
-				    <li><NavLink to={`/user/signout/${user.id}`}>회원탈퇴</NavLink></li>
-				    {user && user.isAdmin && ( 
-                    <li><NavLink to={`/user/list`}>유저 목록 조회</NavLink></li>
-				    )}
-			    </ul>
+		    <div className='mypage-button-list'>
+		    	<div className='mypage-select'>
+		    		<button className='mypage-button' onClick={() => navigate(`/user/${user.id}`)}>회원정보 조회 & 수정</button>
+		    		<button className='mypage-button' onClick={() => navigate(`/user/signout/${user.id}`)}>회원탈퇴</button>
+		    		{user && user.isAdmin && ( 
+                    <button className='mypage-button' onClick={() => navigate(`/user/list`)}>유저 목록 조회</button>
+		    		)}
+		    	</div>
+		    </div>
                 <div className="userListBox">
                     {userList.map(users => (
                         <UserItem key={users.id} user={users} />

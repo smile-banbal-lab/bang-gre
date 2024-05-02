@@ -1,9 +1,47 @@
 .userItem {
-    border: 1px solid black;
-    margin: 5px;
+    border: none;
+    border-radius: 10px;
+    margin: 0px 50px 5px;
     padding: 5px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.userListBox{
+    padding: 50px 0;
+}
+
+.userData {
+    margin: 5px;
 }
 
 .userData > li {
     font-weight: bold;
+    white-space: nowrap;
+    margin: 5px;
+    font-size: 1em;
+}
+
+.userListBox {
+    background-image: url('../../../public/images/Main-background.png');
+    background-size: cover;
+}
+
+.userData{
+    width: 100%;
+}
+
+.userData li:nth-child(1){
+    width: 20%;
+}
+.userData li:nth-child(2){
+    width: 20%;
+}
+.userData li:nth-child(3){
+    width: 20%;
+}
+.userData li:nth-child(4){
+    width: 20%;
+}
+.userData li:nth-child(5){
+    width: 20%;
 }

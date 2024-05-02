@@ -1,4 +1,4 @@
-import { useNavigate, Navigate, useParams, NavLink } from 'react-router-dom';
+import { useNavigate, Navigate, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { callDeleteUserAPI } from '../apis/UserAPICalls';
@@ -59,29 +59,32 @@ function SignOut () {
 
 
     return (
+        <>
+		<div className='mypage-button-list'>
+			<div className='mypage-select'>
+				<button className='mypage-button' onClick={() => navigate(`/user/${user.id}`)}>회원정보 조회 & 수정</button>
+				<button className='mypage-button' onClick={() => navigate(`/user/signout/${user.id}`)}>회원탈퇴</button>
+				{user && user.isAdmin && ( 
+                <button className='mypage-button' onClick={() => navigate(`/user/list`)}>유저 목록 조회</button>
+				)}
+			</div>
+		</div>
         <div className="signout-container">
-        <ul>
-            <li><NavLink to={`/user/${id}`}>회원정보 조회 & 수정</NavLink></li>
-            <li><NavLink to={`/user/signout/${id}`}>회원탈퇴</NavLink></li>
-            {user && user.isAdmin && ( 
-                <li><NavLink to={`/user/list`}>유저 목록 조회</NavLink></li>
-			)}
-        </ul>
-        <h2>회원탈퇴를 하시려면 아이디와 비밀번호를 다시 입력해 주세요</h2>
-        <br/>
             <div className='form-box'>
+                <h5>아이디와 비밀번호를 다시 입력해 주세요</h5>
                 <div className="form-group">
                     <label>아이디 : </label>
                     <input className='form-input' name='userid' value={signOutInfo.userid} onChange={onChangeHandler}></input>
                 </div>
                 <div className="form-group">
                     <label>비밀번호 : </label>
-                    <input className='form-input' name='password' value={signOutInfo.password} onChange={onChangeHandler}></input>
+                    <input className='form-input' type='password' name='password' value={signOutInfo.password} onChange={onChangeHandler}></input>
                 </div>
             </div>
-        <button className="submit-button" onClick={onClickHandler}>회원탈퇴</button>
+        <button className="signout-button" onClick={onClickHandler}>회원탈퇴</button>
         <br />
     </div>
+    </>
 );
 
 }

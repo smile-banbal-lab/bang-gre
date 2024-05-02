@@ -33,11 +33,12 @@ function PasswordVerifyForm() {
 				navigate(`/user/${user.id}`);
 			}
 		},
-		[]
+		[result, isVerify, user]
 	);
 
     return (
         <>
+        <div className='Main-background'></div>
         <div className="check-container">
             <div className="check-form-container">
                 <h1>비밀번호를 다시 한번 확인해 주세요</h1>

@@ -1,11 +1,12 @@
 import MyPageForm from '../components/form/MyPageForm';
-import { NavLink, Navigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import './MyPage.css';
 
 function MyPage() {
 
 	const userString = sessionStorage.getItem('userInfo');
 	const user = JSON.parse(userString);
+	const navigate = useNavigate();
 
 	const verifyStatus = !!sessionStorage.getItem('isVerify');
 
@@ -17,13 +18,15 @@ function MyPage() {
 
 	return (
 		<>
-			<ul>
-				<li><NavLink to={`/user/${user.id}`}>회원정보 조회 & 수정</NavLink></li>
-				<li><NavLink to={`/user/signout/${user.id}`}>회원탈퇴</NavLink></li>
+		<div className='mypage-button-list'>
+			<div className='mypage-select'>
+				<button className='mypage-button' onClick={() => navigate(`/user/${user.id}`)}>회원정보 조회 & 수정</button>
+				<button className='mypage-button' onClick={() => navigate(`/user/signout/${user.id}`)}>회원탈퇴</button>
 				{user && user.isAdmin && ( 
-                <li><NavLink to={`/user/list`}>유저 목록 조회</NavLink></li>
+                <button className='mypage-button' onClick={() => navigate(`/user/list`)}>유저 목록 조회</button>
 				)}
-			</ul>
+			</div>
+		</div>
 			<h1>회원정보 수정</h1>
 			<hr />
 			<MyPageForm />
