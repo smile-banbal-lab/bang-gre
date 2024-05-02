@@ -1,3 +1,109 @@
+#root{
+    --tablebackground : #FCE436;
+}
+
 .qna-detail{
     margin-top: 100px;
+}
+
+.qnaTitle{
+    font-size: 40px;
+    font-weight: 400;
+    color: white;
+    text-shadow: 1px 1px 4px #222;
+}
+
+.qna-table{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none !important;
+    box-shadow: 1px 1px 4px #222;
+}
+
+.qna-table th{
+    padding: 10px 0 10px;
+    
+}
+
+.qna-table td{
+    border: none !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+.qna-table thead tr{
+    height: 50px;
+}
+
+.qna-table tbody tr{
+    height: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    transition: color 0.3s ease;
+}
+
+.qna-table tbody tr:hover{
+    background-color: rgba(76, 187, 224, 0.8);
+    color: white;
+    font-weight: 300;
+}
+
+.qna-background{
+    width: 100%;
+    height: 100vh;
+    background-image: url('../../public/images/Main-background.png');
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    z-index: -999;
+    opacity: 0.7;
+}
+
+.qna-detail{
+    margin-top: 120px !important;
+    width: 60%;
+    height: 60vh;
+    margin: 0 auto;
+    position: relative;
+}
+
+
+.qna-detail h2{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: white;
+    text-shadow: 2px 2px 3px #666;
+}
+
+.qna-detail p span{
+    display: inline-block;
+    width: 80px;
+    font-weight: bold;
+}
+
+.detailBox {
+    background-color: white;
+    padding: 20px;
+    height: 40vh;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px #777;
+    margin-bottom: 5px;
+}
+
+.deleteBtn{
+    position: absolute;
+    right: 0;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    color: rgba(0, 0, 0, 0.6);
+    transition: background-color 0.5s ease;
+    transition: color 0.5s ease;
+}
+
+.deleteBtn:hover{
+    background-color: rgba(248, 227, 76, 1);
+    color: black; 
 }
