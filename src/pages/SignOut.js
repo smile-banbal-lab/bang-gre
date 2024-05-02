@@ -43,8 +43,8 @@ function SignOut () {
         if (signOutInfo.userid == result.userid && signOutInfo.password == result.password) {
         dispatch(callDeleteUserAPI(signOutInfo));
 
-        localStorage.removeItem('isLogin');
-		localStorage.removeItem('isVerify');
+        sessionStorage.removeItem('isLogin');
+		sessionStorage.removeItem('isVerify');
         alert('회원 탈퇴 완료');
 		dispatch(resetLoginUser());
 		navigate('/');
