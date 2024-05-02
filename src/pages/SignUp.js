@@ -117,6 +117,7 @@ function SignUp() {
 					<div className="input-group">
 						<label>비밀번호:</label>
 						<input
+							className='password-input'
 							type="password"
 							name="password"
 							value={formData.password}
