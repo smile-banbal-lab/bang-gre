@@ -59,17 +59,24 @@ function QnaDetail() {
     }
 
     return (
-        <div className='qna-container'>
-            <div className="qna-detail">
-                <h2>{qnaDetail.title}</h2>
-                <p>작성일: {qnaDetail.date}</p>
-                <p>작성자: {qnaDetail.userid}</p>
-                <p>내용: {qnaDetail.content}</p>
-                { user && user.id != null && (user.userid === qnaDetail.userid || user.isAdmin) && (
-                <button onClick={onClickHandler}>글 삭제</button>
-                )}
-            </div>
-        </div>
+        <>
+            <div className="Main-background">
+                        </div>
+                <div className='qna-container'>
+                    <div className="qna-detail ">
+                        <h2 className="qna-title">{qnaDetail.title}</h2>
+                        <p>작성일: {qnaDetail.date}</p>
+                        <p>작성자: {qnaDetail.userid}</p>
+                        <p>내용: {qnaDetail.content}</p>
+                        <br/><br/>
+                        <br/><br/>
+                        <br/>
+                        { user && user.id != null && (user.userid === qnaDetail.userid || user.isAdmin) && (
+                        <button onClick={onClickHandler}>글 삭제</button>
+                        )}
+                    </div>
+                </div>
+        </>
     );
 }
 
