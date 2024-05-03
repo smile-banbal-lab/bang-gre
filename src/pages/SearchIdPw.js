@@ -17,7 +17,7 @@ function SearchIdPw() {
 	const handleSearch = (event) => {
 		event.preventDefault();
 		const email = `${emailUser}@${emailDomain === 'custom' ? customDomain : emailDomain}`;
-		axios.get(`http://localhost:4000/user?email=${email}`)
+		axios.get(`http://192.168.0.60:4000/user?email=${email}`)
 			.then(response => {
 				const users = response.data;
 				if (users.length > 0) {

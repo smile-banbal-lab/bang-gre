@@ -24,7 +24,7 @@ function FAQForm() {
         // Fetch current posts to determine the next id
         const fetchPosts = async () => {
             try {
-                const response = await fetch('http://localhost:4000/qna');
+                const response = await fetch('http://192.168.0.60:4000/qna');
                 const data = await response.json();
                 const nextId = data.length + 1; // Assuming id starts at 1
                 setFormData(prevFormData => ({
@@ -72,7 +72,7 @@ function FAQForm() {
 		const currentDate = new Date().toISOString().split('T')[0];
 	
 		try {
-			const response = await fetch('http://localhost:4000/qna', {
+			const response = await fetch('http://192.168.0.60:4000/qna', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'

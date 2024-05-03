@@ -111,48 +111,7 @@
       "isAdmin": true
     }
   ],
-<<<<<<< HEAD
-  "item": [
-    {
-      "id": "202405021210014264197203john123928573359",
-      "name": "딸기 아이스크림",
-      "date": "2024-05-02",
-      "userid": "john123",
-      "Confirm": true,
-      "menuid": "6",
-      "Quantity": 1
-    },
-    {
-      "id": "202405021210061229660265john1232356598834",
-      "name": "아이스크림 케이크",
-      "date": "2024-05-02",
-      "userid": "john123",
-      "Confirm": true,
-      "menuid": "11",
-      "Quantity": 1
-    },
-    {
-      "id": "202405021212451414554214john1232814081131",
-      "name": "망고 아이스크림",
-      "date": "2024-05-02",
-      "userid": "john123",
-      "Confirm": true,
-      "menuid": "7",
-      "Quantity": 1
-    },
-    {
-      "id": "202405021213291194114274john1233958219120",
-      "name": "바나나 아이스크림",
-      "date": "2024-05-02",
-      "userid": "john123",
-      "Confirm": true,
-      "menuid": "9",
-      "Quantity": 1
-    }
-  ],
-=======
   "item": [],
->>>>>>> bang_gre/master
   "menu": [
     {
       "id": "1",
