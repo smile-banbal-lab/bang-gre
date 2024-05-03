@@ -4,7 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { callDeleteMenuAPI } from '../apis/MenuAPICalls';
 import Button from 'react-bootstrap/Button';
-
+import "./MenuDetail.css";
 
 function MenuDetail() {
 
@@ -34,7 +34,7 @@ function MenuDetail() {
 
     return (
         <div id="MenuDetail-page">
-            <Menu id={id} />
+            <Menu id={id}/>
             <div className="admin-buttonBox">
                 { /* 로그인 된 상황에만 button이 보이도록 조건부 랜더링 */}
                 {(isAuthorized && isAdmin) && // 관리자인 경우에만 버튼 표시

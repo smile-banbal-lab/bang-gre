@@ -156,6 +156,7 @@ function MenuModifyForm() {
 			<br/>
 			<label>카테고리 : </label>
 			<select name="category" value={modifyMenu.category.type} onChange={onChangeHandler}>
+				<option >옵션 선택</option>
 				<option >아이스크림</option>
 				<option>우유</option>
 				<option >발효유</option>
