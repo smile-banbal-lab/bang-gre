@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import './Main.css';
 // import './Login.css';
 import './FAQForm.css';
 
 function FAQForm() {
 	
+	const navigate = useNavigate();
 	const userInfo = useSelector(state => state.userReducer); 
 	// 폼 데이터를 state로 관리함
 	const [formData, setFormData] = React.useState({
@@ -101,6 +103,23 @@ function FAQForm() {
 			alert('문의 등록에 실패하였습니다.');
 		}
 	};
+
+	const onClickHandler = () => {
+		setFormData({
+			name: '',
+			userid: '',
+			email: '',
+			phone: '',
+			address: '',
+			title: '',
+			content: '',
+			date: '',
+			id: ''
+		});
+		navigate('/qna');
+
+	};
+
 	return (
 		
 		<>        
@@ -140,7 +159,7 @@ function FAQForm() {
 							placeholder="주민등록번호 등의 개인정보는 절대 노출하지 마세요."></textarea>
 					</div>
 					<div className="btn">
-						<button type="button" className="FAQ-button">취소하기</button>
+						<button type="button" className="FAQ-button" onClick={onClickHandler}>취소하기</button>
 						<button type="submit" className="FAQ-button">등록하기</button>
 					</div>
 				</form>
