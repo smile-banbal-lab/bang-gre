@@ -1,0 +1,9 @@
+diff a/mock/db.json b/mock/db.json	(rejected hunks)
+@@ -145,7 +145,6 @@
+       "name": "바나나 아이스크림",
+       "date": "2024-05-02",
+       "userid": "john123",
+-      "menuid": "71",
+       "Confirm": true,
+       "menuid": "9",
+       "Quantity": 1

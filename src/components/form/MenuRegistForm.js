@@ -198,7 +198,8 @@ function MenuRegistForm() {
 
 			<label>카테고리 : </label>
 			<select name="category" value={registMenu.category.type} onChange={onChangeHandler}>
-				<option >아이스크림</option>
+				<option>옵션선택</option>
+				<option>아이스크림</option>
 				<option>우유</option>
 				<option >발효유</option>
 				<option>커피</option>
