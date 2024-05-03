@@ -37,7 +37,7 @@ function SignUp() {
 	};
 
 	const checkDuplicate = (field, value) => {
-        axios.get(`http://localhost:4000/user?${field}=${value}`)
+        axios.get(`http://192.168.0.60:4000/user?${field}=${value}`)
             .then(response => {
                 if (response.data.length > 0) { // 데이터가 존재하면 중복
                     setDuplicate({
@@ -68,7 +68,7 @@ function SignUp() {
             alert('아이디 또는 핸드폰 번호가 중복되었습니다.');
             return;
         }
-        axios.post('http://localhost:4000/user', formData)
+        axios.post('http://192.168.0.60:4000/user', formData)
             .then(response => {
                 console.log(response.data);
                 alert('회원가입 성공!');

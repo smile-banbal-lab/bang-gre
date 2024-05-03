@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const DOMAIN = 'http://localhost:4000';
+const DOMAIN = 'http://192.168.0.60:4000';
 
 export const request = async (method, url, data) => {
     return await axios({
