@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import CartItem from '../items/CartItem';
+import CartHistoryItem from '../items/CartHistroyItem';
 import { callGetMenuListAPI } from "../../apis/MenuAPICalls";
 import { callDeleteCartAPI, callGetCartListAPI, callModifyCartAPI } from '../../apis/CartAPICalls'; 
 import "../commons/Commons.css"
 
 
-function CartList() {
+function CartHistoryList() {
     let totalPrice = 0;
+
     const userInfoString = sessionStorage.getItem('userInfo');
 	const userInfo = JSON.parse(userInfoString);
 	console.log("user ID is : ", userInfo.userid);
@@ -40,7 +42,6 @@ function CartList() {
     );
 
 
-
     const onClickHandler = () => {
         console.log("설마");
 
@@ -60,13 +61,12 @@ function CartList() {
             //     });
             //     dispatch(callModifyCartAPI(confirmCart));
             // }
-            if (!menu.Confirm) {
+            if (menu.Confirm) {
                 dispatch(callDeleteCartAPI(menu.id));        
             }
-
         });
 
-        alert("장바구니 비우기 완료");
+        alert("주문내역 삭제 완료");
         document.location.reload();
 
     }
@@ -78,17 +78,20 @@ function CartList() {
                     
                     {/* 장바구니 목록을 표시합니다. */}
                     {cartList && cartList.map(cart => {
-
-                        if ((cart.userid === userid)&&(!cart.Confirm)) {
+                        if ((cart.userid === userid)&&(cart.Confirm)) {
                             console.log("userid, id is : ", cart.userid, userid);
                             let menu = menuList.find(item => item.id === cart.menuid);
                             console.log("menu in CartList is: ", menu);
                             totalPrice += (menu.price)*(cart.Quantity);
                             return(
                                 <div>
-                                    
-                                    <CartItem key={cart.id} menu={cart} prod={menu} history={false}>
-                                    </CartItem>
+                                    <h4>주문날짜: {cart.date}</h4>
+                                    <h4>주문번호: {cart.id.substr(0, 10)}</h4>
+                                    <h4>주문항목번호: {cart.id}</h4>
+                                    <div>
+                                        <CartHistoryItem key={cart.id} menu={cart} prod={menu} history={true}>
+                                        </CartHistoryItem>
+                                    </div>
                                 </div>
                             );
                         }
@@ -97,7 +100,7 @@ function CartList() {
                 <div className="order-confirm">
                     <br></br>
                     <h4>전체 주문금액: {totalPrice}</h4>
-                    <button className='cart-order-confirm-button' name="Confirm" onClick={onClickHandler}>장바구니 비우기</button>
+                    <button className='cart-history-delete-button' name="Confirm" onClick={onClickHandler}>주문내역 전체삭제</button>
                 </div>
             </>
         )
@@ -105,4 +108,4 @@ function CartList() {
     
 }
 
-export default CartList;
+export default CartHistoryList;

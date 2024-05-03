@@ -111,7 +111,17 @@
       "isAdmin": true
     }
   ],
-  "item": [],
+  "item": [
+    {
+      "id": "202405021218364199399930john1233516670686",
+      "name": "아메리카노",
+      "date": "2024-05-02",
+      "userid": "john123",
+      "Confirm": false,
+      "menuid": "71",
+      "Quantity": 1
+    }
+  ],
   "menu": [
     {
       "id": "1",

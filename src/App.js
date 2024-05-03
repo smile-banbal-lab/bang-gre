@@ -19,6 +19,7 @@ import FAQForm from './pages/FAQForm';
 import "./App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import UserList from './components/lists/UserList';
+import CartHistory from './pages/CartHistory';
 
 /* 추가 설치해야 하는 패키지 목록
  * react-router-dom
@@ -59,7 +60,11 @@ function App() {
 					</Route>
 					<Route path="list" element={<UserList />} />
 				</Route>
-				<Route path="cart"  element={<Cart/>} />
+				<Route path="cart"  element={<Cart/>} >
+					<Route index element={<Cart />} />
+					
+				</Route>
+				<Route path="carthistory" element={<CartHistory />} />
 					<Route path="/qna" element={<QnaPage />} />
 					<Route path="/qna/:id" element={<QnaDetail />} />
 				<Route path="contact" element={<FAQForm />} />
